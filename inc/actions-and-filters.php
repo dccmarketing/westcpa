@@ -3,7 +3,7 @@
 /**
  * A class of helpful theme functions
  *
- * @package DocBlock
+ * @package West_CPA
  * @author Slushman <chris@slushman.com>
  */
 class westcpa_Actions_and_Filters {

@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package DocBlock
+ * @package West_CPA
  */
 
 if ( ! function_exists( 'westcpa_posted_on' ) ) :

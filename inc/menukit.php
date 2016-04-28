@@ -3,7 +3,7 @@
 /**
  * A class of helpful menu-related functions
  *
- * @package DocBlock
+ * @package West_CPA
  * @author Slushman <chris@slushman.com>
  */
 class westcpa_Menukit {

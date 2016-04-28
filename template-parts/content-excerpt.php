@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package DocBlock
+ * @package West_CPA
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php

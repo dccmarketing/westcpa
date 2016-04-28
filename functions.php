@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Functions_File_Explained
  *
- * @package DocBlock
+ * @package West_CPA
  */
 
 if ( ! function_exists( 'westcpa_setup' ) ) :

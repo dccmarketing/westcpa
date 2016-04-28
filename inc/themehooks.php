@@ -3,7 +3,7 @@
 /**
  * A class of methods using hooks in the theme.
  *
- * @package DocBlock
+ * @package West_CPA
  * @author Slushman <chris@slushman.com>
  */
 class westcpa_Themehooks {
