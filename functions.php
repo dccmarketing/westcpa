@@ -21,7 +21,7 @@ if ( ! function_exists( 'function_names_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'text-domain', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'westcpa', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -77,8 +77,8 @@ if ( ! function_exists( 'function_names_setup' ) ) :
 		 * Register Menus
 		 */
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'text-domain' ),
-			'social' => esc_html__( 'Social Links', 'text-domain' )
+			'primary' => esc_html__( 'Primary', 'westcpa' ),
+			'social' => esc_html__( 'Social Links', 'westcpa' )
 		) );
 
 	} // function_names_setup()

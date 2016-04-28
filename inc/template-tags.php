@@ -26,12 +26,12 @@ if ( ! function_exists( 'function_names_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			esc_html_x( 'Posted on %s', 'post date', 'text-domain' ),
+			esc_html_x( 'Posted on %s', 'post date', 'westcpa' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'text-domain' ),
+			esc_html_x( 'by %s', 'post author', 'westcpa' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -52,18 +52,18 @@ if ( ! function_exists( 'function_names_entry_footer' ) ) :
 		if ( 'post' == get_post_type() ) {
 
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'text-domain' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'westcpa' ) );
 			if ( $categories_list && function_names_categorized_blog() ) {
 
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'text-domain' ) . '</span>', $categories_list );  // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'westcpa' ) . '</span>', $categories_list );  // WPCS: XSS OK.
 
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'text-domain' ) );
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'westcpa' ) );
 			if ( $tags_list ) {
 
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'text-domain' ) . '</span>', $tags_list );  // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'westcpa' ) . '</span>', $tags_list );  // WPCS: XSS OK.
 
 			}
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'function_names_entry_footer' ) ) :
 
 		}
 
-		edit_post_link( esc_html__( 'Edit', 'text-domain' ), '<span class="edit-link">', '</span>' );
+		edit_post_link( esc_html__( 'Edit', 'westcpa' ), '<span class="edit-link">', '</span>' );
 
 	} // function_names_entry_footer()
 endif;

@@ -38,10 +38,10 @@ function function_names_register_panels( $wp_customize ) {
 	$wp_customize->add_panel( 'theme_options',
 		array(
 			'capability'  		=> 'edit_theme_options',
-			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'text-domain' ),
+			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'westcpa' ),
 			'priority'  		=> 10,
 			'theme_supports'  	=> '',
-			'title'  			=> esc_html__( 'Theme Options', 'text-domain' ),
+			'title'  			=> esc_html__( 'Theme Options', 'westcpa' ),
 		)
 	);
 
@@ -50,10 +50,10 @@ function function_names_register_panels( $wp_customize ) {
 	$wp_customize->add_panel( 'theme_options',
 		array(
 			'capability'  		=> 'edit_theme_options',
-			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'text-domain' ),
+			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'westcpa' ),
 			'priority'  		=> 10,
 			'theme_supports'  	=> '',
-			'title'  			=> esc_html__( 'Theme Options', 'text-domain' ),
+			'title'  			=> esc_html__( 'Theme Options', 'westcpa' ),
 		)
 	);
 	*/
@@ -91,10 +91,10 @@ function function_names_register_sections( $wp_customize ) {
 	$wp_customize->add_section( 'new_section',
 		array(
 			'capability' 	=> 'edit_theme_options',
-			'description' 	=> esc_html__( 'New Customizer Section', 'text-domain' ),
+			'description' 	=> esc_html__( 'New Customizer Section', 'westcpa' ),
 			'panel' 		=> 'theme_options',
 			'priority' 		=> 10,
-			'title' 		=> esc_html__( 'New Section', 'text-domain' )
+			'title' 		=> esc_html__( 'New Section', 'westcpa' )
 		)
 	);
 	*/
@@ -139,8 +139,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'tag_manager',
 		array(
-			'description' 	=> esc_html__( 'Paste in the Google Tag Manager code here. Do not include the comment tags!', 'text-domain' ),
-			'label' => esc_html__( 'Google Tag Manager', 'text-domain' ),
+			'description' 	=> esc_html__( 'Paste in the Google Tag Manager code here. Do not include the comment tags!', 'westcpa' ),
+			'label' => esc_html__( 'Google Tag Manager', 'westcpa' ),
 			'priority' => 90,
 			'section' => 'title_tagline',
 			'settings' => 'tag_manager',
@@ -167,8 +167,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'text_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label'  	=> esc_html__( 'Text Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label'  	=> esc_html__( 'Text Field', 'westcpa' ),
 			'priority' => 10,
 			'section'  	=> 'new_section',
 			'settings' 	=> 'text_field',
@@ -191,8 +191,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'url_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'URL Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'URL Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'url_field',
@@ -214,8 +214,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'email_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Email Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Email Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'email_field',
@@ -235,8 +235,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'date_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Date Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Date Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'date_field',
@@ -257,8 +257,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'checkbox_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Checkbox Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Checkbox Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'checkbox_field',
@@ -281,8 +281,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'password_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Password Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Password Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'password_field',
@@ -305,12 +305,12 @@ function function_names_register_fields( $wp_customize ) {
 		'radio_field',
 		array(
 			'choices' => array(
-				'choice1' => esc_html__( 'Choice 1', 'text-domain' ),
-				'choice2' => esc_html__( 'Choice 2', 'text-domain' ),
-				'choice3' => esc_html__( 'Choice 3', 'text-domain' )
+				'choice1' => esc_html__( 'Choice 1', 'westcpa' ),
+				'choice2' => esc_html__( 'Choice 2', 'westcpa' ),
+				'choice3' => esc_html__( 'Choice 3', 'westcpa' )
 			),
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Radio Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Radio Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'radio_field',
@@ -333,12 +333,12 @@ function function_names_register_fields( $wp_customize ) {
 		'select_field',
 		array(
 			'choices' => array(
-				'choice1' => esc_html__( 'Choice 1', 'text-domain' ),
-				'choice2' => esc_html__( 'Choice 2', 'text-domain' ),
-				'choice3' => esc_html__( 'Choice 3', 'text-domain' )
+				'choice1' => esc_html__( 'Choice 1', 'westcpa' ),
+				'choice2' => esc_html__( 'Choice 2', 'westcpa' ),
+				'choice3' => esc_html__( 'Choice 3', 'westcpa' )
 			),
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Select Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Select Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'select_field',
@@ -360,8 +360,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'textarea_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Textarea Field', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Textarea Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'textarea_field',
@@ -384,7 +384,7 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'range_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
 			'input_attrs' => array(
 				'class' => 'range-field',
 				'max' => 100,
@@ -392,7 +392,7 @@ function function_names_register_fields( $wp_customize ) {
 				'step' => 1,
 				'style' => 'color: #020202'
 			),
-			'label' => esc_html__( 'Range Field', 'text-domain' ),
+			'label' => esc_html__( 'Range Field', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'range_field',
@@ -414,8 +414,8 @@ function function_names_register_fields( $wp_customize ) {
 	$wp_customize->add_control(
 		'select_page_field',
 		array(
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' => esc_html__( 'Select Page', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' => esc_html__( 'Select Page', 'westcpa' ),
 			'priority' => 10,
 			'section' => 'new_section',
 			'settings' => 'select_page_field',
@@ -439,8 +439,8 @@ function function_names_register_fields( $wp_customize ) {
 			$wp_customize,
 			'color_field',
 			array(
-				'description' 	=> esc_html__( '', 'text-domain' ),
-				'label' => esc_html__( 'Color Field', 'text-domain' ),
+				'description' 	=> esc_html__( '', 'westcpa' ),
+				'label' => esc_html__( 'Color Field', 'westcpa' ),
 				'priority' => 10,
 				'section' => 'new_section',
 				'settings' => 'color_field'
@@ -458,8 +458,8 @@ function function_names_register_fields( $wp_customize ) {
 			$wp_customize,
 			'file_upload',
 			array(
-				'description' 	=> esc_html__( '', 'text-domain' ),
-				'label' => esc_html__( 'File Upload', 'text-domain' ),
+				'description' 	=> esc_html__( '', 'westcpa' ),
+				'label' => esc_html__( 'File Upload', 'westcpa' ),
 				'priority' => 10,
 				'section' => 'new_section',
 				'settings' => 'file_upload'
@@ -482,8 +482,8 @@ function function_names_register_fields( $wp_customize ) {
 			$wp_customize,
 			'image_upload',
 			array(
-				'description' 	=> esc_html__( '', 'text-domain' ),
-				'label' => esc_html__( 'Image Field', 'text-domain' ),
+				'description' 	=> esc_html__( '', 'westcpa' ),
+				'label' => esc_html__( 'Image Field', 'westcpa' ),
 				'priority' => 10,
 				'section' => 'new_section',
 				'settings' => 'image_upload'
@@ -509,8 +509,8 @@ function function_names_register_fields( $wp_customize ) {
 			$wp_customize,
 			'media_upload',
 			array(
-				'description' 	=> esc_html__( '', 'text-domain' ),
-				'label' => esc_html__( 'Media Field', 'text-domain' ),
+				'description' 	=> esc_html__( '', 'westcpa' ),
+				'label' => esc_html__( 'Media Field', 'westcpa' ),
 				'mime_type' => '',
 				'priority' => 10,
 				'section' => 'new_section',
@@ -536,7 +536,7 @@ function function_names_register_fields( $wp_customize ) {
 			$wp_customize,
 			'cropped_image',
 			array(
-				'description' 	=> esc_html__( '', 'text-domain' ),
+				'description' 	=> esc_html__( '', 'westcpa' ),
 				'flex_height' => '',
 				'flex_width' => '',
 				'height' => '1080',
@@ -562,8 +562,8 @@ function function_names_register_fields( $wp_customize ) {
 		'country',
 		array(
 			'choices' 		=> function_names_country_list(),
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' 		=> esc_html__( 'Country', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' 		=> esc_html__( 'Country', 'westcpa' ),
 			'priority' 		=> 250,
 			'section' 		=> 'contact_info',
 			'settings' 		=> 'country',
@@ -585,71 +585,71 @@ function function_names_register_fields( $wp_customize ) {
 		'us_state',
 		array(
 			'choices' => array(
-				'AL' => esc_html__( 'Alabama', 'text-domain' ),
-				'AK' => esc_html__( 'Alaska', 'text-domain' ),
-				'AZ' => esc_html__( 'Arizona', 'text-domain' ),
-				'AR' => esc_html__( 'Arkansas', 'text-domain' ),
-				'CA' => esc_html__( 'California', 'text-domain' ),
-				'CO' => esc_html__( 'Colorado', 'text-domain' ),
-				'CT' => esc_html__( 'Connecticut', 'text-domain' ),
-				'DE' => esc_html__( 'Delaware', 'text-domain' ),
-				'DC' => esc_html__( 'District of Columbia', 'text-domain' ),
-				'FL' => esc_html__( 'Florida', 'text-domain' ),
-				'GA' => esc_html__( 'Georgia', 'text-domain' ),
-				'HI' => esc_html__( 'Hawaii', 'text-domain' ),
-				'ID' => esc_html__( 'Idaho', 'text-domain' ),
-				'IL' => esc_html__( 'Illinois', 'text-domain' ),
-				'IN' => esc_html__( 'Indiana', 'text-domain' ),
-				'IA' => esc_html__( 'Iowa', 'text-domain' ),
-				'KS' => esc_html__( 'Kansas', 'text-domain' ),
-				'KY' => esc_html__( 'Kentucky', 'text-domain' ),
-				'LA' => esc_html__( 'Louisiana', 'text-domain' ),
-				'ME' => esc_html__( 'Maine', 'text-domain' ),
-				'MD' => esc_html__( 'Maryland', 'text-domain' ),
-				'MA' => esc_html__( 'Massachusetts', 'text-domain' ),
-				'MI' => esc_html__( 'Michigan', 'text-domain' ),
-				'MN' => esc_html__( 'Minnesota', 'text-domain' ),
-				'MS' => esc_html__( 'Mississippi', 'text-domain' ),
-				'MO' => esc_html__( 'Missouri', 'text-domain' ),
-				'MT' => esc_html__( 'Montana', 'text-domain' ),
-				'NE' => esc_html__( 'Nebraska', 'text-domain' ),
-				'NV' => esc_html__( 'Nevada', 'text-domain' ),
-				'NH' => esc_html__( 'New Hampshire', 'text-domain' ),
-				'NJ' => esc_html__( 'New Jersey', 'text-domain' ),
-				'NM' => esc_html__( 'New Mexico', 'text-domain' ),
-				'NY' => esc_html__( 'New York', 'text-domain' ),
-				'NC' => esc_html__( 'North Carolina', 'text-domain' ),
-				'ND' => esc_html__( 'North Dakota', 'text-domain' ),
-				'OH' => esc_html__( 'Ohio', 'text-domain' ),
-				'OK' => esc_html__( 'Oklahoma', 'text-domain' ),
-				'OR' => esc_html__( 'Oregon', 'text-domain' ),
-				'PA' => esc_html__( 'Pennsylvania', 'text-domain' ),
-				'RI' => esc_html__( 'Rhode Island', 'text-domain' ),
-				'SC' => esc_html__( 'South Carolina', 'text-domain' ),
-				'SD' => esc_html__( 'South Dakota', 'text-domain' ),
-				'TN' => esc_html__( 'Tennessee', 'text-domain' ),
-				'TX' => esc_html__( 'Texas', 'text-domain' ),
-				'UT' => esc_html__( 'Utah', 'text-domain' ),
-				'VT' => esc_html__( 'Vermont', 'text-domain' ),
-				'VA' => esc_html__( 'Virginia', 'text-domain' ),
-				'WA' => esc_html__( 'Washington', 'text-domain' ),
-				'WV' => esc_html__( 'West Virginia', 'text-domain' ),
-				'WI' => esc_html__( 'Wisconsin', 'text-domain' ),
-				'WY' => esc_html__( 'Wyoming', 'text-domain' ),
-				'AS' => esc_html__( 'American Samoa', 'text-domain' ),
-				'AA' => esc_html__( 'Armed Forces America (except Canada)', 'text-domain' ),
-				'AE' => esc_html__( 'Armed Forces Africa/Canada/Europe/Middle East', 'text-domain' ),
-				'AP' => esc_html__( 'Armed Forces Pacific', 'text-domain' ),
-				'FM' => esc_html__( 'Federated States of Micronesia', 'text-domain' ),
-				'GU' => esc_html__( 'Guam', 'text-domain' ),
-				'MH' => esc_html__( 'Marshall Islands', 'text-domain' ),
-				'MP' => esc_html__( 'Northern Mariana Islands', 'text-domain' ),
-				'PR' => esc_html__( 'Puerto Rico', 'text-domain' ),
-				'PW' => esc_html__( 'Palau', 'text-domain' ),
-				'VI' => esc_html__( 'Virgin Islands', 'text-domain' )
+				'AL' => esc_html__( 'Alabama', 'westcpa' ),
+				'AK' => esc_html__( 'Alaska', 'westcpa' ),
+				'AZ' => esc_html__( 'Arizona', 'westcpa' ),
+				'AR' => esc_html__( 'Arkansas', 'westcpa' ),
+				'CA' => esc_html__( 'California', 'westcpa' ),
+				'CO' => esc_html__( 'Colorado', 'westcpa' ),
+				'CT' => esc_html__( 'Connecticut', 'westcpa' ),
+				'DE' => esc_html__( 'Delaware', 'westcpa' ),
+				'DC' => esc_html__( 'District of Columbia', 'westcpa' ),
+				'FL' => esc_html__( 'Florida', 'westcpa' ),
+				'GA' => esc_html__( 'Georgia', 'westcpa' ),
+				'HI' => esc_html__( 'Hawaii', 'westcpa' ),
+				'ID' => esc_html__( 'Idaho', 'westcpa' ),
+				'IL' => esc_html__( 'Illinois', 'westcpa' ),
+				'IN' => esc_html__( 'Indiana', 'westcpa' ),
+				'IA' => esc_html__( 'Iowa', 'westcpa' ),
+				'KS' => esc_html__( 'Kansas', 'westcpa' ),
+				'KY' => esc_html__( 'Kentucky', 'westcpa' ),
+				'LA' => esc_html__( 'Louisiana', 'westcpa' ),
+				'ME' => esc_html__( 'Maine', 'westcpa' ),
+				'MD' => esc_html__( 'Maryland', 'westcpa' ),
+				'MA' => esc_html__( 'Massachusetts', 'westcpa' ),
+				'MI' => esc_html__( 'Michigan', 'westcpa' ),
+				'MN' => esc_html__( 'Minnesota', 'westcpa' ),
+				'MS' => esc_html__( 'Mississippi', 'westcpa' ),
+				'MO' => esc_html__( 'Missouri', 'westcpa' ),
+				'MT' => esc_html__( 'Montana', 'westcpa' ),
+				'NE' => esc_html__( 'Nebraska', 'westcpa' ),
+				'NV' => esc_html__( 'Nevada', 'westcpa' ),
+				'NH' => esc_html__( 'New Hampshire', 'westcpa' ),
+				'NJ' => esc_html__( 'New Jersey', 'westcpa' ),
+				'NM' => esc_html__( 'New Mexico', 'westcpa' ),
+				'NY' => esc_html__( 'New York', 'westcpa' ),
+				'NC' => esc_html__( 'North Carolina', 'westcpa' ),
+				'ND' => esc_html__( 'North Dakota', 'westcpa' ),
+				'OH' => esc_html__( 'Ohio', 'westcpa' ),
+				'OK' => esc_html__( 'Oklahoma', 'westcpa' ),
+				'OR' => esc_html__( 'Oregon', 'westcpa' ),
+				'PA' => esc_html__( 'Pennsylvania', 'westcpa' ),
+				'RI' => esc_html__( 'Rhode Island', 'westcpa' ),
+				'SC' => esc_html__( 'South Carolina', 'westcpa' ),
+				'SD' => esc_html__( 'South Dakota', 'westcpa' ),
+				'TN' => esc_html__( 'Tennessee', 'westcpa' ),
+				'TX' => esc_html__( 'Texas', 'westcpa' ),
+				'UT' => esc_html__( 'Utah', 'westcpa' ),
+				'VT' => esc_html__( 'Vermont', 'westcpa' ),
+				'VA' => esc_html__( 'Virginia', 'westcpa' ),
+				'WA' => esc_html__( 'Washington', 'westcpa' ),
+				'WV' => esc_html__( 'West Virginia', 'westcpa' ),
+				'WI' => esc_html__( 'Wisconsin', 'westcpa' ),
+				'WY' => esc_html__( 'Wyoming', 'westcpa' ),
+				'AS' => esc_html__( 'American Samoa', 'westcpa' ),
+				'AA' => esc_html__( 'Armed Forces America (except Canada)', 'westcpa' ),
+				'AE' => esc_html__( 'Armed Forces Africa/Canada/Europe/Middle East', 'westcpa' ),
+				'AP' => esc_html__( 'Armed Forces Pacific', 'westcpa' ),
+				'FM' => esc_html__( 'Federated States of Micronesia', 'westcpa' ),
+				'GU' => esc_html__( 'Guam', 'westcpa' ),
+				'MH' => esc_html__( 'Marshall Islands', 'westcpa' ),
+				'MP' => esc_html__( 'Northern Mariana Islands', 'westcpa' ),
+				'PR' => esc_html__( 'Puerto Rico', 'westcpa' ),
+				'PW' => esc_html__( 'Palau', 'westcpa' ),
+				'VI' => esc_html__( 'Virgin Islands', 'westcpa' )
 			),
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' 		=> esc_html__( 'State', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' 		=> esc_html__( 'State', 'westcpa' ),
 			'priority' 		=> 230,
 			'section' 		=> 'contact_info',
 			'settings' 		=> 'us_state',
@@ -671,22 +671,22 @@ function function_names_register_fields( $wp_customize ) {
 		'canada_state',
 		array(
 			'choices' => array(
-				'AB' => esc_html__( 'Alberta', 'text-domain' ),
-				'BC' => esc_html__( 'British Columbia', 'text-domain' ),
-				'MB' => esc_html__( 'Manitoba', 'text-domain' ),
-				'NB' => esc_html__( 'New Brunswick', 'text-domain' ),
-				'NL' => esc_html__( 'Newfoundland and Labrador', 'text-domain' ),
-				'NT' => esc_html__( 'Northwest Territories', 'text-domain' ),
-				'NS' => esc_html__( 'Nova Scotia', 'text-domain' ),
-				'NU' => esc_html__( 'Nunavut', 'text-domain' ),
-				'ON' => esc_html__( 'Ontario', 'text-domain' ),
-				'PE' => esc_html__( 'Prince Edward Island', 'text-domain' ),
-				'QC' => esc_html__( 'Quebec', 'text-domain' ),
-				'SK' => esc_html__( 'Saskatchewan', 'text-domain' ),
-				'YT' => esc_html__( 'Yukon', 'text-domain' )
+				'AB' => esc_html__( 'Alberta', 'westcpa' ),
+				'BC' => esc_html__( 'British Columbia', 'westcpa' ),
+				'MB' => esc_html__( 'Manitoba', 'westcpa' ),
+				'NB' => esc_html__( 'New Brunswick', 'westcpa' ),
+				'NL' => esc_html__( 'Newfoundland and Labrador', 'westcpa' ),
+				'NT' => esc_html__( 'Northwest Territories', 'westcpa' ),
+				'NS' => esc_html__( 'Nova Scotia', 'westcpa' ),
+				'NU' => esc_html__( 'Nunavut', 'westcpa' ),
+				'ON' => esc_html__( 'Ontario', 'westcpa' ),
+				'PE' => esc_html__( 'Prince Edward Island', 'westcpa' ),
+				'QC' => esc_html__( 'Quebec', 'westcpa' ),
+				'SK' => esc_html__( 'Saskatchewan', 'westcpa' ),
+				'YT' => esc_html__( 'Yukon', 'westcpa' )
 			),
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' 		=> esc_html__( 'State', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' 		=> esc_html__( 'State', 'westcpa' ),
 			'priority' 		=> 230,
 			'section' 		=> 'contact_info',
 			'settings' 		=> 'canada_state',
@@ -708,17 +708,17 @@ function function_names_register_fields( $wp_customize ) {
 		'australia_state',
 		array(
 			'choices' => array(
-				'ACT' 	=> esc_html__( 'Australian Capital Territory', 'text-domain' ),
-				'NSW' 	=> esc_html__( 'New South Wales', 'text-domain' ),
-				'NT' 	=> esc_html__( 'Northern Territory', 'text-domain' ),
-				'QLD' 	=> esc_html__( 'Queensland', 'text-domain' ),
-				'SA' 	=> esc_html__( 'South Australia', 'text-domain' ),
-				'TAS' 	=> esc_html__( 'Tasmania', 'text-domain' ),
-				'VIC' 	=> esc_html__( 'Victoria', 'text-domain' ),
-				'WA' 	=> esc_html__( 'Western Australia', 'text-domain' )
+				'ACT' 	=> esc_html__( 'Australian Capital Territory', 'westcpa' ),
+				'NSW' 	=> esc_html__( 'New South Wales', 'westcpa' ),
+				'NT' 	=> esc_html__( 'Northern Territory', 'westcpa' ),
+				'QLD' 	=> esc_html__( 'Queensland', 'westcpa' ),
+				'SA' 	=> esc_html__( 'South Australia', 'westcpa' ),
+				'TAS' 	=> esc_html__( 'Tasmania', 'westcpa' ),
+				'VIC' 	=> esc_html__( 'Victoria', 'westcpa' ),
+				'WA' 	=> esc_html__( 'Western Australia', 'westcpa' )
 			),
-			'description' 	=> esc_html__( '', 'text-domain' ),
-			'label' 		=> esc_html__( 'State', 'text-domain' ),
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label' 		=> esc_html__( 'State', 'westcpa' ),
 			'priority' 		=> 230,
 			'section' 		=> 'contact_info',
 			'settings' 		=> 'australia_state',
@@ -877,262 +877,262 @@ function function_names_country_list( $country = '' ) {
 
 	$countries = array();
 
-	$countries['AF'] = esc_html__( 'Afghanistan (‫افغانستان‬‎)', 'text-domain' );
-	$countries['AX'] = esc_html__( 'Åland Islands (Åland)', 'text-domain' );
-	$countries['AL'] = esc_html__( 'Albania (Shqipëri)', 'text-domain' );
-	$countries['DZ'] = esc_html__( 'Algeria (‫الجزائر‬‎)', 'text-domain' );
-	$countries['AS'] = esc_html__( 'American Samoa', 'text-domain' );
-	$countries['AD'] = esc_html__( 'Andorra', 'text-domain' );
-	$countries['AO'] = esc_html__( 'Angola', 'text-domain' );
-	$countries['AI'] = esc_html__( 'Anguilla', 'text-domain' );
-	$countries['AQ'] = esc_html__( 'Antarctica', 'text-domain' );
-	$countries['AG'] = esc_html__( 'Antigua and Barbuda', 'text-domain' );
-	$countries['AR'] = esc_html__( 'Argentina', 'text-domain' );
-	$countries['AM'] = esc_html__( 'Armenia (Հայաստան)', 'text-domain' );
-	$countries['AW'] = esc_html__( 'Aruba', 'text-domain' );
-	$countries['AC'] = esc_html__( 'Ascension Island', 'text-domain' );
-	$countries['AU'] = esc_html__( 'Australia', 'text-domain' );
-	$countries['AT'] = esc_html__( 'Austria (Österreich)', 'text-domain' );
-	$countries['AZ'] = esc_html__( 'Azerbaijan (Azərbaycan)', 'text-domain' );
-	$countries['BS'] = esc_html__( 'Bahamas', 'text-domain' );
-	$countries['BH'] = esc_html__( 'Bahrain (‫البحرين‬‎)', 'text-domain' );
-	$countries['BD'] = esc_html__( 'Bangladesh (বাংলাদেশ)', 'text-domain' );
-	$countries['BB'] = esc_html__( 'Barbados', 'text-domain' );
-	$countries['BY'] = esc_html__( 'Belarus (Беларусь)', 'text-domain' );
-	$countries['BE'] = esc_html__( 'Belgium (België)', 'text-domain' );
-	$countries['BZ'] = esc_html__( 'Belize', 'text-domain' );
-	$countries['BJ'] = esc_html__( 'Benin (Bénin)', 'text-domain' );
-	$countries['BM'] = esc_html__( 'Bermuda', 'text-domain' );
-	$countries['BT'] = esc_html__( 'Bhutan (འབྲུག)', 'text-domain' );
-	$countries['BO'] = esc_html__( 'Bolivia', 'text-domain' );
-	$countries['BA'] = esc_html__( 'Bosnia and Herzegovina (Босна и Херцеговина)', 'text-domain' );
-	$countries['BW'] = esc_html__( 'Botswana', 'text-domain' );
-	$countries['BV'] = esc_html__( 'Bouvet Island', 'text-domain' );
-	$countries['BR'] = esc_html__( 'Brazil (Brasil)', 'text-domain' );
-	$countries['IO'] = esc_html__( 'British Indian Ocean Territory', 'text-domain' );
-	$countries['VG'] = esc_html__( 'British Virgin Islands', 'text-domain' );
-	$countries['BN'] = esc_html__( 'Brunei', 'text-domain' );
-	$countries['BG'] = esc_html__( 'Bulgaria (България)', 'text-domain' );
-	$countries['BF'] = esc_html__( 'Burkina Faso', 'text-domain' );
-	$countries['BI'] = esc_html__( 'Burundi (Uburundi)', 'text-domain' );
-	$countries['KH'] = esc_html__( 'Cambodia (កម្ពុជា)', 'text-domain' );
-	$countries['CM'] = esc_html__( 'Cameroon (Cameroun)', 'text-domain' );
-	$countries['CA'] = esc_html__( 'Canada', 'text-domain' );
-	$countries['IC'] = esc_html__( 'Canary Islands (islas Canarias)', 'text-domain' );
-	$countries['CV'] = esc_html__( 'Cape Verde (Kabu Verdi)', 'text-domain' );
-	$countries['BQ'] = esc_html__( 'Caribbean Netherlands', 'text-domain' );
-	$countries['KY'] = esc_html__( 'Cayman Islands', 'text-domain' );
-	$countries['CF'] = esc_html__( 'Central African Republic (République centrafricaine)', 'text-domain' );
-	$countries['EA'] = esc_html__( 'Ceuta and Melilla (Ceuta y Melilla)', 'text-domain' );
-	$countries['TD'] = esc_html__( 'Chad (Tchad)', 'text-domain' );
-	$countries['CL'] = esc_html__( 'Chile', 'text-domain' );
-	$countries['CN'] = esc_html__( 'China (中国)', 'text-domain' );
-	$countries['CX'] = esc_html__( 'Christmas Island', 'text-domain' );
-	$countries['CP'] = esc_html__( 'Clipperton Island', 'text-domain' );
-	$countries['CC'] = esc_html__( 'Cocos (Keeling) Islands (Kepulauan Cocos (Keeling))', 'text-domain' );
-	$countries['CO'] = esc_html__( 'Colombia', 'text-domain' );
-	$countries['KM'] = esc_html__( 'Comoros (‫جزر القمر‬‎)', 'text-domain' );
-	$countries['CD'] = esc_html__( 'Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)', 'text-domain' );
-	$countries['CG'] = esc_html__( 'Congo (Republic) (Congo-Brazzaville)', 'text-domain' );
-	$countries['CK'] = esc_html__( 'Cook Islands', 'text-domain' );
-	$countries['CR'] = esc_html__( 'Costa Rica', 'text-domain' );
-	$countries['CI'] = esc_html__( 'Côte d’Ivoire', 'text-domain' );
-	$countries['HR'] = esc_html__( 'Croatia (Hrvatska)', 'text-domain' );
-	$countries['CU'] = esc_html__( 'Cuba', 'text-domain' );
-	$countries['CW'] = esc_html__( 'Curaçao', 'text-domain' );
-	$countries['CY'] = esc_html__( 'Cyprus (Κύπρος)', 'text-domain' );
-	$countries['CZ'] = esc_html__( 'Czech Republic (Česká republika)', 'text-domain' );
-	$countries['DK'] = esc_html__( 'Denmark (Danmark)', 'text-domain' );
-	$countries['DG'] = esc_html__( 'Diego Garcia', 'text-domain' );
-	$countries['DJ'] = esc_html__( 'Djibouti', 'text-domain' );
-	$countries['DM'] = esc_html__( 'Dominica', 'text-domain' );
-	$countries['DO'] = esc_html__( 'Dominican Republic (República Dominicana)', 'text-domain' );
-	$countries['EC'] = esc_html__( 'Ecuador', 'text-domain' );
-	$countries['EG'] = esc_html__( 'Egypt (‫مصر‬‎)', 'text-domain' );
-	$countries['SV'] = esc_html__( 'El Salvador', 'text-domain' );
-	$countries['GQ'] = esc_html__( 'Equatorial Guinea (Guinea Ecuatorial)', 'text-domain' );
-	$countries['ER'] = esc_html__( 'Eritrea', 'text-domain' );
-	$countries['EE'] = esc_html__( 'Estonia (Eesti)', 'text-domain' );
-	$countries['ET'] = esc_html__( 'Ethiopia', 'text-domain' );
-	$countries['FK'] = esc_html__( 'Falkland Islands (Islas Malvinas)', 'text-domain' );
-	$countries['FO'] = esc_html__( 'Faroe Islands (Føroyar)', 'text-domain' );
-	$countries['FJ'] = esc_html__( 'Fiji', 'text-domain' );
-	$countries['FI'] = esc_html__( 'Finland (Suomi)', 'text-domain' );
-	$countries['FR'] = esc_html__( 'France', 'text-domain' );
-	$countries['GF'] = esc_html__( 'French Guiana (Guyane française)', 'text-domain' );
-	$countries['PF'] = esc_html__( 'French Polynesia (Polynésie française)', 'text-domain' );
-	$countries['TF'] = esc_html__( 'French Southern Territories (Terres australes françaises)', 'text-domain' );
-	$countries['GA'] = esc_html__( 'Gabon', 'text-domain' );
-	$countries['GM'] = esc_html__( 'Gambia', 'text-domain' );
-	$countries['GE'] = esc_html__( 'Georgia (საქართველო)', 'text-domain' );
-	$countries['DE'] = esc_html__( 'Germany (Deutschland)', 'text-domain' );
-	$countries['GH'] = esc_html__( 'Ghana (Gaana)', 'text-domain' );
-	$countries['GI'] = esc_html__( 'Gibraltar', 'text-domain' );
-	$countries['GR'] = esc_html__( 'Greece (Ελλάδα)', 'text-domain' );
-	$countries['GL'] = esc_html__( 'Greenland (Kalaallit Nunaat)', 'text-domain' );
-	$countries['GD'] = esc_html__( 'Grenada', 'text-domain' );
-	$countries['GP'] = esc_html__( 'Guadeloupe', 'text-domain' );
-	$countries['GU'] = esc_html__( 'Guam', 'text-domain' );
-	$countries['GT'] = esc_html__( 'Guatemala', 'text-domain' );
-	$countries['GG'] = esc_html__( 'Guernsey', 'text-domain' );
-	$countries['GN'] = esc_html__( 'Guinea (Guinée)', 'text-domain' );
-	$countries['GW'] = esc_html__( 'Guinea-Bissau (Guiné Bissau)', 'text-domain' );
-	$countries['GY'] = esc_html__( 'Guyana', 'text-domain' );
-	$countries['HT'] = esc_html__( 'Haiti', 'text-domain' );
-	$countries['HM'] = esc_html__( 'Heard & McDonald Islands', 'text-domain' );
-	$countries['HN'] = esc_html__( 'Honduras', 'text-domain' );
-	$countries['HK'] = esc_html__( 'Hong Kong (香港)', 'text-domain' );
-	$countries['HU'] = esc_html__( 'Hungary (Magyarország)', 'text-domain' );
-	$countries['IS'] = esc_html__( 'Iceland (Ísland)', 'text-domain' );
-	$countries['IN'] = esc_html__( 'India (भारत)', 'text-domain' );
-	$countries['ID'] = esc_html__( 'Indonesia', 'text-domain' );
-	$countries['IR'] = esc_html__( 'Iran (‫ایران‬‎)', 'text-domain' );
-	$countries['IQ'] = esc_html__( 'Iraq (‫العراق‬‎)', 'text-domain' );
-	$countries['IE'] = esc_html__( 'Ireland', 'text-domain' );
-	$countries['IM'] = esc_html__( 'Isle of Man', 'text-domain' );
-	$countries['IL'] = esc_html__( 'Israel (‫ישראל‬‎)', 'text-domain' );
-	$countries['IT'] = esc_html__( 'Italy (Italia)', 'text-domain' );
-	$countries['JM'] = esc_html__( 'Jamaica', 'text-domain' );
-	$countries['JP'] = esc_html__( 'Japan (日本)', 'text-domain' );
-	$countries['JE'] = esc_html__( 'Jersey', 'text-domain' );
-	$countries['JO'] = esc_html__( 'Jordan (‫الأردن‬‎)', 'text-domain' );
-	$countries['KZ'] = esc_html__( 'Kazakhstan (Казахстан)', 'text-domain' );
-	$countries['KE'] = esc_html__( 'Kenya', 'text-domain' );
-	$countries['KI'] = esc_html__( 'Kiribati', 'text-domain' );
-	$countries['XK'] = esc_html__( 'Kosovo (Kosovë)', 'text-domain' );
-	$countries['KW'] = esc_html__( 'Kuwait (‫الكويت‬‎)', 'text-domain' );
-	$countries['KG'] = esc_html__( 'Kyrgyzstan (Кыргызстан)', 'text-domain' );
-	$countries['LA'] = esc_html__( 'Laos (ລາວ)', 'text-domain' );
-	$countries['LV'] = esc_html__( 'Latvia (Latvija)', 'text-domain' );
-	$countries['LB'] = esc_html__( 'Lebanon (‫لبنان‬‎)', 'text-domain' );
-	$countries['LS'] = esc_html__( 'Lesotho', 'text-domain' );
-	$countries['LR'] = esc_html__( 'Liberia', 'text-domain' );
-	$countries['LY'] = esc_html__( 'Libya (‫ليبيا‬‎)', 'text-domain' );
-	$countries['LI'] = esc_html__( 'Liechtenstein', 'text-domain' );
-	$countries['LT'] = esc_html__( 'Lithuania (Lietuva)', 'text-domain' );
-	$countries['LU'] = esc_html__( 'Luxembourg', 'text-domain' );
-	$countries['MO'] = esc_html__( 'Macau (澳門)', 'text-domain' );
-	$countries['MK'] = esc_html__( 'Macedonia (FYROM) (Македонија)', 'text-domain' );
-	$countries['MG'] = esc_html__( 'Madagascar (Madagasikara)', 'text-domain' );
-	$countries['MW'] = esc_html__( 'Malawi', 'text-domain' );
-	$countries['MY'] = esc_html__( 'Malaysia', 'text-domain' );
-	$countries['MV'] = esc_html__( 'Maldives', 'text-domain' );
-	$countries['ML'] = esc_html__( 'Mali', 'text-domain' );
-	$countries['MT'] = esc_html__( 'Malta', 'text-domain' );
-	$countries['MH'] = esc_html__( 'Marshall Islands', 'text-domain' );
-	$countries['MQ'] = esc_html__( 'Martinique', 'text-domain' );
-	$countries['MR'] = esc_html__( 'Mauritania (‫موريتانيا‬‎)', 'text-domain' );
-	$countries['MU'] = esc_html__( 'Mauritius (Moris)', 'text-domain' );
-	$countries['YT'] = esc_html__( 'Mayotte', 'text-domain' );
-	$countries['MX'] = esc_html__( 'Mexico (México)', 'text-domain' );
-	$countries['FM'] = esc_html__( 'Micronesia', 'text-domain' );
-	$countries['MD'] = esc_html__( 'Moldova (Republica Moldova)', 'text-domain' );
-	$countries['MC'] = esc_html__( 'Monaco', 'text-domain' );
-	$countries['MN'] = esc_html__( 'Mongolia (Монгол)', 'text-domain' );
-	$countries['ME'] = esc_html__( 'Montenegro (Crna Gora)', 'text-domain' );
-	$countries['MS'] = esc_html__( 'Montserrat', 'text-domain' );
-	$countries['MA'] = esc_html__( 'Morocco (‫المغرب‬‎)', 'text-domain' );
-	$countries['MZ'] = esc_html__( 'Mozambique (Moçambique)', 'text-domain' );
-	$countries['MM'] = esc_html__( 'Myanmar (Burma) (မြန်မာ)', 'text-domain' );
-	$countries['NA'] = esc_html__( 'Namibia (Namibië)', 'text-domain' );
-	$countries['NR'] = esc_html__( 'Nauru', 'text-domain' );
-	$countries['NP'] = esc_html__( 'Nepal (नेपाल)', 'text-domain' );
-	$countries['NL'] = esc_html__( 'Netherlands (Nederland)', 'text-domain' );
-	$countries['NC'] = esc_html__( 'New Caledonia (Nouvelle-Calédonie)', 'text-domain' );
-	$countries['NZ'] = esc_html__( 'New Zealand', 'text-domain' );
-	$countries['NI'] = esc_html__( 'Nicaragua', 'text-domain' );
-	$countries['NE'] = esc_html__( 'Niger (Nijar)', 'text-domain' );
-	$countries['NG'] = esc_html__( 'Nigeria', 'text-domain' );
-	$countries['NU'] = esc_html__( 'Niue', 'text-domain' );
-	$countries['NF'] = esc_html__( 'Norfolk Island', 'text-domain' );
-	$countries['MP'] = esc_html__( 'Northern Mariana Islands', 'text-domain' );
-	$countries['KP'] = esc_html__( 'North Korea (조선 민주주의 인민 공화국)', 'text-domain' );
-	$countries['NO'] = esc_html__( 'Norway (Norge)', 'text-domain' );
-	$countries['OM'] = esc_html__( 'Oman (‫عُمان‬‎)', 'text-domain' );
-	$countries['PK'] = esc_html__( 'Pakistan (‫پاکستان‬‎)', 'text-domain' );
-	$countries['PW'] = esc_html__( 'Palau', 'text-domain' );
-	$countries['PS'] = esc_html__( 'Palestine (‫فلسطين‬‎)', 'text-domain' );
-	$countries['PA'] = esc_html__( 'Panama (Panamá)', 'text-domain' );
-	$countries['PG'] = esc_html__( 'Papua New Guinea', 'text-domain' );
-	$countries['PY'] = esc_html__( 'Paraguay', 'text-domain' );
-	$countries['PE'] = esc_html__( 'Peru (Perú)', 'text-domain' );
-	$countries['PH'] = esc_html__( 'Philippines', 'text-domain' );
-	$countries['PN'] = esc_html__( 'Pitcairn Islands', 'text-domain' );
-	$countries['PL'] = esc_html__( 'Poland (Polska)', 'text-domain' );
-	$countries['PT'] = esc_html__( 'Portugal', 'text-domain' );
-	$countries['PR'] = esc_html__( 'Puerto Rico', 'text-domain' );
-	$countries['QA'] = esc_html__( 'Qatar (‫قطر‬‎)', 'text-domain' );
-	$countries['RE'] = esc_html__( 'Réunion (La Réunion)', 'text-domain' );
-	$countries['RO'] = esc_html__( 'Romania (România)', 'text-domain' );
-	$countries['RU'] = esc_html__( 'Russia (Россия)', 'text-domain' );
-	$countries['RW'] = esc_html__( 'Rwanda', 'text-domain' );
-	$countries['BL'] = esc_html__( 'Saint Barthélemy (Saint-Barthélemy)', 'text-domain' );
-	$countries['SH'] = esc_html__( 'Saint Helena', 'text-domain' );
-	$countries['KN'] = esc_html__( 'Saint Kitts and Nevis', 'text-domain' );
-	$countries['LC'] = esc_html__( 'Saint Lucia', 'text-domain' );
-	$countries['MF'] = esc_html__( 'Saint Martin (Saint-Martin (partie française))', 'text-domain' );
-	$countries['PM'] = esc_html__( 'Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)', 'text-domain' );
-	$countries['WS'] = esc_html__( 'Samoa', 'text-domain' );
-	$countries['SM'] = esc_html__( 'San Marino', 'text-domain' );
-	$countries['ST'] = esc_html__( 'São Tomé and Príncipe (São Tomé e Príncipe)', 'text-domain' );
-	$countries['SA'] = esc_html__( 'Saudi Arabia (‫المملكة العربية السعودية‬‎)', 'text-domain' );
-	$countries['SN'] = esc_html__( 'Senegal (Sénégal)', 'text-domain' );
-	$countries['RS'] = esc_html__( 'Serbia (Србија)', 'text-domain' );
-	$countries['SC'] = esc_html__( 'Seychelles', 'text-domain' );
-	$countries['SL'] = esc_html__( 'Sierra Leone', 'text-domain' );
-	$countries['SG'] = esc_html__( 'Singapore', 'text-domain' );
-	$countries['SX'] = esc_html__( 'Sint Maarten', 'text-domain' );
-	$countries['SK'] = esc_html__( 'Slovakia (Slovensko)', 'text-domain' );
-	$countries['SI'] = esc_html__( 'Slovenia (Slovenija)', 'text-domain' );
-	$countries['SB'] = esc_html__( 'Solomon Islands', 'text-domain' );
-	$countries['SO'] = esc_html__( 'Somalia (Soomaaliya)', 'text-domain' );
-	$countries['ZA'] = esc_html__( 'South Africa', 'text-domain' );
-	$countries['GS'] = esc_html__( 'South Georgia & South Sandwich Islands', 'text-domain' );
-	$countries['KR'] = esc_html__( 'South Korea (대한민국)', 'text-domain' );
-	$countries['SS'] = esc_html__( 'South Sudan (‫جنوب السودان‬‎)', 'text-domain' );
-	$countries['ES'] = esc_html__( 'Spain (España)', 'text-domain' );
-	$countries['LK'] = esc_html__( 'Sri Lanka (ශ්‍රී ලංකාව)', 'text-domain' );
-	$countries['VC'] = esc_html__( 'St. Vincent & Grenadines', 'text-domain' );
-	$countries['SD'] = esc_html__( 'Sudan (‫السودان‬‎)', 'text-domain' );
-	$countries['SR'] = esc_html__( 'Suriname', 'text-domain' );
-	$countries['SJ'] = esc_html__( 'Svalbard and Jan Mayen (Svalbard og Jan Mayen)', 'text-domain' );
-	$countries['SZ'] = esc_html__( 'Swaziland', 'text-domain' );
-	$countries['SE'] = esc_html__( 'Sweden (Sverige)', 'text-domain' );
-	$countries['CH'] = esc_html__( 'Switzerland (Schweiz)', 'text-domain' );
-	$countries['SY'] = esc_html__( 'Syria (‫سوريا‬‎)', 'text-domain' );
-	$countries['TW'] = esc_html__( 'Taiwan (台灣)', 'text-domain' );
-	$countries['TJ'] = esc_html__( 'Tajikistan', 'text-domain' );
-	$countries['TZ'] = esc_html__( 'Tanzania', 'text-domain' );
-	$countries['TH'] = esc_html__( 'Thailand (ไทย)', 'text-domain' );
-	$countries['TL'] = esc_html__( 'Timor-Leste', 'text-domain' );
-	$countries['TG'] = esc_html__( 'Togo', 'text-domain' );
-	$countries['TK'] = esc_html__( 'Tokelau', 'text-domain' );
-	$countries['TO'] = esc_html__( 'Tonga', 'text-domain' );
-	$countries['TT'] = esc_html__( 'Trinidad and Tobago', 'text-domain' );
-	$countries['TA'] = esc_html__( 'Tristan da Cunha', 'text-domain' );
-	$countries['TN'] = esc_html__( 'Tunisia (‫تونس‬‎)', 'text-domain' );
-	$countries['TR'] = esc_html__( 'Turkey (Türkiye)', 'text-domain' );
-	$countries['TM'] = esc_html__( 'Turkmenistan', 'text-domain' );
-	$countries['TC'] = esc_html__( 'Turks and Caicos Islands', 'text-domain' );
-	$countries['TV'] = esc_html__( 'Tuvalu', 'text-domain' );
-	$countries['UM'] = esc_html__( 'U.S. Outlying Islands', 'text-domain' );
-	$countries['VI'] = esc_html__( 'U.S. Virgin Islands', 'text-domain' );
-	$countries['UG'] = esc_html__( 'Uganda', 'text-domain' );
-	$countries['UA'] = esc_html__( 'Ukraine (Україна)', 'text-domain' );
-	$countries['AE'] = esc_html__( 'United Arab Emirates (‫الإمارات العربية المتحدة‬‎)', 'text-domain' );
-	$countries['GB'] = esc_html__( 'United Kingdom', 'text-domain' );
-	$countries['US'] = esc_html__( 'United States', 'text-domain' );
-	$countries['UY'] = esc_html__( 'Uruguay', 'text-domain' );
-	$countries['UZ'] = esc_html__( 'Uzbekistan (Oʻzbekiston)', 'text-domain' );
-	$countries['VU'] = esc_html__( 'Vanuatu', 'text-domain' );
-	$countries['VA'] = esc_html__( 'Vatican City (Città del Vaticano)', 'text-domain' );
-	$countries['VE'] = esc_html__( 'Venezuela', 'text-domain' );
-	$countries['VN'] = esc_html__( 'Vietnam (Việt Nam)', 'text-domain' );
-	$countries['WF'] = esc_html__( 'Wallis and Futuna', 'text-domain' );
-	$countries['EH'] = esc_html__( 'Western Sahara (‫الصحراء الغربية‬‎)', 'text-domain' );
-	$countries['YE'] = esc_html__( 'Yemen (‫اليمن‬‎)', 'text-domain' );
-	$countries['ZM'] = esc_html__( 'Zambia', 'text-domain' );
-	$countries['ZW'] = esc_html__( 'Zimbabwe', 'text-domain' );
+	$countries['AF'] = esc_html__( 'Afghanistan (‫افغانستان‬‎)', 'westcpa' );
+	$countries['AX'] = esc_html__( 'Åland Islands (Åland)', 'westcpa' );
+	$countries['AL'] = esc_html__( 'Albania (Shqipëri)', 'westcpa' );
+	$countries['DZ'] = esc_html__( 'Algeria (‫الجزائر‬‎)', 'westcpa' );
+	$countries['AS'] = esc_html__( 'American Samoa', 'westcpa' );
+	$countries['AD'] = esc_html__( 'Andorra', 'westcpa' );
+	$countries['AO'] = esc_html__( 'Angola', 'westcpa' );
+	$countries['AI'] = esc_html__( 'Anguilla', 'westcpa' );
+	$countries['AQ'] = esc_html__( 'Antarctica', 'westcpa' );
+	$countries['AG'] = esc_html__( 'Antigua and Barbuda', 'westcpa' );
+	$countries['AR'] = esc_html__( 'Argentina', 'westcpa' );
+	$countries['AM'] = esc_html__( 'Armenia (Հայաստան)', 'westcpa' );
+	$countries['AW'] = esc_html__( 'Aruba', 'westcpa' );
+	$countries['AC'] = esc_html__( 'Ascension Island', 'westcpa' );
+	$countries['AU'] = esc_html__( 'Australia', 'westcpa' );
+	$countries['AT'] = esc_html__( 'Austria (Österreich)', 'westcpa' );
+	$countries['AZ'] = esc_html__( 'Azerbaijan (Azərbaycan)', 'westcpa' );
+	$countries['BS'] = esc_html__( 'Bahamas', 'westcpa' );
+	$countries['BH'] = esc_html__( 'Bahrain (‫البحرين‬‎)', 'westcpa' );
+	$countries['BD'] = esc_html__( 'Bangladesh (বাংলাদেশ)', 'westcpa' );
+	$countries['BB'] = esc_html__( 'Barbados', 'westcpa' );
+	$countries['BY'] = esc_html__( 'Belarus (Беларусь)', 'westcpa' );
+	$countries['BE'] = esc_html__( 'Belgium (België)', 'westcpa' );
+	$countries['BZ'] = esc_html__( 'Belize', 'westcpa' );
+	$countries['BJ'] = esc_html__( 'Benin (Bénin)', 'westcpa' );
+	$countries['BM'] = esc_html__( 'Bermuda', 'westcpa' );
+	$countries['BT'] = esc_html__( 'Bhutan (འབྲུག)', 'westcpa' );
+	$countries['BO'] = esc_html__( 'Bolivia', 'westcpa' );
+	$countries['BA'] = esc_html__( 'Bosnia and Herzegovina (Босна и Херцеговина)', 'westcpa' );
+	$countries['BW'] = esc_html__( 'Botswana', 'westcpa' );
+	$countries['BV'] = esc_html__( 'Bouvet Island', 'westcpa' );
+	$countries['BR'] = esc_html__( 'Brazil (Brasil)', 'westcpa' );
+	$countries['IO'] = esc_html__( 'British Indian Ocean Territory', 'westcpa' );
+	$countries['VG'] = esc_html__( 'British Virgin Islands', 'westcpa' );
+	$countries['BN'] = esc_html__( 'Brunei', 'westcpa' );
+	$countries['BG'] = esc_html__( 'Bulgaria (България)', 'westcpa' );
+	$countries['BF'] = esc_html__( 'Burkina Faso', 'westcpa' );
+	$countries['BI'] = esc_html__( 'Burundi (Uburundi)', 'westcpa' );
+	$countries['KH'] = esc_html__( 'Cambodia (កម្ពុជា)', 'westcpa' );
+	$countries['CM'] = esc_html__( 'Cameroon (Cameroun)', 'westcpa' );
+	$countries['CA'] = esc_html__( 'Canada', 'westcpa' );
+	$countries['IC'] = esc_html__( 'Canary Islands (islas Canarias)', 'westcpa' );
+	$countries['CV'] = esc_html__( 'Cape Verde (Kabu Verdi)', 'westcpa' );
+	$countries['BQ'] = esc_html__( 'Caribbean Netherlands', 'westcpa' );
+	$countries['KY'] = esc_html__( 'Cayman Islands', 'westcpa' );
+	$countries['CF'] = esc_html__( 'Central African Republic (République centrafricaine)', 'westcpa' );
+	$countries['EA'] = esc_html__( 'Ceuta and Melilla (Ceuta y Melilla)', 'westcpa' );
+	$countries['TD'] = esc_html__( 'Chad (Tchad)', 'westcpa' );
+	$countries['CL'] = esc_html__( 'Chile', 'westcpa' );
+	$countries['CN'] = esc_html__( 'China (中国)', 'westcpa' );
+	$countries['CX'] = esc_html__( 'Christmas Island', 'westcpa' );
+	$countries['CP'] = esc_html__( 'Clipperton Island', 'westcpa' );
+	$countries['CC'] = esc_html__( 'Cocos (Keeling) Islands (Kepulauan Cocos (Keeling))', 'westcpa' );
+	$countries['CO'] = esc_html__( 'Colombia', 'westcpa' );
+	$countries['KM'] = esc_html__( 'Comoros (‫جزر القمر‬‎)', 'westcpa' );
+	$countries['CD'] = esc_html__( 'Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)', 'westcpa' );
+	$countries['CG'] = esc_html__( 'Congo (Republic) (Congo-Brazzaville)', 'westcpa' );
+	$countries['CK'] = esc_html__( 'Cook Islands', 'westcpa' );
+	$countries['CR'] = esc_html__( 'Costa Rica', 'westcpa' );
+	$countries['CI'] = esc_html__( 'Côte d’Ivoire', 'westcpa' );
+	$countries['HR'] = esc_html__( 'Croatia (Hrvatska)', 'westcpa' );
+	$countries['CU'] = esc_html__( 'Cuba', 'westcpa' );
+	$countries['CW'] = esc_html__( 'Curaçao', 'westcpa' );
+	$countries['CY'] = esc_html__( 'Cyprus (Κύπρος)', 'westcpa' );
+	$countries['CZ'] = esc_html__( 'Czech Republic (Česká republika)', 'westcpa' );
+	$countries['DK'] = esc_html__( 'Denmark (Danmark)', 'westcpa' );
+	$countries['DG'] = esc_html__( 'Diego Garcia', 'westcpa' );
+	$countries['DJ'] = esc_html__( 'Djibouti', 'westcpa' );
+	$countries['DM'] = esc_html__( 'Dominica', 'westcpa' );
+	$countries['DO'] = esc_html__( 'Dominican Republic (República Dominicana)', 'westcpa' );
+	$countries['EC'] = esc_html__( 'Ecuador', 'westcpa' );
+	$countries['EG'] = esc_html__( 'Egypt (‫مصر‬‎)', 'westcpa' );
+	$countries['SV'] = esc_html__( 'El Salvador', 'westcpa' );
+	$countries['GQ'] = esc_html__( 'Equatorial Guinea (Guinea Ecuatorial)', 'westcpa' );
+	$countries['ER'] = esc_html__( 'Eritrea', 'westcpa' );
+	$countries['EE'] = esc_html__( 'Estonia (Eesti)', 'westcpa' );
+	$countries['ET'] = esc_html__( 'Ethiopia', 'westcpa' );
+	$countries['FK'] = esc_html__( 'Falkland Islands (Islas Malvinas)', 'westcpa' );
+	$countries['FO'] = esc_html__( 'Faroe Islands (Føroyar)', 'westcpa' );
+	$countries['FJ'] = esc_html__( 'Fiji', 'westcpa' );
+	$countries['FI'] = esc_html__( 'Finland (Suomi)', 'westcpa' );
+	$countries['FR'] = esc_html__( 'France', 'westcpa' );
+	$countries['GF'] = esc_html__( 'French Guiana (Guyane française)', 'westcpa' );
+	$countries['PF'] = esc_html__( 'French Polynesia (Polynésie française)', 'westcpa' );
+	$countries['TF'] = esc_html__( 'French Southern Territories (Terres australes françaises)', 'westcpa' );
+	$countries['GA'] = esc_html__( 'Gabon', 'westcpa' );
+	$countries['GM'] = esc_html__( 'Gambia', 'westcpa' );
+	$countries['GE'] = esc_html__( 'Georgia (საქართველო)', 'westcpa' );
+	$countries['DE'] = esc_html__( 'Germany (Deutschland)', 'westcpa' );
+	$countries['GH'] = esc_html__( 'Ghana (Gaana)', 'westcpa' );
+	$countries['GI'] = esc_html__( 'Gibraltar', 'westcpa' );
+	$countries['GR'] = esc_html__( 'Greece (Ελλάδα)', 'westcpa' );
+	$countries['GL'] = esc_html__( 'Greenland (Kalaallit Nunaat)', 'westcpa' );
+	$countries['GD'] = esc_html__( 'Grenada', 'westcpa' );
+	$countries['GP'] = esc_html__( 'Guadeloupe', 'westcpa' );
+	$countries['GU'] = esc_html__( 'Guam', 'westcpa' );
+	$countries['GT'] = esc_html__( 'Guatemala', 'westcpa' );
+	$countries['GG'] = esc_html__( 'Guernsey', 'westcpa' );
+	$countries['GN'] = esc_html__( 'Guinea (Guinée)', 'westcpa' );
+	$countries['GW'] = esc_html__( 'Guinea-Bissau (Guiné Bissau)', 'westcpa' );
+	$countries['GY'] = esc_html__( 'Guyana', 'westcpa' );
+	$countries['HT'] = esc_html__( 'Haiti', 'westcpa' );
+	$countries['HM'] = esc_html__( 'Heard & McDonald Islands', 'westcpa' );
+	$countries['HN'] = esc_html__( 'Honduras', 'westcpa' );
+	$countries['HK'] = esc_html__( 'Hong Kong (香港)', 'westcpa' );
+	$countries['HU'] = esc_html__( 'Hungary (Magyarország)', 'westcpa' );
+	$countries['IS'] = esc_html__( 'Iceland (Ísland)', 'westcpa' );
+	$countries['IN'] = esc_html__( 'India (भारत)', 'westcpa' );
+	$countries['ID'] = esc_html__( 'Indonesia', 'westcpa' );
+	$countries['IR'] = esc_html__( 'Iran (‫ایران‬‎)', 'westcpa' );
+	$countries['IQ'] = esc_html__( 'Iraq (‫العراق‬‎)', 'westcpa' );
+	$countries['IE'] = esc_html__( 'Ireland', 'westcpa' );
+	$countries['IM'] = esc_html__( 'Isle of Man', 'westcpa' );
+	$countries['IL'] = esc_html__( 'Israel (‫ישראל‬‎)', 'westcpa' );
+	$countries['IT'] = esc_html__( 'Italy (Italia)', 'westcpa' );
+	$countries['JM'] = esc_html__( 'Jamaica', 'westcpa' );
+	$countries['JP'] = esc_html__( 'Japan (日本)', 'westcpa' );
+	$countries['JE'] = esc_html__( 'Jersey', 'westcpa' );
+	$countries['JO'] = esc_html__( 'Jordan (‫الأردن‬‎)', 'westcpa' );
+	$countries['KZ'] = esc_html__( 'Kazakhstan (Казахстан)', 'westcpa' );
+	$countries['KE'] = esc_html__( 'Kenya', 'westcpa' );
+	$countries['KI'] = esc_html__( 'Kiribati', 'westcpa' );
+	$countries['XK'] = esc_html__( 'Kosovo (Kosovë)', 'westcpa' );
+	$countries['KW'] = esc_html__( 'Kuwait (‫الكويت‬‎)', 'westcpa' );
+	$countries['KG'] = esc_html__( 'Kyrgyzstan (Кыргызстан)', 'westcpa' );
+	$countries['LA'] = esc_html__( 'Laos (ລາວ)', 'westcpa' );
+	$countries['LV'] = esc_html__( 'Latvia (Latvija)', 'westcpa' );
+	$countries['LB'] = esc_html__( 'Lebanon (‫لبنان‬‎)', 'westcpa' );
+	$countries['LS'] = esc_html__( 'Lesotho', 'westcpa' );
+	$countries['LR'] = esc_html__( 'Liberia', 'westcpa' );
+	$countries['LY'] = esc_html__( 'Libya (‫ليبيا‬‎)', 'westcpa' );
+	$countries['LI'] = esc_html__( 'Liechtenstein', 'westcpa' );
+	$countries['LT'] = esc_html__( 'Lithuania (Lietuva)', 'westcpa' );
+	$countries['LU'] = esc_html__( 'Luxembourg', 'westcpa' );
+	$countries['MO'] = esc_html__( 'Macau (澳門)', 'westcpa' );
+	$countries['MK'] = esc_html__( 'Macedonia (FYROM) (Македонија)', 'westcpa' );
+	$countries['MG'] = esc_html__( 'Madagascar (Madagasikara)', 'westcpa' );
+	$countries['MW'] = esc_html__( 'Malawi', 'westcpa' );
+	$countries['MY'] = esc_html__( 'Malaysia', 'westcpa' );
+	$countries['MV'] = esc_html__( 'Maldives', 'westcpa' );
+	$countries['ML'] = esc_html__( 'Mali', 'westcpa' );
+	$countries['MT'] = esc_html__( 'Malta', 'westcpa' );
+	$countries['MH'] = esc_html__( 'Marshall Islands', 'westcpa' );
+	$countries['MQ'] = esc_html__( 'Martinique', 'westcpa' );
+	$countries['MR'] = esc_html__( 'Mauritania (‫موريتانيا‬‎)', 'westcpa' );
+	$countries['MU'] = esc_html__( 'Mauritius (Moris)', 'westcpa' );
+	$countries['YT'] = esc_html__( 'Mayotte', 'westcpa' );
+	$countries['MX'] = esc_html__( 'Mexico (México)', 'westcpa' );
+	$countries['FM'] = esc_html__( 'Micronesia', 'westcpa' );
+	$countries['MD'] = esc_html__( 'Moldova (Republica Moldova)', 'westcpa' );
+	$countries['MC'] = esc_html__( 'Monaco', 'westcpa' );
+	$countries['MN'] = esc_html__( 'Mongolia (Монгол)', 'westcpa' );
+	$countries['ME'] = esc_html__( 'Montenegro (Crna Gora)', 'westcpa' );
+	$countries['MS'] = esc_html__( 'Montserrat', 'westcpa' );
+	$countries['MA'] = esc_html__( 'Morocco (‫المغرب‬‎)', 'westcpa' );
+	$countries['MZ'] = esc_html__( 'Mozambique (Moçambique)', 'westcpa' );
+	$countries['MM'] = esc_html__( 'Myanmar (Burma) (မြန်မာ)', 'westcpa' );
+	$countries['NA'] = esc_html__( 'Namibia (Namibië)', 'westcpa' );
+	$countries['NR'] = esc_html__( 'Nauru', 'westcpa' );
+	$countries['NP'] = esc_html__( 'Nepal (नेपाल)', 'westcpa' );
+	$countries['NL'] = esc_html__( 'Netherlands (Nederland)', 'westcpa' );
+	$countries['NC'] = esc_html__( 'New Caledonia (Nouvelle-Calédonie)', 'westcpa' );
+	$countries['NZ'] = esc_html__( 'New Zealand', 'westcpa' );
+	$countries['NI'] = esc_html__( 'Nicaragua', 'westcpa' );
+	$countries['NE'] = esc_html__( 'Niger (Nijar)', 'westcpa' );
+	$countries['NG'] = esc_html__( 'Nigeria', 'westcpa' );
+	$countries['NU'] = esc_html__( 'Niue', 'westcpa' );
+	$countries['NF'] = esc_html__( 'Norfolk Island', 'westcpa' );
+	$countries['MP'] = esc_html__( 'Northern Mariana Islands', 'westcpa' );
+	$countries['KP'] = esc_html__( 'North Korea (조선 민주주의 인민 공화국)', 'westcpa' );
+	$countries['NO'] = esc_html__( 'Norway (Norge)', 'westcpa' );
+	$countries['OM'] = esc_html__( 'Oman (‫عُمان‬‎)', 'westcpa' );
+	$countries['PK'] = esc_html__( 'Pakistan (‫پاکستان‬‎)', 'westcpa' );
+	$countries['PW'] = esc_html__( 'Palau', 'westcpa' );
+	$countries['PS'] = esc_html__( 'Palestine (‫فلسطين‬‎)', 'westcpa' );
+	$countries['PA'] = esc_html__( 'Panama (Panamá)', 'westcpa' );
+	$countries['PG'] = esc_html__( 'Papua New Guinea', 'westcpa' );
+	$countries['PY'] = esc_html__( 'Paraguay', 'westcpa' );
+	$countries['PE'] = esc_html__( 'Peru (Perú)', 'westcpa' );
+	$countries['PH'] = esc_html__( 'Philippines', 'westcpa' );
+	$countries['PN'] = esc_html__( 'Pitcairn Islands', 'westcpa' );
+	$countries['PL'] = esc_html__( 'Poland (Polska)', 'westcpa' );
+	$countries['PT'] = esc_html__( 'Portugal', 'westcpa' );
+	$countries['PR'] = esc_html__( 'Puerto Rico', 'westcpa' );
+	$countries['QA'] = esc_html__( 'Qatar (‫قطر‬‎)', 'westcpa' );
+	$countries['RE'] = esc_html__( 'Réunion (La Réunion)', 'westcpa' );
+	$countries['RO'] = esc_html__( 'Romania (România)', 'westcpa' );
+	$countries['RU'] = esc_html__( 'Russia (Россия)', 'westcpa' );
+	$countries['RW'] = esc_html__( 'Rwanda', 'westcpa' );
+	$countries['BL'] = esc_html__( 'Saint Barthélemy (Saint-Barthélemy)', 'westcpa' );
+	$countries['SH'] = esc_html__( 'Saint Helena', 'westcpa' );
+	$countries['KN'] = esc_html__( 'Saint Kitts and Nevis', 'westcpa' );
+	$countries['LC'] = esc_html__( 'Saint Lucia', 'westcpa' );
+	$countries['MF'] = esc_html__( 'Saint Martin (Saint-Martin (partie française))', 'westcpa' );
+	$countries['PM'] = esc_html__( 'Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)', 'westcpa' );
+	$countries['WS'] = esc_html__( 'Samoa', 'westcpa' );
+	$countries['SM'] = esc_html__( 'San Marino', 'westcpa' );
+	$countries['ST'] = esc_html__( 'São Tomé and Príncipe (São Tomé e Príncipe)', 'westcpa' );
+	$countries['SA'] = esc_html__( 'Saudi Arabia (‫المملكة العربية السعودية‬‎)', 'westcpa' );
+	$countries['SN'] = esc_html__( 'Senegal (Sénégal)', 'westcpa' );
+	$countries['RS'] = esc_html__( 'Serbia (Србија)', 'westcpa' );
+	$countries['SC'] = esc_html__( 'Seychelles', 'westcpa' );
+	$countries['SL'] = esc_html__( 'Sierra Leone', 'westcpa' );
+	$countries['SG'] = esc_html__( 'Singapore', 'westcpa' );
+	$countries['SX'] = esc_html__( 'Sint Maarten', 'westcpa' );
+	$countries['SK'] = esc_html__( 'Slovakia (Slovensko)', 'westcpa' );
+	$countries['SI'] = esc_html__( 'Slovenia (Slovenija)', 'westcpa' );
+	$countries['SB'] = esc_html__( 'Solomon Islands', 'westcpa' );
+	$countries['SO'] = esc_html__( 'Somalia (Soomaaliya)', 'westcpa' );
+	$countries['ZA'] = esc_html__( 'South Africa', 'westcpa' );
+	$countries['GS'] = esc_html__( 'South Georgia & South Sandwich Islands', 'westcpa' );
+	$countries['KR'] = esc_html__( 'South Korea (대한민국)', 'westcpa' );
+	$countries['SS'] = esc_html__( 'South Sudan (‫جنوب السودان‬‎)', 'westcpa' );
+	$countries['ES'] = esc_html__( 'Spain (España)', 'westcpa' );
+	$countries['LK'] = esc_html__( 'Sri Lanka (ශ්‍රී ලංකාව)', 'westcpa' );
+	$countries['VC'] = esc_html__( 'St. Vincent & Grenadines', 'westcpa' );
+	$countries['SD'] = esc_html__( 'Sudan (‫السودان‬‎)', 'westcpa' );
+	$countries['SR'] = esc_html__( 'Suriname', 'westcpa' );
+	$countries['SJ'] = esc_html__( 'Svalbard and Jan Mayen (Svalbard og Jan Mayen)', 'westcpa' );
+	$countries['SZ'] = esc_html__( 'Swaziland', 'westcpa' );
+	$countries['SE'] = esc_html__( 'Sweden (Sverige)', 'westcpa' );
+	$countries['CH'] = esc_html__( 'Switzerland (Schweiz)', 'westcpa' );
+	$countries['SY'] = esc_html__( 'Syria (‫سوريا‬‎)', 'westcpa' );
+	$countries['TW'] = esc_html__( 'Taiwan (台灣)', 'westcpa' );
+	$countries['TJ'] = esc_html__( 'Tajikistan', 'westcpa' );
+	$countries['TZ'] = esc_html__( 'Tanzania', 'westcpa' );
+	$countries['TH'] = esc_html__( 'Thailand (ไทย)', 'westcpa' );
+	$countries['TL'] = esc_html__( 'Timor-Leste', 'westcpa' );
+	$countries['TG'] = esc_html__( 'Togo', 'westcpa' );
+	$countries['TK'] = esc_html__( 'Tokelau', 'westcpa' );
+	$countries['TO'] = esc_html__( 'Tonga', 'westcpa' );
+	$countries['TT'] = esc_html__( 'Trinidad and Tobago', 'westcpa' );
+	$countries['TA'] = esc_html__( 'Tristan da Cunha', 'westcpa' );
+	$countries['TN'] = esc_html__( 'Tunisia (‫تونس‬‎)', 'westcpa' );
+	$countries['TR'] = esc_html__( 'Turkey (Türkiye)', 'westcpa' );
+	$countries['TM'] = esc_html__( 'Turkmenistan', 'westcpa' );
+	$countries['TC'] = esc_html__( 'Turks and Caicos Islands', 'westcpa' );
+	$countries['TV'] = esc_html__( 'Tuvalu', 'westcpa' );
+	$countries['UM'] = esc_html__( 'U.S. Outlying Islands', 'westcpa' );
+	$countries['VI'] = esc_html__( 'U.S. Virgin Islands', 'westcpa' );
+	$countries['UG'] = esc_html__( 'Uganda', 'westcpa' );
+	$countries['UA'] = esc_html__( 'Ukraine (Україна)', 'westcpa' );
+	$countries['AE'] = esc_html__( 'United Arab Emirates (‫الإمارات العربية المتحدة‬‎)', 'westcpa' );
+	$countries['GB'] = esc_html__( 'United Kingdom', 'westcpa' );
+	$countries['US'] = esc_html__( 'United States', 'westcpa' );
+	$countries['UY'] = esc_html__( 'Uruguay', 'westcpa' );
+	$countries['UZ'] = esc_html__( 'Uzbekistan (Oʻzbekiston)', 'westcpa' );
+	$countries['VU'] = esc_html__( 'Vanuatu', 'westcpa' );
+	$countries['VA'] = esc_html__( 'Vatican City (Città del Vaticano)', 'westcpa' );
+	$countries['VE'] = esc_html__( 'Venezuela', 'westcpa' );
+	$countries['VN'] = esc_html__( 'Vietnam (Việt Nam)', 'westcpa' );
+	$countries['WF'] = esc_html__( 'Wallis and Futuna', 'westcpa' );
+	$countries['EH'] = esc_html__( 'Western Sahara (‫الصحراء الغربية‬‎)', 'westcpa' );
+	$countries['YE'] = esc_html__( 'Yemen (‫اليمن‬‎)', 'westcpa' );
+	$countries['ZM'] = esc_html__( 'Zambia', 'westcpa' );
+	$countries['ZW'] = esc_html__( 'Zimbabwe', 'westcpa' );
 
 	if ( ! empty( $country ) ) {
 
