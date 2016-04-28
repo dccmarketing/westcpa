@@ -1,6 +1,6 @@
 <?php
 /**
- * Replace With Theme Name Customizer
+ * West CPA Customizer
  *
  * Contains methods for customizing the theme customization screen.
  *
@@ -38,7 +38,7 @@ function westcpa_register_panels( $wp_customize ) {
 	$wp_customize->add_panel( 'theme_options',
 		array(
 			'capability'  		=> 'edit_theme_options',
-			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'westcpa' ),
+			'description'  		=> esc_html__( 'Options for West CPA', 'westcpa' ),
 			'priority'  		=> 10,
 			'theme_supports'  	=> '',
 			'title'  			=> esc_html__( 'Theme Options', 'westcpa' ),
@@ -50,7 +50,7 @@ function westcpa_register_panels( $wp_customize ) {
 	$wp_customize->add_panel( 'theme_options',
 		array(
 			'capability'  		=> 'edit_theme_options',
-			'description'  		=> esc_html__( 'Options for Replace With Theme Name', 'westcpa' ),
+			'description'  		=> esc_html__( 'Options for West CPA', 'westcpa' ),
 			'priority'  		=> 10,
 			'theme_supports'  	=> '',
 			'title'  			=> esc_html__( 'Theme Options', 'westcpa' ),
