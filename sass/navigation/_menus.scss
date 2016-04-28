@@ -1,5 +1,7 @@
 .main-navigation {
+	background-color: $navy;
 	clear			: both;
+	color 			: $light;
 	display			: block;
 	float			: left;
 	width			: 100%;
@@ -12,6 +14,12 @@
 		@media only screen and (min-width: $bp__menu-button+1) {
 			display 	: block;
 			text-align	: center;
+		}
+
+		 > li {
+		 	 > a {
+				padding: 1.5em;
+			}
 		}
 
 		ul {
@@ -50,6 +58,7 @@
 
 				@media only screen and (min-width: $bp__menu-button+1) {
 					color 		: $color__text-submenu;
+					padding 	: 0.5em 1em;
 					white-space : nowrap;
 				}
 			}
@@ -67,6 +76,7 @@
 
 			}
 		} // .submenu ul
+
 	} // first-level ul
 
 	li {
@@ -139,7 +149,7 @@
 	&.toggled {
 
 		.nav-menu {
-			@extend %menutoggle;
+			@include menutoggle();
 		}
 
 		.menu-main-menu-container {
@@ -188,7 +198,7 @@
 
 /* Small menu */
 .menu-toggle {
-	@extend %menutoggle;
+	@include menutoggle();
 
 	@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
 		background-color: $color__bg-menu-button;

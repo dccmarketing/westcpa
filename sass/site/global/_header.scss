@@ -1,6 +1,5 @@
 .site-header {
 	// DO NOT ADD PADDING HERE! - it screws up menus
-	margin-bottom	: $size__default-bot-marg;
 	overflow 		: auto;
 
 	@media only screen and (min-width: $bp__menu-button+1) {
@@ -8,12 +7,29 @@
 	}
 }
 
+.wrap-header {
+	padding: 1em;
+
+	@media only screen and (min-width: $bp__tablet) {
+		padding: 0;
+	}
+}
+
 .site-branding {
+	align-items : center;
+	display 	: flex;
+	flex-wrap 	: wrap;
 	margin		: 0 auto;
 }
 
 .site-title {
-	text-align: center;
+	text-align	: center;
+	width 		: 100%;
+
+	@media only screen and (min-width: $bp__tablet) {
+		text-align 	: left;
+		width 		: 50%;
+	}
 
 	a {
 		color 			: $color__text-site-title;
@@ -22,5 +38,11 @@
 }
 
 .site-description {
-	text-align: center;
+	text-align	: center;
+	width 		: 100%;
+
+	@media only screen and (min-width: $bp__tablet) {
+		text-align 	: right;
+		width 		: 50%;
+	}
 }

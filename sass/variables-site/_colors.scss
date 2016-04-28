@@ -54,14 +54,14 @@ $color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
 
 // Menu colors
 $color__bg-menu-button			: $med;
-$color__bg-menu-button-mobile 	: $med;
+$color__bg-menu-button-mobile 	: $navy;
 $color__bg-menu-button-pseudo 	: $color__bg-menu-button-mobile;
 $color__bg-menu-item			: $med;
 $color__bg-menu-item-mobile		: $med;
-$color__bg-menu-current			: darken( $color__bg-menu-item, 25% );
-$color__bg-menu-current-hover	: darken( $color__bg-menu-item, 25% );
+$color__bg-menu-current			: $maroon;
+$color__bg-menu-current-hover	: $maroon;
 
-$color__text-menu				: $dark;
+$color__text-menu				: $light;
 $color__text-menu-hover			: darken( $color__text-menu, 25% );
 $color__text-menu-mobile		: $light;
 $color__text-menu-mobile-hover 	: $dark;
