@@ -78,7 +78,6 @@ do_action( 'tha_body_top' );
 		 *
 		 * @hooked 		tha_header_bottom 	85
 		 * @hooked 		header_wrap_end 	90
-		 * @hooked 		primary_menu 		95
 		 */
 		do_action( 'tha_header_bottom' );
 
@@ -86,6 +85,8 @@ do_action( 'tha_body_top' );
 
 	/**
 	 * The tha_header_after action hook
+	 *
+	 * @hooked 		menu_primary 		10
 	 */
 	do_action( 'tha_header_after' );
 

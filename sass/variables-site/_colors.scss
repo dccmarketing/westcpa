@@ -2,6 +2,10 @@ $light	: #fff;
 $med	: #ccc;
 $dark	: #020202;
 
+$maroon	: #a1171b;
+$navy 	: #001a28;
+$char 	: lighten( #000, 0.75 );
+
 // Backgrounds
 $color__background-body		: $light;
 $color__background-screen	: #f1f1f1;
@@ -15,19 +19,19 @@ $color__bg-button-focus 	: darken( $color__background-button, 10% );
 
 // Text colors
 $color__text-screen			: #21759b;
-$color__text-input			: $dark;
-$color__text-input-focus	: $dark;
+$color__text-input			: $char;
+$color__text-input-focus	: $char;
 $color__text-pre 			: $light;
 $color__link				: royalblue;
 $color__link-visited		: purple;
 $color__link-hover			: midnightblue;
-$color__text-main			: #404040;
+$color__text-main			: $char;
 $color__text-social 		: $light;
-$color__text-ins 			: $dark;
+$color__text-ins 			: $char;
 $color__text-button 		: rgba(0, 0, 0, .8);
 $color__text-button-hover 	: $light;
 $color__text-button-focus 	: $light;
-$color__text-site-title 	: $dark;
+$color__text-site-title 	: $char;
 
 // Border colors
 $color__border-button		: $med $med #bbb;

@@ -25,12 +25,13 @@ class westcpa_Themehooks {
 		add_action( 'tha_header_top', 					array( $this, 'header_wrap_start' ), 10 );
 		add_action( 'tha_header_top', 					array( $this, 'site_branding_start' ), 15 );
 
-		add_action( 'westcpa_header_content', 	array( $this, 'site_title' ), 10 );
-		add_action( 'westcpa_header_content', 	array( $this, 'site_description' ), 15 );
+		add_action( 'westcpa_header_content', 			array( $this, 'site_title' ), 10 );
+		add_action( 'westcpa_header_content', 			array( $this, 'site_description' ), 15 );
 
 		add_action( 'tha_header_bottom', 				array( $this, 'site_branding_end' ), 85 );
 		add_action( 'tha_header_bottom', 				array( $this, 'header_wrap_end' ), 90 );
-		add_action( 'tha_header_bottom', 				array( $this, 'primary_menu' ), 95 );
+
+		add_action( 'tha_header_after', 				array( $this, 'menu_primary' ), 10);
 
 		add_action( 'tha_body_top', 					array( $this, 'analytics_code' ), 10 );
 		add_action( 'tha_body_top', 					array( $this, 'add_hidden_search' ), 15 );
@@ -42,19 +43,19 @@ class westcpa_Themehooks {
 
 		add_action( 'tha_content_while_after', 			array( $this, 'posts_nav' ) );
 
-		add_action( 'westcpa_footer_content', 	array( $this, 'footer_content' ) );
+		add_action( 'westcpa_footer_content', 			array( $this, 'footer_content' ) );
 
 		add_action( 'tha_content_top', 					array( $this, 'breadcrumbs' ) );
 
 		add_action( 'tha_entry_after', 					array( $this, 'comments' ), 10 );
 
-		add_action( 'westcpa_404_before', 		array( $this, 'four_04_title' ), 10 );
+		add_action( 'westcpa_404_before', 				array( $this, 'four_04_title' ), 10 );
 
-		add_action( 'westcpa_404_content', 		array( $this, 'add_search' ), 10 );
-		add_action( 'westcpa_404_content', 		array( $this, 'four_04_posts_widget' ), 15 );
-		add_action( 'westcpa_404_content', 		array( $this, 'four_04_categories' ), 20 );
-		add_action( 'westcpa_404_content', 		array( $this, 'four_04_archives' ), 25 );
-		add_action( 'westcpa_404_content', 		array( $this, 'four_04_tag_cloud' ), 30 );
+		add_action( 'westcpa_404_content', 				array( $this, 'add_search' ), 10 );
+		add_action( 'westcpa_404_content', 				array( $this, 'four_04_posts_widget' ), 15 );
+		add_action( 'westcpa_404_content', 				array( $this, 'four_04_categories' ), 20 );
+		add_action( 'westcpa_404_content', 				array( $this, 'four_04_archives' ), 25 );
+		add_action( 'westcpa_404_content', 				array( $this, 'four_04_tag_cloud' ), 30 );
 
 	} // loader()
 
@@ -456,11 +457,11 @@ class westcpa_Themehooks {
 
 		$description = get_bloginfo( 'description', 'display' );
 
-		if ( $description || is_customize_preview() ) {
+		if ( $description || is_customize_preview() ) :
 
-			?><p class="site-description"><?php $description; /* WPCS: xss ok. */ ?></p><?php
+			?><p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p><?php
 
-		}
+		endif;
 
 	} // site_description()
 
@@ -475,11 +476,11 @@ class westcpa_Themehooks {
 
 		if ( is_front_page() && is_home() ) {
 
-			?><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><?php
+			?><h1 class="site-title"><?php the_custom_logo(); ?></h1><?php
 
 		} else {
 
-			?><p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p><?php
+			?><p class="site-title"><?php the_custom_logo(); ?></p><?php
 
 		}
 
