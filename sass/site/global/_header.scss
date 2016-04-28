@@ -1,0 +1,26 @@
+.site-header {
+	// DO NOT ADD PADDING HERE! - it screws up menus
+	margin-bottom	: $size__default-bot-marg;
+	overflow 		: auto;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		overflow 	: visible;
+	}
+}
+
+.site-branding {
+	margin		: 0 auto;
+}
+
+.site-title {
+	text-align: center;
+
+	a {
+		color 			: $color__text-site-title;
+		text-decoration : none;
+	}
+}
+
+.site-description {
+	text-align: center;
+}

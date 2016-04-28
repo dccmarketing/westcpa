@@ -1,0 +1,18 @@
+/**
+ * Custom styling for the admin
+ */
+
+@import "sass/variables-site/*";
+@import "sass/mixins/*";
+
+.wp-admin {
+
+}
+
+// Hide SimpleMap Update Nag
+.toplevel_page_simplemap,
+.post-type-sm-location {
+	.update-nag {
+		display: none;
+	}
+}

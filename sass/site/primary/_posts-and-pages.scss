@@ -1,0 +1,48 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	hyphens 	: auto;
+	margin 		: 1.5em 0 0;
+	word-wrap 	: break-word;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.site-content {
+	margin 		: 0 auto $size__default-bot-marg;
+	max-width 	: $size__max-width;
+	overflow 	: auto;
+	width 		: 100%;
+}
+
+.content-area {
+	float 		: left;
+	overflow 	: auto;
+	padding 	: 1em;
+	width 		: 100%;
+
+	@media only screen and (min-width: $bp__tablet) {
+		&.content-sidebar {
+			float 	: left;
+			margin 	: 0 2.5% 0 0;
+			width 	: 70%;
+		}
+
+		&.sidebar-content {
+			float 	: right;
+			margin 	: 0 0 0 2.5%;
+			width 	: 70%;
+		}
+	}
+}

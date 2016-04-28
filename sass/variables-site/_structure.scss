@@ -1,0 +1,30 @@
+$size__site-main		: 100%;
+$size__site-sidebar		: 25%;
+
+$size__default-bot-marg	: 1.5em;
+$size__max-width 		: 1000px;
+
+$size__menu_width 		: 300px;
+$size__hidden-search 	: 180px;
+
+$size__wp-admin-bar-1 	: 46px;
+$size__wp-admin-bar-2 	: 32px;
+
+$trans__default 		: 0.4s ease;
+
+/**
+ * Login Page
+ */
+$size__login-logo-bg 	: 84px; // default size
+$size__login-logo-width : 84px;
+$size__login-logo-height: 84px;
+
+/**
+ * Breakpoints
+ */
+$bp__menu-button		: 600px; // 37.5em
+$bp__headings1 			: 700px; // 43.75em
+$bp__tablet				: 768px; // 48em
+$bp__admin-bar-1		: 783px;
+$bp__headings2 			: 900px; // 56.25em
+$bp__laptop				: 1024px; // 64em

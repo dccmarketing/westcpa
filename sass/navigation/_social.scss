@@ -1,0 +1,23 @@
+.nav-social {
+
+	.screen-reader-text,
+	a {
+		@include hidetext();
+	}
+
+	.menu-items {
+		@include listreset();
+	}
+
+	.menu-item {
+		display 	: inline-block;
+		line-height : 1.5;
+		margin 		: 0 0.5em;
+		position 	: relative;
+
+		svg {
+			height 	: $font__size-social;
+			width 	: $font__size-social;
+		}
+	}
+}
