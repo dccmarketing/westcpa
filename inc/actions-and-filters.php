@@ -6,7 +6,7 @@
  * @package DocBlock
  * @author Slushman <chris@slushman.com>
  */
-class function_names_Actions_and_Filters {
+class westcpa_Actions_and_Filters {
 
 	/**
 	 * Constructor
@@ -98,10 +98,10 @@ class function_names_Actions_and_Filters {
 	 */
 	public function background_images() {
 
-		global $function_names_themekit;
+		global $westcpa_themekit;
 
 		$output = '';
-		$image 	= $function_names_themekit->get_thumbnail_url( get_the_ID(), 'full' );
+		$image 	= $westcpa_themekit->get_thumbnail_url( get_the_ID(), 'full' );
 
 		if ( ! $image ) {
 
@@ -120,14 +120,14 @@ class function_names_Actions_and_Filters {
 	} // background_images()
 
 	/**
-	 * Flush out the transients used in function_names_categorized_blog.
+	 * Flush out the transients used in westcpa_categorized_blog.
 	 */
 	function category_transient_flusher() {
 
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return; }
 
 		// Like, beat it. Dig?
-		delete_transient( 'function_names_categories' );
+		delete_transient( 'westcpa_categories' );
 
 	} // category_transient_flusher()
 
@@ -499,6 +499,6 @@ class function_names_Actions_and_Filters {
 /**
  * Make an instance so its ready to be used
  */
-$function_names_actions_and_filters = new function_names_Actions_and_Filters();
+$westcpa_actions_and_filters = new westcpa_Actions_and_Filters();
 
 

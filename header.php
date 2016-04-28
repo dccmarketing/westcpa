@@ -71,7 +71,7 @@ do_action( 'tha_body_top' );
 		 * @hooked 		site_title 			10
 		 * @hooked 		site_description 	15
 		 */
-		do_action( 'function_names_header_content' );
+		do_action( 'westcpa_header_content' );
 
 		/**
 		 * The tha_header_bottom action hook

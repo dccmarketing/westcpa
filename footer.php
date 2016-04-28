@@ -34,11 +34,11 @@
 		do_action( 'tha_footer_top' );
 
 		/**
-		 * The function_names_footer_content action hook
+		 * The westcpa_footer_content action hook
 		 *
 		 * @hooked 		footer_content
 		 */
-		do_action( 'function_names_footer_content' );
+		do_action( 'westcpa_footer_content' );
 
 		/**
 		 * The tha_footer_bottom action hook

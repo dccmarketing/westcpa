@@ -6,7 +6,7 @@
  * @package DocBlock
  * @author Slushman <chris@slushman.com>
  */
-class function_names_Themehooks {
+class westcpa_Themehooks {
 
 	/**
 	 * Constructor
@@ -25,8 +25,8 @@ class function_names_Themehooks {
 		add_action( 'tha_header_top', 					array( $this, 'header_wrap_start' ), 10 );
 		add_action( 'tha_header_top', 					array( $this, 'site_branding_start' ), 15 );
 
-		add_action( 'function_names_header_content', 	array( $this, 'site_title' ), 10 );
-		add_action( 'function_names_header_content', 	array( $this, 'site_description' ), 15 );
+		add_action( 'westcpa_header_content', 	array( $this, 'site_title' ), 10 );
+		add_action( 'westcpa_header_content', 	array( $this, 'site_description' ), 15 );
 
 		add_action( 'tha_header_bottom', 				array( $this, 'site_branding_end' ), 85 );
 		add_action( 'tha_header_bottom', 				array( $this, 'header_wrap_end' ), 90 );
@@ -42,19 +42,19 @@ class function_names_Themehooks {
 
 		add_action( 'tha_content_while_after', 			array( $this, 'posts_nav' ) );
 
-		add_action( 'function_names_footer_content', 	array( $this, 'footer_content' ) );
+		add_action( 'westcpa_footer_content', 	array( $this, 'footer_content' ) );
 
 		add_action( 'tha_content_top', 					array( $this, 'breadcrumbs' ) );
 
 		add_action( 'tha_entry_after', 					array( $this, 'comments' ), 10 );
 
-		add_action( 'function_names_404_before', 		array( $this, 'four_04_title' ), 10 );
+		add_action( 'westcpa_404_before', 		array( $this, 'four_04_title' ), 10 );
 
-		add_action( 'function_names_404_content', 		array( $this, 'add_search' ), 10 );
-		add_action( 'function_names_404_content', 		array( $this, 'four_04_posts_widget' ), 15 );
-		add_action( 'function_names_404_content', 		array( $this, 'four_04_categories' ), 20 );
-		add_action( 'function_names_404_content', 		array( $this, 'four_04_archives' ), 25 );
-		add_action( 'function_names_404_content', 		array( $this, 'four_04_tag_cloud' ), 30 );
+		add_action( 'westcpa_404_content', 		array( $this, 'add_search' ), 10 );
+		add_action( 'westcpa_404_content', 		array( $this, 'four_04_posts_widget' ), 15 );
+		add_action( 'westcpa_404_content', 		array( $this, 'four_04_categories' ), 20 );
+		add_action( 'westcpa_404_content', 		array( $this, 'four_04_archives' ), 25 );
+		add_action( 'westcpa_404_content', 		array( $this, 'four_04_tag_cloud' ), 30 );
 
 	} // loader()
 
@@ -80,7 +80,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds a search form
 	 *
-	 * @hooked 		function_names_404_content 		15
+	 * @hooked 		westcpa_404_content 		15
 	 *
 	 * @return 		mixed 		Search form markup
 	 */
@@ -134,7 +134,7 @@ class function_names_Themehooks {
 	/**
 	 * Returns the appropriate breadcrumbs.
 	 *
-	 * @hooked		function_names_wrap_content
+	 * @hooked		westcpa_wrap_content
 	 *
 	 * @return 		mixed 				WooCommerce breadcrumbs, then Yoast breadcrumbs
 	 */
@@ -187,7 +187,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds the copyright and credits to the footer content.
 	 *
-	 * @hooked 		function_names_footer_content
+	 * @hooked 		westcpa_footer_content
 	 *
 	 * @return 		mixed 									The footer markup
 	 */
@@ -205,7 +205,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds the  to the 404 page content.
 	 *
-	 * @hooked 		function_names_404_content		25
+	 * @hooked 		westcpa_404_content		25
 	 *
 	 * @return 		mixed 							Markup for the archives
 	 */
@@ -221,13 +221,13 @@ class function_names_Themehooks {
 	/**
 	 * Adds the  to the 404 page content.
 	 *
-	 * @hooked 		function_names_404_content		20
+	 * @hooked 		westcpa_404_content		20
 	 *
 	 * @return 		mixed 							The categories widget
 	 */
 	public function four_04_categories() {
 
-		if ( ! function_names_categorized_blog() ) { return; }
+		if ( ! westcpa_categorized_blog() ) { return; }
 
 		?><div class="widget widget_categories">
 			<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'westcpa' ); ?></h2>
@@ -249,7 +249,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds the Recent Posts widget to the 404 page.
 	 *
-	 * @hooked 		function_names_404_content 		15
+	 * @hooked 		westcpa_404_content 		15
 	 *
 	 * @return 		mixed 							The Recent Posts widget
 	 */
@@ -262,7 +262,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds the  to the 404 page content.
 	 *
-	 * @hooked 		function_names_404_content		30
+	 * @hooked 		westcpa_404_content		30
 	 *
 	 * @return 		mixed 							The tag cloud widget
 	 */
@@ -275,7 +275,7 @@ class function_names_Themehooks {
 	/**
 	 * The 404 page title markup
 	 *
-	 * @hooked 		function_names_404_content 		10
+	 * @hooked 		westcpa_404_content 		10
 	 *
 	 * @return 		mixed 							The 440 page title
 	 */
@@ -448,7 +448,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds the site description markup
 	 *
-	 * @hooked 		function_names_header_content 		15
+	 * @hooked 		westcpa_header_content 		15
 	 *
 	 * @return 		mixed 								The site description markup
 	 */
@@ -467,7 +467,7 @@ class function_names_Themehooks {
 	/**
 	 * Adds the site title markup
 	 *
-	 * @hooked 		function_names_header_content 		10
+	 * @hooked 		westcpa_header_content 		10
 	 *
 	 * @return 		mixed 								The site title markup
 	 */
@@ -500,6 +500,6 @@ class function_names_Themehooks {
 
 } // class
 
-$function_names_Themehooks = new function_names_Themehooks();
+$westcpa_Themehooks = new westcpa_Themehooks();
 
 

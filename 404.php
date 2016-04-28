@@ -14,16 +14,16 @@ get_header();
 			<section class="error-404 not-found"><?php
 
 				/**
-				 * The function_names_404_content action hook
+				 * The westcpa_404_content action hook
 				 *
 				 * @hooked 		four_04_title 		10
 				 */
-				do_action( 'function_names_404_before' );
+				do_action( 'westcpa_404_before' );
 
 				?><div class="page-content"><?php
 
 					/**
-					 * The function_names_404_content action hook
+					 * The westcpa_404_content action hook
 					 *
 					 * @hooked 		add_search 					10
 					 * @hooked 		four_04_posts_widget 		15
@@ -31,14 +31,14 @@ get_header();
 					 * @hooked 		four_04_archives 			25
 					 * @hooked 		four_04_tag_cloud 			30
 					 */
-					do_action( 'function_names_404_content' );
+					do_action( 'westcpa_404_content' );
 
 				?></div><!-- .page-content --><?php
 
 				/**
-				 * The function_names_404_after action hook
+				 * The westcpa_404_after action hook
 				 */
-				do_action( 'function_names_404_after' );
+				do_action( 'westcpa_404_after' );
 
 			?></section><!-- .error-404 -->
 		</main><!-- #main -->

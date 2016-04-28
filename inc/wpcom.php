@@ -12,13 +12,13 @@
  *
  * @global array $themecolors
  */
-function function_names_wpcom_setup() {
+function westcpa_wpcom_setup() {
 
 	global $themecolors;
 
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
-	
+
 		$themecolors = array(
 			'bg'     => '',
 			'border' => '',
@@ -26,8 +26,8 @@ function function_names_wpcom_setup() {
 			'link'   => '',
 			'url'    => '',
 		);
-	
+
 	}
 
-} // function_names_wpcom_setup()
-add_action( 'after_setup_theme', 'function_names_wpcom_setup' );
+} // westcpa_wpcom_setup()
+add_action( 'after_setup_theme', 'westcpa_wpcom_setup' );

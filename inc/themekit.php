@@ -6,7 +6,7 @@
  * @package DocBlock
  * @author Slushman <chris@slushman.com>
  */
-class function_names_Themekit {
+class westcpa_Themekit {
 
 	/**
 	 * Constructor
@@ -216,9 +216,9 @@ class function_names_Themekit {
 		$list['youtubesquare']		= '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" class="youtube-square"><path d="M19.9 16.2c0 2-1.7 3.7-3.7 3.7H3.8c-2 0-3.7-1.7-3.7-3.7V3.8C.1 1.8 1.8.1 3.8.1h12.4c2 0 3.7 1.7 3.7 3.7v12.4zm-3.1-6c-.2-.8-.8-1.3-1.5-1.4-1.8-.2-3.5-.2-5.3-.2-1.8 0-3.5 0-5.3.2-.7.1-1.4.6-1.5 1.4-.2 1.1-.3 2.2-.3 3.3 0 1.1 0 2.3.3 3.3.2.7.8 1.3 1.5 1.4 1.8.2 3.5.2 5.3.2s3.5 0 5.3-.2c.7-.1 1.4-.6 1.5-1.4.3-1.1.3-2.3.3-3.3 0-1.1 0-2.3-.3-3.3zm-9.8.9H6v5.4H5v-5.4H4v-.9h3v.9zm1.5-9.8h-1l-.6 2.5-.7-2.5h-1l.6 1.8c.3.9.5 1.6.6 2v2.6h1V5.1l1.1-3.8zm1 15.3h-.8v-.5c-.3.4-.7.6-1 .6-.3 0-.5-.1-.5-.4-.1-.1-.1-.4-.1-.7v-3.7h.8v3.8c0 .1.1.2.2.2.2 0 .3-.1.5-.4v-3.6h.9v4.7zm1.6-12.1c0-.5-.1-.9-.3-1.1-.2-.3-.6-.5-1-.5s-.8.2-1 .5c-.2.2-.3.6-.3 1.1v1.7c0 .5.1.9.3 1.1.2.3.6.5 1 .5s.8-.2 1-.5c.2-.2.3-.6.3-1.1V4.5zm-.9 1.9c0 .4-.1.7-.4.7-.3-.1-.4-.3-.4-.7v-2c0-.4.1-.7.4-.7.3 0 .4.2.4.7v2zm2.6 8.8c0 .4 0 .7-.1.9-.1.4-.3.5-.7.5-.3 0-.6-.2-.9-.5v.5h-.9v-6.3h.9v2.1c.3-.3.6-.5.9-.5.3 0 .6.2.7.5.1.2.1.5.1 1v1.8zm-.9-2c0-.4-.1-.6-.4-.6-.1 0-.3.1-.4.2v2.9c.1.1.3.2.4.2.2 0 .4-.2.4-.6v-2.1zm2.4-5.5V3h-.9v3.6c-.2.3-.4.4-.5.4-.1 0-.2-.1-.2-.2V3h-.9v3.8c0 .3 0 .6.1.7.1.2.3.3.6.3s.6-.2 1-.6v.5h.8zm1.7 7.4v.6c0 .2-.1.4-.2.5-.2.3-.6.5-1 .5-.5 0-.8-.2-1-.5-.2-.2-.3-.6-.3-1.1v-1.7c0-.5.1-.9.3-1.1.2-.3.6-.5 1-.5s.8.2 1 .5c.2.2.3.6.3 1.1v1h-1.7v.8c0 .4.1.7.4.7.2 0 .3-.1.4-.3V15h.8v.1zm-.8-1.4v-.4c0-.4-.1-.7-.4-.7s-.4.2-.4.7v.4h.8z"/></svg>';
 
 		/**
-		 * The function_names_svgs filter
+		 * The westcpa_svgs filter
 		 */
-		$list = apply_filters( 'function_names_svgs', $list );
+		$list = apply_filters( 'westcpa_svgs', $list );
 
 		return $list;
 
@@ -363,6 +363,6 @@ class function_names_Themekit {
 /**
  * Make an instance so its ready to be used
  */
-$function_names_themekit = new function_names_Themekit();
+$westcpa_themekit = new westcpa_Themekit();
 
 
