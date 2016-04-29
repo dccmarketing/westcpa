@@ -15,3 +15,17 @@ $font__pre 					: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body 	: 1.5;
 $font__line-height-pre 		: 1.6;
 $font__size-social 			: 36px;
+
+.white-red {
+	background-color: $maroon;
+	color 			: $light;
+}
+
+.white-navy {
+	background-color: $navy;
+	color 			: $light;
+}
+
+.font-opens {
+	font-family: 'Open Sans', sans-serif;
+}

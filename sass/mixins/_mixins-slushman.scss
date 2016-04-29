@@ -34,29 +34,39 @@
 }
 
 /**
- * Sets the element's width and margin based on the quantity of that element (up to 4)
+ * Sets the element's width and margin based on the quantity of that element (up to 4).
+ *
+ * Margins are optional. If the parent uses space-between, they aren't needed.
  *
  * @param 	string 		$element: 'li'          The element to look for, default is li
  * @param 	float 		$margin:  1.33          Margin width, as a percent
- * @param 	int 		$offset:  1             How much to offset the order for flebox
+ * @parms 	bool 		$margins: false			TRUE to include the margins, default is false
+ * @param 	int 		$offset:  1             How much to offset the order for flexbox
  */
-@mixin autowidthflex( $element: 'li', $margin: 1.33, $offset: 1 ) {
+@mixin autowidthflex( $element: 'li', $margin: 1.33, $margins: false, $offset: 1 ) {
 
 	@for $i from 1 through 4 {
 
+		$margperc: percentage( $margin / 100 );
+
 		&:first-of-type:nth-last-of-type(#{$i}),
 		&:first-of-type:nth-last-of-type(#{$i}) ~ #{$element} {
-			$margperc: percentage( $margin / 100 );
-			margin 	: 0 $margperc;
-			width 	: percentage( ( ( 100 / $i ) - ( $margin * 2 ) ) / 100 );
+			width: percentage( ( ( 100 / $i ) - ( $margin * 2 ) ) / 100 );
 		}
 
-		&:first-of-type {
-			margin-left : 0 !important;
-		}
+		@if $margins {
+			&:first-of-type:nth-last-of-type(#{$i}),
+			&:first-of-type:nth-last-of-type(#{$i}) ~ #{$element} {
+				margin 	: 0 $margperc;
+			}
 
-		&:last-of-type {
-			margin-right: 0 !important;
+			&:first-of-type {
+				margin-left : 0 !important;
+			}
+
+			&:last-of-type {
+				margin-right: 0 !important;
+			}
 		}
 	}
 
@@ -87,6 +97,12 @@
 	border-radius 	: 0;
 	background 		: transparent;
 	padding 		: 0;
+}
+
+@mixin center() {
+	align-items 	: center;
+	display 		: flex;
+	justify-content : center;
 }
 
 @mixin clearafter() {
@@ -167,26 +183,24 @@
 
 	$marginperc	 	: percentage( $margin / 100 );
 
-	width			: $width;
+	display 		: inline-block;
 	margin-left	 	: $marginperc;
 	margin-right 	: $marginperc;
-	display 		: inline-block;
 	vertical-align 	: top;
-
+	width			: $width;
 }
 
 @mixin menutoggle() {
-	display			: block;
-	width			: 100%;
 	border			: none;
-	line-height		: 1.25em;
-	font-size		: 1.25em;
-	box-shadow		: none;
 	border-radius	: 0;
-	text-shadow		: none;
+	box-shadow		: none;
+	display			: block;
+	font-size		: 1.25em;
+	line-height		: 1.5;
 	outline 		: 0;
-	background		: $color__bg-menu-button-mobile;
-	color 			: $color__text-menu-button-mobile;
+	padding 		: 0.5em;
+	text-shadow		: none;
+	width			: 100%;
 
 	&:hover,
 	&:focus,
@@ -194,14 +208,13 @@
 		border		: none;
 		box-shadow	: none;
 		border-color: inherit;
-		background 	: $color__bg-menu-button-pseudo;
 	}
 
 	@media only screen and (min-width: $bp__tablet) {
 		background-color: transparent;
 	}
 
-	@media only screen and (min-width: $bp__menu-button+1) {
+	@media only screen and (min-width: $bp__sidemenu) {
 		z-index: 9999;
 	}
 }

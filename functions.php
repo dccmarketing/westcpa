@@ -141,4 +141,14 @@ require get_template_directory() . '/inc/themehooks.php';
  */
 require get_template_directory() . '/inc/menukit.php';
 
+/**
+ * Load Main Menu Walker
+ */
+require get_template_directory() . '/inc/main-menu-walker.php';
+
+/**
+ * Load Employees Customizer
+ */
+require get_template_directory() . '/inc/employees.php';
+
 

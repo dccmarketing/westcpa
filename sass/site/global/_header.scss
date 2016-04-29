@@ -2,16 +2,8 @@
 	// DO NOT ADD PADDING HERE! - it screws up menus
 	overflow 		: auto;
 
-	@media only screen and (min-width: $bp__menu-button+1) {
+	@media only screen and (min-width: $bp__sidemenu) {
 		overflow 	: visible;
-	}
-}
-
-.wrap-header {
-	padding: 1em;
-
-	@media only screen and (min-width: $bp__tablet) {
-		padding: 0;
 	}
 }
 
@@ -27,6 +19,7 @@
 	width 		: 100%;
 
 	@media only screen and (min-width: $bp__tablet) {
+		padding 	: 0 1em;
 		text-align 	: left;
 		width 		: 50%;
 	}
@@ -38,11 +31,26 @@
 }
 
 .site-description {
-	text-align	: center;
-	width 		: 100%;
+	padding 		: 0.25em 4em;
+	position 		: relative;
+	text-align		: center;
+	text-transform 	: uppercase;
+	width 			: 100%;
+
+	@media only screen and (min-width: $bp__mobile1) {
+		padding-left 	: 0;
+		padding-right 	: 0em;
+	}
 
 	@media only screen and (min-width: $bp__tablet) {
-		text-align 	: right;
-		width 		: 50%;
+		padding-right 	: 1em;
+		text-align 		: right;
+		width 			: 50%;
+
+		@include arrowfins( $maroon );
 	}
+}
+
+.diamond {
+	@include diamond( $maroon, 1em, 0.4em, 4.75em );
 }

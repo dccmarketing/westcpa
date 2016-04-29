@@ -1,0 +1,38 @@
+@mixin arrowfins( $color, $height: 1em, $angle: 0.4em ) {
+
+	&:before {
+		border-color 		: $color;
+		border-left-color 	: transparent;
+		border-style 		: solid;
+		border-width 		: $height $angle;
+		content 			: "";
+		left 				: -$angle;
+		position 			: absolute;
+		top 				: 0;
+	}
+
+}
+
+@mixin diamond( $color, $height: 1em, $angle: 0.4em, $left: 4.75em ) {
+	border-color 		: transparent;
+	border-right-color 	: $color;
+	border-style 		: solid;
+	border-width 		: $height 2em;
+	display 			: block;
+	height 				: 0;
+	left 				: -$left;
+	position 			: absolute;
+	top 				: 0;
+	width 				: 0;
+
+	&:after {
+		border-color 		: transparent;
+		border-left-color 	: $color;
+		border-style 		: solid;
+		border-width 		: $height $angle;
+		content 			: "";
+		left 				: 2em;
+		position 			: absolute;
+		top 				: -$height;
+	}
+}

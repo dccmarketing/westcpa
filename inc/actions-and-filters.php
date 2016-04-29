@@ -213,7 +213,7 @@ class westcpa_Actions_and_Filters {
 
 		$return 	= '';
 		$families 	= '';
-		$fonts[] 	= array( 'font' => 'Oxygen', 'weights' => '400,700', 'translate' => esc_html_x( 'on', 'Oxygen font: on or off', 'westcpa' ) );
+		$fonts[] 	= array( 'font' => 'Open Sans', 'weights' => '400', 'translate' => esc_html_x( 'on', 'Open Sans font: on or off', 'westcpa' ) );
 
 		foreach ( $fonts as $font ) {
 
@@ -226,7 +226,7 @@ class westcpa_Actions_and_Filters {
 		if ( ! empty( $families ) ) {
 
 			$query_args['family'] 	= urlencode( implode( '|', $families ) );
-			$query_args['subset'] 	= urlencode( 'latin,latin-ext' );
+			$query_args['subset'] 	= urlencode( 'latin' );
 			$return 				= add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
 		}
@@ -368,7 +368,11 @@ class westcpa_Actions_and_Filters {
 
 		wp_enqueue_script( 'westcpa-search', get_template_directory_uri() . '/js/hidden-search.min.js', array(), '20150807', true );
 
-		// wp_enqueue_style( 'westcpa-fonts', $this->fonts_url(), array(), null );
+		wp_enqueue_script( 'enquire', '//cdnjs.cloudflare.com/ajax/libs/enquire.js/2.1.2/enquire.min.js', array(), '20150804', true );
+
+		wp_enqueue_script( 'westcpa-menu-scripts', get_template_directory_uri() . '/js/menu-scripts.min.js', array( 'jquery', 'enquire' ), '20160429', true );
+
+		wp_enqueue_style( 'westcpa-fonts', $this->fonts_url(), array(), null );
 
 	} // public_scripts_and_styles()
 

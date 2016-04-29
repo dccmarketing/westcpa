@@ -9,7 +9,7 @@
 	margin 	: 0 0 1.5em;
 	width 	: percentage( ( 100 / 2 ) / 100 );
 
-	@media only screen and (min-width: $bp__menu-button+1) {
+	@media only screen and (min-width: $bp__sidemenu) {
 		width: percentage( ( 100 / 3 ) / 100 );
 	}
 

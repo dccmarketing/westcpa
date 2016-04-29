@@ -1,9 +1,6 @@
 .main-navigation {
-	background-color: $navy;
 	clear			: both;
-	color 			: $light;
 	display			: block;
-	float			: left;
 	width			: 100%;
 
 	ul {
@@ -12,11 +9,36 @@
 		text-align 	: left;
 
 		@media only screen and (min-width: $bp__menu-button+1) {
-			display 	: block;
-			text-align	: center;
+			@include center();
 		}
 
 		 > li {
+		 	@media only screen and (max-width: $bp__menu-button) {
+				//position: relative;
+
+				&.menu-item-has-children {
+
+					.sub-menu {
+						display: none;
+					}
+
+					.show-hide {
+						cursor 			: pointer;
+						height 			: 3em;
+						position 		: absolute;
+						right 			: 0;
+						top 			: 0.5em;
+						width 			: 3em;
+					}
+				}
+			}
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+				.show-hide {
+					display: none;
+				}
+			}
+
 		 	 > a {
 				padding: 1.5em;
 			}
@@ -26,25 +48,29 @@
 			background-color: $color__bg-menu-item-mobile;
 			display			: inherit;
 
+			@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
+				background-color: $transred;
+			}
+
 			@media only screen and (min-width: $bp__menu-button+1) {
 				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
 				left 		: 0;
 				opacity 	: 0;
 				position	: absolute;
-				transition 	: visibility 0s ease 0.5s,opacity 0.5s ease;
+				transition 	: visibility 0s ease 0.5s, opacity 0.5s ease;
 				visibility 	: hidden;
 				z-index		: 99999;
 			} // breakpoint
 
 			ul {
 
-				@media only screen and (min-width: $bp__menu-button+1) {
+				@media only screen and (min-width: $bp__sidemenu+1) {
 					left: 100%;
 					top	: 0;
 				}
 
 				a {
-					@media only screen and (max-width: $bp__menu-button) {
+					@media only screen and (max-width: $bp__sidemenu) {
 						border-left : none;
 						padding 	: 0.5em 3em;
 					}
@@ -52,11 +78,11 @@
 			}
 
 			a {
-				@media only screen and (max-width: $bp__menu-button) {
+				@media only screen and (max-width: $bp__sidemenu) {
 					padding: 0.5em 2em;
 				}
 
-				@media only screen and (min-width: $bp__menu-button+1) {
+				@media only screen and (min-width: $bp__sidemenu+1) {
 					color 		: $color__text-submenu;
 					padding 	: 0.5em 1em;
 					white-space : nowrap;
@@ -64,12 +90,12 @@
 			}
 
 			li {
-				display: block;
-				text-align: left;
+				display 	: block;
+				text-align 	: left;
 
 				&:last-child {
 
-					@media only screen and (max-width: $bp__menu-button) {
+					@media only screen and (max-width: $bp__sidemenu) {
 						padding-bottom: 0;
 					}
 				}
@@ -80,32 +106,37 @@
 	} // first-level ul
 
 	li {
-
-		@media only screen and (min-width: $bp__menu-button+1) {
-			display 	: inline-block;
-			position 	: relative;
-		}
+		position: relative;
 
 		&:hover,
 		&.focus {
 
-			> ul {
-				@media only screen and (min-width: $bp__menu-button+1) {
-					display 	: block;
+			> .wrap-submenu,
+			> .wrap-submenu > ul {
+				@media only screen and (min-width: $bp__sidemenu+1) {
 					opacity 	: 1;
 					visibility 	: visible;
 				}
 			}
 
 			> a {
-				background-color: $color__bg-menu-item-mobile;
-				color 			: $color__text-menu-mobile-hover;
 
 				@media only screen and (min-width: $bp__menu-button+1) {
-					color: $color__text-menu-hover;
+					background-color: $color__bg-menu-item;
+					color 			: $color__text-menu-hover;
 				}
 			}
 
+		}
+
+		&.open {
+
+			> .wrap-submenu,
+			> .wrap-submenu ul,
+			a .dashicons.children {
+				opacity 	: 1;
+				visibility 	: visible;
+			}
 		}
 	}
 
@@ -114,8 +145,9 @@
 		display			: block;
 		padding 		: 0.5em 1em;
 		text-decoration	: none;
+		transition 		: background-color $trans__default;
 
-		@media only screen and (min-width: $bp__menu-button+1) {
+		@media only screen and (min-width: $bp__sidemenu+1) {
 			color: $color__text-menu;
 		}
 
@@ -129,8 +161,8 @@
 	.current-menu-parent,
 	.current_page_ancestor {
 
-		@media only screen and (min-width: $bp__menu-button+1) {
-			background-color: $color__bg-menu-current;
+		@media only screen and (min-width: $bp__sidemenu+1) {
+			//background-color: $color__bg-menu-current;
 		}
 
 		> a {
@@ -141,7 +173,11 @@
 		&.focus {
 
 			> a {
-				color: $color__text-menu-current-hover;
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					background-color: $color__bg-menu-current-hover;
+					color 			: $color__text-menu-current-hover;
+				}
 			}
 		}
 	}
@@ -150,6 +186,7 @@
 
 		.nav-menu {
 			@include menutoggle();
+			padding: 0;
 		}
 
 		.menu-main-menu-container {
@@ -158,10 +195,15 @@
 			}
 
 		}
+	}
 
-		.menu-toggle {
-			right: $size__menu_width;
+	.diamond {
+		display: none;
+
+		@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
+			@include diamond( $navy, 1.25em, 0.55em, 4.9em );
 		}
+
 	}
 } // .main-navigation
 
@@ -173,7 +215,7 @@
 	 * Tablet menu - slide in from left - on top or pushing content
 	 */
 	@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
-		background-color: $dark;
+		background-color: $transnavy;
 		bottom 			: 0;
 		height 			: 100%;
 		left 			: 0;
@@ -181,7 +223,7 @@
 		position 		: fixed;
 		top 			: 0;
 		transform 		: translateX( -$size__menu_width);
-		transition 		: transform 0.4s ease;
+		transition 		: transform $trans__default;
 		width 			: $size__menu_width;
 		z-index 		: 9999;
 
@@ -199,18 +241,34 @@
 /* Small menu */
 .menu-toggle {
 	@include menutoggle();
+	background		: $color__bg-menu-button-mobile;
+	color 			: $color__text-menu-button-mobile;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: $navy;
+	}
 
 	@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
 		background-color: $color__bg-menu-button;
 		color 			: $color__text-menu-button;
 		position 		: absolute;
 		right 			: 0;
-		width 			: 200px;
+		width 			: 50%;
 		z-index 		: 99;
+
+		@include arrowfins( $navy, 1.25em, 0.55em );
 	}
 
 	@media only screen and (min-width: $bp__menu-button+1) {
 		display 		: none;
+	}
+}
+
+.wrap-submenu {
+	@media only screen and (max-width: $bp__menu-button) {
+		border-top: 3px solid $maroon;
 	}
 }
 

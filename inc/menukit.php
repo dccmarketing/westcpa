@@ -28,6 +28,7 @@ class westcpa_Menukit {
 		//add_filter( 'walker_nav_menu_start_el', 	array( $this, 'dashicon_after_menu_item' ), 10, 4 );
 		//add_filter( 'walker_nav_menu_start_el', 	array( $this, 'dashicon_only_menu_item' ), 10, 4 );
 		//add_filter( 'walker_nav_menu_start_el', 	array( $this, 'menu_caret' ), 10, 4 );
+		add_filter( 'walker_nav_menu_start_el', 	array( $this, 'menu_show_hide' ), 10, 4 );
 		//add_filter( 'walker_nav_menu_start_el', 	array( $this, 'svg_before_menu_item' ), 10, 4 );
 		//add_filter( 'walker_nav_menu_start_el', 	array( $this, 'svg_after_menu_item' ), 10, 4 );
 		//add_filter( 'walker_nav_menu_start_el', 	array( $this, 'svg_only_menu_item' ), 10, 4 );
@@ -185,6 +186,34 @@ class westcpa_Menukit {
 		return $output;
 
 	} // menu_caret()
+
+	/**
+	 * Add Plus ("+") expander to menus with children
+	 *
+	 * @param 		string 		$item_output		//
+	 * @param 		object 		$item				//
+	 * @param 		int 		$depth 				//
+	 * @param 		array 		$args 				//
+	 *
+	 * @return 		string 							modified menu
+	 */
+	public function menu_show_hide( $item_output, $item, $depth, $args ) {
+
+		if ( 'primary' !== $args->theme_location ) { return $item_output; }
+		if ( ! in_array( 'menu-item-has-children', $item->classes ) ) { return $item_output; }
+
+		$atts 	= $this->get_attributes( $item );
+		$output = '';
+
+		$output .= '<a href="' . $item->url . '">';
+		$output .= $item->title;
+		$output .= '<span class="children"></span>';
+		$output .= '</a>';
+		$output .= '<span class="show-hide flex-center">+</span>';
+
+		return $output;
+
+	} // menu_show_hide()
 
 	/**
 	 * Adds an SVG icon before the menu item text

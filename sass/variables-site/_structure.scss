@@ -10,7 +10,7 @@ $size__hidden-search 	: 180px;
 $size__wp-admin-bar-1 	: 46px;
 $size__wp-admin-bar-2 	: 32px;
 
-$trans__default 		: 0.4s ease;
+$trans__default 		: 0.3s ease;
 
 /**
  * Login Page
@@ -22,9 +22,11 @@ $size__login-logo-height: 84px;
 /**
  * Breakpoints
  */
-$bp__menu-button		: 600px; // 37.5em
+$bp__mobile1			: 375px; // 37.5em
+$bp__sidemenu 			: 600px;
 $bp__headings1 			: 700px; // 43.75em
 $bp__tablet				: 768px; // 48em
 $bp__admin-bar-1		: 783px;
 $bp__headings2 			: 900px; // 56.25em
+$bp__menu-button		: 1024px; // 37.5em
 $bp__laptop				: 1024px; // 64em

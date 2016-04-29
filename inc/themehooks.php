@@ -326,11 +326,13 @@ class westcpa_Themehooks {
 	 */
 	public function menu_primary() {
 
-		?><nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'slushman-2016' ); ?></button><?php
+		?><nav id="site-navigation" class="main-navigation white-navy" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="diamond"></span><?php esc_html_e( 'Menu', 'slushman-2016' ); ?></button><?php
 
 				$menu_args['menu_id'] 			= 'primary-menu';
 				$menu_args['theme_location'] 	= 'primary';
+				$menu_args['walker']  			= new Main_Menu_Walker();
 
 				wp_nav_menu( $menu_args );
 
@@ -459,7 +461,7 @@ class westcpa_Themehooks {
 
 		if ( $description || is_customize_preview() ) :
 
-			?><p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p><?php
+			?><p class="site-description white-red font-opens"><span class="diamond"></span><?php echo $description; /* WPCS: xss ok. */ ?></p><?php
 
 		endif;
 
