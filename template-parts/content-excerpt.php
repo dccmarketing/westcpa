@@ -13,7 +13,10 @@
 
 	?><header class="entry-header justcontent"><?php
 
-		the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		/**
+		 * @hooked 		title_entry 		10
+		 */
+		do_action( 'entry_header_content' );
 
 		if ( 'post' == get_post_type() ) :
 

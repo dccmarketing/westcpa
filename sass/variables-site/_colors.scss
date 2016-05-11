@@ -5,8 +5,9 @@ $dark		: #020202;
 $maroon		: #a1171b;
 $navy 		: #001a28;
 $char 		: lighten( #000, 35% );
+$blue 		: #004c75;
 
-$transnavy 	: rgba( $navy, 0.85 );
+$transnavy 	: rgba( $blue, 0.85 );
 $transred 	: rgba( $maroon, 0.85 );
 
 // Backgrounds
@@ -25,9 +26,9 @@ $color__text-screen			: #21759b;
 $color__text-input			: $char;
 $color__text-input-focus	: $char;
 $color__text-pre 			: $light;
-$color__link				: royalblue;
-$color__link-visited		: purple;
-$color__link-hover			: midnightblue;
+$color__link				: $blue;
+$color__link-visited		: $blue;
+$color__link-hover			: $maroon;
 $color__text-main			: $char;
 $color__text-social 		: $light;
 $color__text-ins 			: $char;
@@ -56,13 +57,13 @@ $color__shadow-button-inner-focus 	: rgba(255, 255, 255, 0.5);
 $color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
 
 // Menu colors
-$color__bg-menu-button			: $navy;
-$color__bg-menu-button-mobile 	: $navy;
-$color__bg-menu-button-pseudo 	: $navy;
+$color__bg-menu-button			: $maroon;
+$color__bg-menu-button-mobile 	: $maroon;
+$color__bg-menu-button-pseudo 	: $maroon;
 $color__bg-menu-item			: $maroon;
-$color__bg-menu-item-mobile		: $maroon;
-$color__bg-menu-current			: $maroon;
-$color__bg-menu-current-hover	: $char;
+$color__bg-menu-item-mobile		: $blue;
+$color__bg-menu-current			: $blue;
+$color__bg-menu-current-hover	: $blue;
 
 $color__text-menu				: $light;
 $color__text-menu-hover			: $light;

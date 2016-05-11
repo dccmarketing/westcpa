@@ -22,7 +22,7 @@ class westcpa_Employees {
 	 */
 	private function loader() {
 
-		$templates = Employees_Templates::this();
+		//$templates = Employees_Templates::this();
 
 		add_filter( 'employees-field-honorific-suffix', array( $this, 'add_suffix_honorifics' ), 10, 1 );
 

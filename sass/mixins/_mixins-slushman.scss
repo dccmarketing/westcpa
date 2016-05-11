@@ -43,7 +43,7 @@
  * @parms 	bool 		$margins: false			TRUE to include the margins, default is false
  * @param 	int 		$offset:  1             How much to offset the order for flexbox
  */
-@mixin autowidthflex( $element: 'li', $margin: 1.33, $margins: false, $offset: 1 ) {
+@mixin autowidthflex( $element: 'li', $margin: 1.33, $margins: false, $offset: 1, $bp: $bp__tablet ) {
 
 	@for $i from 1 through 4 {
 
@@ -51,7 +51,11 @@
 
 		&:first-of-type:nth-last-of-type(#{$i}),
 		&:first-of-type:nth-last-of-type(#{$i}) ~ #{$element} {
-			width: percentage( ( ( 100 / $i ) - ( $margin * 2 ) ) / 100 );
+			width: 100%;
+
+			@media only screen and (min-width: $bp) {
+				width: percentage( ( ( 100 / $i ) - ( $margin * 2 ) ) / 100 );
+			}
 		}
 
 		@if $margins {

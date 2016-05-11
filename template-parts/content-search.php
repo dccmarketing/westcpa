@@ -13,7 +13,10 @@
 
 	?><header class="page-header contentsearch"><?php
 
-		the_title( sprintf( '<h2 class="page-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		/**
+		 * @hooked 		title_search 		10
+		 */
+		do_action( 'entry_header_content' );
 
 		if ( 'post' == get_post_type() ) :
 			?><div class="entry-meta"><?php

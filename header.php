@@ -55,7 +55,7 @@ do_action( 'tha_body_top' );
 	 */
 	do_action( 'tha_header_before' );
 
-	?><header id="masthead" class="site-header" role="banner"><?php
+	?><header id="masthead" role="banner"><?php
 
 		/**
 		 * The tha_header_top action hook
@@ -68,7 +68,7 @@ do_action( 'tha_body_top' );
 		/**
 		 * The header_content action hook
 		 *
-		 * @hooked 		site_title 			10
+		 * @hooked 		title_site 			10
 		 * @hooked 		site_description 	15
 		 */
 		do_action( 'westcpa_header_content' );

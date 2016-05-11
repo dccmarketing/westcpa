@@ -25,37 +25,51 @@ class westcpa_Themehooks {
 		add_action( 'tha_header_top', 					array( $this, 'header_wrap_start' ), 10 );
 		add_action( 'tha_header_top', 					array( $this, 'site_branding_start' ), 15 );
 
-		add_action( 'westcpa_header_content', 			array( $this, 'site_title' ), 10 );
-		add_action( 'westcpa_header_content', 			array( $this, 'site_description' ), 15 );
+		add_action( 'westcpa_header_content', 			array( $this, 'title_site' ), 10 );
 
 		add_action( 'tha_header_bottom', 				array( $this, 'site_branding_end' ), 85 );
 		add_action( 'tha_header_bottom', 				array( $this, 'header_wrap_end' ), 90 );
 
 		add_action( 'tha_header_after', 				array( $this, 'menu_primary' ), 10);
 
+		add_action( 'tha_content_before', 				array( $this, 'block_home_top' ), 20 );
+		add_action( 'tha_content_before', 				array( $this, 'block_home_img1' ), 30 );
+		add_action( 'tha_content_before', 				array( $this, 'blocks_home' ), 40 );
+		add_action( 'tha_content_before', 				array( $this, 'block_home_img2' ), 50 );
+
 		add_action( 'tha_body_top', 					array( $this, 'analytics_code' ), 10 );
 		add_action( 'tha_body_top', 					array( $this, 'add_hidden_search' ), 15 );
 		add_action( 'tha_body_top', 					array( $this, 'skip_link' ), 20 );
 
-		add_action( 'tha_content_while_before', 		array( $this, 'archive_title' ) );
-		add_action( 'tha_content_while_before', 		array( $this, 'single_post_title' ) );
-		add_action( 'tha_content_while_before', 		array( $this, 'search_title' ) );
+		add_action( 'tha_content_while_before', 		array( $this, 'title_archive' ) );
+		add_action( 'tha_content_while_before', 		array( $this, 'title_single_post' ) );
+		add_action( 'tha_content_while_before', 		array( $this, 'title_search' ) );
 
 		add_action( 'tha_content_while_after', 			array( $this, 'posts_nav' ) );
-
-		add_action( 'westcpa_footer_content', 			array( $this, 'footer_content' ) );
 
 		add_action( 'tha_content_top', 					array( $this, 'breadcrumbs' ) );
 
 		add_action( 'tha_entry_after', 					array( $this, 'comments' ), 10 );
 
-		add_action( 'westcpa_404_before', 				array( $this, 'four_04_title' ), 10 );
+		add_action( 'westcpa_404_before', 				array( $this, 'title_404' ), 10 );
 
 		add_action( 'westcpa_404_content', 				array( $this, 'add_search' ), 10 );
 		add_action( 'westcpa_404_content', 				array( $this, 'four_04_posts_widget' ), 15 );
 		add_action( 'westcpa_404_content', 				array( $this, 'four_04_categories' ), 20 );
 		add_action( 'westcpa_404_content', 				array( $this, 'four_04_archives' ), 25 );
 		add_action( 'westcpa_404_content', 				array( $this, 'four_04_tag_cloud' ), 30 );
+
+		add_action( 'entry_header_content', 			array( $this, 'title_entry' ), 10 );
+		add_action( 'entry_header_content', 			array( $this, 'title_page' ), 10 );
+		add_action( 'entry_header_content', 			array( $this, 'title_none' ), 10 );
+		add_action( 'entry_header_content', 			array( $this, 'title_search' ), 10 );
+		add_action( 'entry_header_content', 			array( $this, 'posted_on' ), 20 );
+
+		add_action( 'tha_footer_top', 					array( $this, 'footer_wrap_begin' ) );
+		add_action( 'westcpa_footer_content', 			array( $this, 'site_description' ), 10 );
+		add_action( 'westcpa_footer_content', 			array( $this, 'footer_locations' ), 15 );
+		add_action( 'westcpa_footer_content', 			array( $this, 'footer_content' ), 20 );
+		add_action( 'tha_footer_bottom', 				array( $this, 'footer_wrap_end' ) );
 
 	} // loader()
 
@@ -102,35 +116,99 @@ class westcpa_Themehooks {
 
 		$tag = get_theme_mod( 'tag_manager' );
 
-		if ( ! empty( $tag ) ) {
+		if ( empty( $tag ) ) { return; }
 
-			echo '<!-- Google Tag Manager -->';
-			echo $tag;
-			echo '<!-- Google Tag Manager -->';
-
-		}
+		echo '<!-- Google Tag Manager -->';
+		echo $tag;
+		echo '<!-- Google Tag Manager -->';
 
 	} // analytics_code()
 
 	/**
-	 * Adds the page title to an archive page
+	 * Displays the home blocks
 	 *
-	 * @hooked 		tha_content_while_before
-	 *
-	 * @return 		mixed 							The archive page title
+	 * @return 		mixed 			The home blocks
 	 */
-	public function archive_title() {
+	public function blocks_home() {
 
-		if ( ! is_archive() ) { return; }
+		if ( ! is_front_page() ) { return; }
 
-		?><header class="page-header"><?php
+		$blocks 	= get_field( 'three_blocks' );
+		$fullblocks = ! empty( $blocks[0]['block_content'] ) || ! empty( $blocks[1]['block_content'] ) || ! empty( $blocks[2]['block_content'] );
 
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
-			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		if ( $fullblocks ) :
 
-		?></header><!-- .page-header --><?php
+			?><div class="blocks"><?php
 
-	} // archive_title()
+		endif;
+
+		foreach ( range( 0, 2 ) as $i ) :
+
+			if ( empty( $blocks[$i]['block_content'] ) ) { continue; }
+
+			?><div class="block"><?php
+
+				if ( ! empty( $blocks[$i]['block_icon'] ) ) :
+
+					?><p class="home-block-icon fa <?php echo esc_attr( $blocks[$i]['block_icon'] ); ?>" id="home-block-icon-<?php echo $i ?>"></p><?php
+
+				endif;
+
+				if ( ! empty( $blocks[$i]['block_title'] ) ) :
+
+					?><h3 class="home-block-title"><?php echo esc_html( $blocks[$i]['block_title'] ); ?></h3><?php
+
+				endif;
+
+				?><p id="home-block-content-<?php echo $i ?>"><?php echo wp_kses( $blocks[$i]['block_content'], array( 'a' => array( 'href' => array() ), 'br' => array(), 'em' => array(), 'strong' => array() ) ); ?></p>
+			</div><?php
+
+		endforeach;
+
+		if ( $fullblocks ) :
+
+			?></div><!-- .blocks --><?php
+
+		endif;
+
+	} // blocks_home()
+
+	public function block_home_img1() {
+
+		if ( ! is_front_page() ) { return; }
+
+		?><div class="block-home-img" id="bhi1"></div><?php
+
+	} // block_home_img1()
+
+	public function block_home_img2() {
+
+		if ( ! is_front_page() ) { return; }
+
+		?><div class="block-home-img"  id="bhi2"></div><?php
+
+	} // block_home_img2()
+
+	/**
+	 * Displays the top home block
+	 *
+	 * @return 		mixed 			The top home block
+	 */
+	public function block_home_top() {
+
+		if ( ! is_front_page() ) { return; }
+
+		$block = get_field( 'top_home_block' );
+
+		if ( empty( $block ) ) { return; }
+
+		?><div class="block-home-top"><?php
+
+			echo wp_kses( $block, array( 'a' => array( 'href' => array() ), 'br' => array(), 'em' => array(), 'strong' => array() ) );
+
+		?></div><?php
+
+	} // block_home_top()
 
 	/**
 	 * Returns the appropriate breadcrumbs.
@@ -194,14 +272,93 @@ class westcpa_Themehooks {
 	 */
 	public function footer_content() {
 
-		?><div class="wrap wrap-footer">
-			<div class="site-info">
-				<div class="copyright">&copy <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url(), 'westcpa' ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></div>
-				<div class="credits"><?php printf( esc_html__( 'Site created by %1$s', 'westcpa' ), '<a href="https://dccmarketing.com/" rel="nofollow" target="_blank">DCC Marketing</a>' ); ?></div>
-			</div><!-- .site-info -->
-		</div><!-- .wrap-footer --><?php
+		?><section class="site-info">
+			<div class="copyright">&copy <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( get_admin_url(), 'westcpa' ); ?>"><?php echo get_bloginfo( 'name' ); ?></a> <?php esc_html_e( 'All Rights Reserved.', 'westcpa' ); ?></div>
+			<div><?php
+
+				$menu_args['theme_location']	= 'legal';
+				$menu_args['container'] 		= 'div';
+				$menu_args['container_id']    	= 'menu-legal';
+				$menu_args['container_class'] 	= 'menu nav-legal';
+				$menu_args['menu_id']         	= 'menu-legal-items';
+				$menu_args['menu_class']      	= 'menu-items';
+				$menu_args['depth']           	= 1;
+
+				wp_nav_menu( $menu_args );
+
+			?></div>
+			<div class="credits"><?php printf( esc_html__( 'Site created by %1$s', 'westcpa' ), '<a href="https://dccmarketing.com/" rel="nofollow" target="_blank">DCC Marketing</a>' ); ?></div>
+		</section><!-- .site-info --><?php
 
 	} // footer_content()
+
+	/**
+	 * Displays the Footer Middle sidebar
+	 */
+	public function footer_widget_middle() {
+
+		if ( ! is_active_sidebar( 'footer-middle' ) ) { return; }
+
+		dynamic_sidebar( 'footer-middle' );
+
+	} // footer_widget_middle()
+
+	/**
+	 * Displays the Footer Right sidebar
+	 */
+	public function footer_widget_right() {
+
+		if ( ! is_active_sidebar( 'footer-right' ) ) { return; }
+
+		dynamic_sidebar( 'footer-right' );
+
+	} // footer_widget_right()
+
+	/**
+	 * Displays a list of all locations
+	 *
+	 * @return 		mixed 			List of locations
+	 */
+	public function footer_locations() {
+
+		global $westcpa_themekit;
+
+		$locations 			= array();
+		$locs_args['order'] = 'ASC';
+		$locations 			= $westcpa_themekit->get_posts( 'sm-location', $locs_args, 'footerlocs' );
+
+		if ( empty( $locations ) ) { return; }
+
+		?><section class="footer-locs">
+			<ul class="locs blocks"><?php
+
+			foreach ( $locations->posts as $location ) :
+
+				$meta = get_post_meta( $location->ID );
+
+				?><li class="loc block">
+					<h3 class="loc-title"><?php echo esc_html( $location->post_title ); ?></h3>
+					<p class="loc-phone"><?php echo $westcpa_themekit->make_phone_link( $meta['location_phone'][0] ); ?></p>
+				</li><?php
+
+			endforeach;
+
+			?></ul>
+		</section><!-- .footer-locs --><?php
+
+	} // footer_locations()
+
+	public function footer_wrap_begin() {
+
+		?><div class="wrap wrap-footer"><?php
+
+	} // footer_wrap_begin()
+
+	public function footer_wrap_end() {
+
+		?></div><!-- wrap-footer --><?php
+
+	} // footer_wrap_end()
 
 	/**
 	 * Adds the  to the 404 page content.
@@ -211,6 +368,8 @@ class westcpa_Themehooks {
 	 * @return 		mixed 							Markup for the archives
 	 */
 	public function four_04_archives() {
+
+		if ( ! is_404() ) { return; }
 
 		/* translators: %1$s: smiley */
 		$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'westcpa' ), convert_smilies( ':)' ) ) . '</p>';
@@ -229,6 +388,7 @@ class westcpa_Themehooks {
 	public function four_04_categories() {
 
 		if ( ! westcpa_categorized_blog() ) { return; }
+		if ( ! is_404() ) { return; }
 
 		?><div class="widget widget_categories">
 			<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'westcpa' ); ?></h2>
@@ -256,6 +416,8 @@ class westcpa_Themehooks {
 	 */
 	public function four_04_posts_widget() {
 
+		if ( ! is_404() ) { return; }
+
 		the_widget( 'WP_Widget_Recent_Posts' );
 
 	} // four_04_posts_widget()
@@ -269,27 +431,11 @@ class westcpa_Themehooks {
 	 */
 	public function four_04_tag_cloud() {
 
+		if ( ! is_404() ) { return; }
+
 		the_widget( 'WP_Widget_Tag_Cloud' );
 
 	} // four_04_tag_cloud()
-
-	/**
-	 * The 404 page title markup
-	 *
-	 * @hooked 		westcpa_404_content 		10
-	 *
-	 * @return 		mixed 							The 440 page title
-	 */
-	public function four_04_title() {
-
-		if ( ! is_404() ) { return; }
-
-		?><header class="page-header">
-			<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'westcpa' ); ?></h1>
-		</header><!-- .page-header -->
-		<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'westcpa' ); ?></p><?php
-
-	} // four_04_title()
 
 	/**
 	 * The header wrap markup
@@ -326,9 +472,9 @@ class westcpa_Themehooks {
 	 */
 	public function menu_primary() {
 
-		?><nav id="site-navigation" class="main-navigation white-navy" role="navigation">
+		?><nav id="site-navigation" class="main-navigation white-red" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="diamond"></span><?php esc_html_e( 'Menu', 'slushman-2016' ); ?></button><?php
+				<span class="diamond"></span><?php esc_html_e( 'Menu', 'westcpa' ); ?></button><?php
 
 				$menu_args['menu_id'] 			= 'primary-menu';
 				$menu_args['theme_location'] 	= 'primary';
@@ -367,6 +513,24 @@ class westcpa_Themehooks {
 	} // menu_social()
 
 	/**
+	 * Adds the posted_on post meta.
+	 *
+	 * @return 		mixed 			The posted_on post meta.
+	 */
+	public function posted_on() {
+
+		if ( 'post' != get_post_type() ) { return; }
+		if ( ! is_search() ) { return; }
+
+		?><div class="entry-meta"><?php
+
+			westcpa_posted_on();
+
+		?></div><!-- .entry-meta --><?php
+
+	} // posted_on()
+
+	/**
 	 * Adds the post navigation to the archive pages
 	 *
 	 * @hooked 		tha_content_while_after
@@ -383,44 +547,6 @@ class westcpa_Themehooks {
 		the_posts_navigation();
 
 	} // posts_nav()
-
-	/**
-	 * The search title markup
-	 *
-	 * @hooked 		tha_content_while_before
-	 *
-	 * @return 		mixed 							Search title markup
-	 */
-	public function search_title() {
-
-		if ( ! is_search() ) { return; }
-
-		?><header class="page-header">
-			<h1 class="page-title"><?php
-
-				printf( esc_html__( 'Search Results for: %s', 'westcpa' ), '<span>' . get_search_query() . '</span>' );
-
-			?></h1>
-		</header><!-- .page-header --><?php
-
-	} // search_title()
-
-	/**
-	 * Adds the single post title to the index
-	 *
-	 * @hooked 		tha_content_while_before
-	 *
-	 * @return 		mixed 							The single post title
-	 */
-	public function single_post_title() {
-
-		if ( ! is_home() && is_front_page() ) { return; }
-
-		?><header>
-			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-		</header><?php
-
-	} // single_post_title()
 
 	/**
 	 * Adds the starting site branding markup
@@ -461,32 +587,13 @@ class westcpa_Themehooks {
 
 		if ( $description || is_customize_preview() ) :
 
-			?><p class="site-description white-red font-opens"><span class="diamond"></span><?php echo $description; /* WPCS: xss ok. */ ?></p><?php
+			?><p class="site-description font-opens"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p><?php
 
 		endif;
 
 	} // site_description()
 
-	/**
-	 * Adds the site title markup
-	 *
-	 * @hooked 		westcpa_header_content 		10
-	 *
-	 * @return 		mixed 								The site title markup
-	 */
-	public function site_title() {
 
-		if ( is_front_page() && is_home() ) {
-
-			?><h1 class="site-title"><?php the_custom_logo(); ?></h1><?php
-
-		} else {
-
-			?><p class="site-title"><?php the_custom_logo(); ?></p><?php
-
-		}
-
-	} // site_title()
 
 	/**
 	 * Adds the a11y skip link markup
@@ -500,6 +607,158 @@ class westcpa_Themehooks {
 		?><a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'westcpa' ); ?></a><?php
 
 	} // skip_link()
+
+	/**
+	 * The 404 page title markup
+	 *
+	 * @hooked 		westcpa_404_content 		10
+	 *
+	 * @return 		mixed 							The 440 page title
+	 */
+	public function title_404() {
+
+		if ( ! is_404() ) { return; }
+
+		?><header class="page-header">
+			<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'westcpa' ); ?></h1>
+		</header><!-- .page-header -->
+		<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'westcpa' ); ?></p><?php
+
+	} // title_404()
+
+	/**
+	 * Adds the page title to an archive page
+	 *
+	 * @hooked 		tha_content_while_before
+	 *
+	 * @return 		mixed 							The archive page title
+	 */
+	public function title_archive() {
+
+		if ( ! is_archive() ) { return; }
+
+		?><header class="page-header"><?php
+
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+
+		?></header><!-- .page-header --><?php
+
+	} // title_archive()
+
+	/**
+	 * Returns the entry title
+	 *
+	 * @hooked 		tha_content_while_before 		10
+	 *
+	 * @return 		mixed 							The entry title
+	 */
+	public function title_entry() {
+
+		if ( is_front_page() ) { return; }
+		if ( is_page() ) { return; }
+
+		if ( is_single() ) {
+
+			the_title( '<h1 class="entry-title">', '</h1>' );
+
+		} else {
+
+			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+
+		}
+
+	} // title_entry()
+
+	/**
+	 * Returns the page title
+	 *
+	 * @hooked 		entry_header_content 		10
+	 *
+	 * @return 		mixed 							The entry title
+	 */
+	public function title_none() {
+
+		if ( ! is_home() ) { return; }
+
+		?><h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'text-domain' ); ?></h1><?php
+
+	} // title_none()
+
+	/**
+	 * Returns the page title
+	 *
+	 * @hooked 		tha_content_while_before 		10
+	 *
+	 * @return 		mixed 							The entry title
+	 */
+	public function title_page() {
+
+		if ( is_front_page() || is_home() ) { return; }
+		if ( ! is_page() ) { return; }
+
+		the_title( '<h1 class="page-title">', '</h1>' );
+
+	} // title_page()
+
+	/**
+	 * The search title markup
+	 *
+	 * @hooked 		tha_content_while_before
+	 *
+	 * @return 		mixed 							Search title markup
+	 */
+	public function title_search() {
+
+		if ( ! is_search() ) { return; }
+
+		?><header class="page-header">
+			<h1 class="page-title"><?php
+
+				printf( esc_html__( 'Search Results for: %s', 'westcpa' ), '<span>' . get_search_query() . '</span>' );
+
+			?></h1>
+		</header><!-- .page-header --><?php
+
+	} // title_search()
+
+	/**
+	 * Adds the single post title to the index
+	 *
+	 * @hooked 		tha_content_while_before
+	 *
+	 * @return 		mixed 							The single post title
+	 */
+	public function title_single_post() {
+
+		if ( ! is_home() && is_front_page() ) { return; }
+
+		?><header>
+			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+		</header><?php
+
+	} // title_single_post()
+
+	/**
+	 * Adds the site title markup
+	 *
+	 * @hooked 		westcpa_header_content 		10
+	 *
+	 * @return 		mixed 						The site title markup
+	 */
+	public function title_site() {
+
+		if ( is_front_page() && is_home() ) {
+
+			?><h1 class="site-title"><?php the_custom_logo(); ?></h1><?php
+
+		} else {
+
+			?><p class="site-title"><?php the_custom_logo(); ?></p><?php
+
+		}
+
+	} // title_site()
 
 } // class
 

@@ -10,7 +10,7 @@
 get_header();
 
 	?><div id="primary" class="content-area full-width">
-		<main id="main" class="site-main" role="main"><?php
+		<main id="main" role="main"><?php
 
 			/**
 			 * The tha_content_while_before action hook
@@ -25,8 +25,6 @@ get_header();
 				do_action( 'tha_entry_before' );
 
 				get_template_part( 'template-parts/content', 'home' );
-
-				get_template_part( 'template-parts/content', 'blocks' );
 
 				/**
 				 * The tha_entry_after action hook

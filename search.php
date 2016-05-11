@@ -10,14 +10,14 @@
 get_header();
 
 	?><section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main"><?php
+		<main id="main" role="main"><?php
 
 		if ( have_posts() ) :
 
 			/**
 			 * The tha_content_while_before action hook
 			 *
-			 * @hooked 		search_title
+			 * @hooked 		title_search
 			 */
 			do_action( 'tha_content_while_before' );
 

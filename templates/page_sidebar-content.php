@@ -11,7 +11,7 @@ get_header();
 get_sidebar( 'left' );
 
 	?><div id="primary" class="content-area sidebar-content">
-		<main id="main" class="site-main" role="main"><?php
+		<main id="main" role="main"><?php
 
 			/**
 			 * The tha_content_while_before action hook

@@ -10,13 +10,13 @@
 get_header();
 
 	?><div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" role="main">
 			<section class="error-404 not-found"><?php
 
 				/**
 				 * The westcpa_404_content action hook
 				 *
-				 * @hooked 		four_04_title 		10
+				 * @hooked 		title_404 		10
 				 */
 				do_action( 'westcpa_404_before' );
 

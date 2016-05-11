@@ -24,6 +24,10 @@
 	max-width 	: $size__max-width;
 	overflow 	: auto;
 	width 		: 100%;
+
+	@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
+		padding-top: 3em;
+	}
 }
 
 .content-area {
@@ -43,6 +47,19 @@
 			float 	: right;
 			margin 	: 0 0 0 2.5%;
 			width 	: 70%;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $blue;
+	}
+}
+
+.contact {
+	table {
+		th {
+			padding 	: 1.5em 0 0;
+			text-align 	: left;
 		}
 	}
 }

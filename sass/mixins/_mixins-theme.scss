@@ -1,38 +1,46 @@
-@mixin arrowfins( $color, $height: 1em, $angle: 0.4em ) {
+/**
+ * Styles a left-pointing diamond with matching fins on the parent element
+ *
+ * @param  {[type]} $color   [description]
+ * @param  {[type]} $height: 1em           [description]
+ * @param  {[type]} $left:   4.5em         [description]
+ * @return {[type]}          [description]
+ */
+@mixin diamond( $color, $height: 1em, $left: 4.5em ) {
+
+	$angle: $height / 2;
+
+	border-color 		: transparent;
+	border-left-color 	: $color;
+	border-style 		: solid;
+	border-width 		: $height 0.5em;
+	height 				: 100%;
+	left 				: -1em;
+	position 			: absolute;
+	top 				: 0;
 
 	&:before {
+		border-color 		: transparent;
+		border-right-color 	: $color;
+		border-style 		: solid;
+		border-width 		: $height ($height*2);
+		content 			: "";
+		display 			: block;
+		height 				: 0;
+		left 				: -$left;
+		position 			: absolute;
+		top 				: -$height;
+		width 				: 0;
+	}
+
+	&:after {
 		border-color 		: $color;
 		border-left-color 	: transparent;
 		border-style 		: solid;
-		border-width 		: $height $angle;
+		border-width 		: $height 0.5em;
 		content 			: "";
-		left 				: -$angle;
 		position 			: absolute;
-		top 				: 0;
-	}
-
-}
-
-@mixin diamond( $color, $height: 1em, $angle: 0.4em, $left: 4.75em ) {
-	border-color 		: transparent;
-	border-right-color 	: $color;
-	border-style 		: solid;
-	border-width 		: $height 2em;
-	display 			: block;
-	height 				: 0;
-	left 				: -$left;
-	position 			: absolute;
-	top 				: 0;
-	width 				: 0;
-
-	&:after {
-		border-color 		: transparent;
-		border-left-color 	: $color;
-		border-style 		: solid;
-		border-width 		: $height $angle;
-		content 			: "";
-		left 				: 2em;
-		position 			: absolute;
+		right 				: -($height * 0.75); // -0.75em;
 		top 				: -$height;
 	}
 }

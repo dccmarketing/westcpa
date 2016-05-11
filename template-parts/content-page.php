@@ -13,7 +13,10 @@
 
 	?><header class="page-header contentpage"><?php
 
-		the_title( '<h1 class="page-title">', '</h1>' );
+		/**
+		 * @hooked 		title_entry 		10
+		 */
+		do_action( 'entry_header_content' );
 
 	?></header><!-- .entry-header --><?php
 

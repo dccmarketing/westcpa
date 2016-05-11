@@ -69,15 +69,18 @@ if ( ! function_exists( 'westcpa_setup' ) ) :
 
 		/**
 		 * Enable Yoast Breadcrumb support
+		 *
+		 * Turning off for this site.
 		 */
-		add_theme_support( 'yoast-seo-breadcrumbs' );
+		//add_theme_support( 'yoast-seo-breadcrumbs' );
 
 		/**
 		 * Register Menus
 		 */
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'westcpa' ),
-			'social' => esc_html__( 'Social Links', 'westcpa' )
+			'social' => esc_html__( 'Social Links', 'westcpa' ),
+			'legal' => esc_html__( 'Legal', 'westcpa' )
 		) );
 
 	} // westcpa_setup()
@@ -150,5 +153,11 @@ require get_template_directory() . '/inc/main-menu-walker.php';
  * Load Employees Customizer
  */
 require get_template_directory() . '/inc/employees.php';
+
+/**
+ * Load Soliloquy Customizer
+ */
+require get_template_directory() . '/inc/soliloquy.php';
+
 
 

@@ -10,7 +10,7 @@
 get_header();
 
 	?><div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main"><?php
+		<main id="main" role="main"><?php
 
 		/**
 		 * The tha_content_while_before action hook

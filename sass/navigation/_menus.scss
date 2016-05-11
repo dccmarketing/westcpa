@@ -57,7 +57,7 @@
 				left 		: 0;
 				opacity 	: 0;
 				position	: absolute;
-				transition 	: visibility 0s ease 0.5s, opacity 0.5s ease;
+				transition 	: visibility 0s ease 0.25s, opacity 0.25s ease;
 				visibility 	: hidden;
 				z-index		: 99999;
 			} // breakpoint
@@ -92,11 +92,21 @@
 			li {
 				display 	: block;
 				text-align 	: left;
+				transition 	: background-color $trans__default;
 
 				&:last-child {
 
 					@media only screen and (max-width: $bp__sidemenu) {
 						padding-bottom: 0;
+					}
+				}
+
+				&:hover,
+				&:focus,
+				&.focus {
+
+					a {
+						background-color: $navy;
 					}
 				}
 
@@ -201,7 +211,8 @@
 		display: none;
 
 		@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
-			@include diamond( $navy, 1.25em, 0.55em, 4.9em );
+			display: block;
+			@include diamond( $navy, 1.25em, 5.5em );
 		}
 
 	}
@@ -257,8 +268,6 @@
 		right 			: 0;
 		width 			: 50%;
 		z-index 		: 99;
-
-		@include arrowfins( $navy, 1.25em, 0.55em );
 	}
 
 	@media only screen and (min-width: $bp__menu-button+1) {
@@ -268,7 +277,7 @@
 
 .wrap-submenu {
 	@media only screen and (max-width: $bp__menu-button) {
-		border-top: 3px solid $maroon;
+		border-top: 3px solid $navy;
 	}
 }
 

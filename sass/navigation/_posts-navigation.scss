@@ -2,7 +2,7 @@
 .posts-navigation,
 .post-navigation {
 
-	.site-main & {
+	[role="main"] & {
 		margin	: 0 0 $size__default-bot-marg;
 		overflow: hidden;
 	}

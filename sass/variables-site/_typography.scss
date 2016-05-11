@@ -9,7 +9,7 @@
 	font-style 	: normal;
 }
 
-$font__main 				: sans-serif;
+$font__main 				: serif;
 $font__code 				: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre 					: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body 	: 1.5;
@@ -22,7 +22,7 @@ $font__size-social 			: 36px;
 }
 
 .white-navy {
-	background-color: $navy;
+	background-color: $blue;
 	color 			: $light;
 }
 

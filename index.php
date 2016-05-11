@@ -15,14 +15,14 @@
 get_header();
 
 	?><div id="primary" class="content-area content-sidebar">
-		<main id="main" class="site-main" role="main"><?php
+		<main id="main" role="main"><?php
 
 		if ( have_posts() ) :
 
 			/**
 			 * The tha_content_while_before action hook
 			 *
-			 * @hooked 		single_post_title
+			 * @hooked 		title_single_post
 			 */
 			do_action( 'tha_content_while_before' );
 

@@ -42,7 +42,29 @@
 		} );
 	} );
 
+	wp.customize( 'home_block_content_1', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-block-content-1' ).text( to );
+		} );
+	} );
 
+	wp.customize( 'home_block_content_2', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-block-content-2' ).text( to );
+		} );
+	} );
+
+	wp.customize( 'home_block_content_3', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-block-content-3' ).text( to );
+		} );
+	} );
+
+	wp.customize( 'footer_locs_label', function( value ) {
+		value.bind( function( to ) {
+			$( '#footer-locs-label' ).text( to );
+		} );
+	} );
 
 /*
 	wp.customize( 'text_field', function( value ) {

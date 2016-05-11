@@ -45,6 +45,7 @@ function westcpa_register_panels( $wp_customize ) {
 		)
 	);
 
+
 	/*
 	// Theme Options Panel
 	$wp_customize->add_panel( 'theme_options',
@@ -84,6 +85,15 @@ function westcpa_register_panels( $wp_customize ) {
  */
 function westcpa_register_sections( $wp_customize ) {
 
+	$wp_customize->add_section( 'footer',
+		array(
+			'capability' 	=> 'edit_theme_options',
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'panel' 		=> 'theme_options',
+			'priority' 		=> 10,
+			'title' 		=> esc_html__( 'Footer', 'westcpa' )
+		)
+	);
 
 
 	/*
@@ -148,6 +158,31 @@ function westcpa_register_fields( $wp_customize ) {
 		)
 	);
 	$wp_customize->get_setting( 'tag_manager' )->transport = 'postMessage';
+
+
+
+	// Footer Locations Label Field
+	$wp_customize->add_setting(
+		'footer_locs_label',
+		array(
+			'default'  			=> '',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport' 		=> 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'footer_locs_label',
+		array(
+			'description' 	=> esc_html__( '', 'westcpa' ),
+			'label'  	=> esc_html__( 'Footer Locations Label', 'westcpa' ),
+			'priority' => 10,
+			'section'  	=> 'footer',
+			'settings' 	=> 'footer_locs_label',
+			'type' 		=> 'text'
+		)
+	);
+	$wp_customize->get_setting( 'footer_locs_label' )->transport = 'postMessage';
+
 
 
 
@@ -796,6 +831,18 @@ function westcpa_header_output() {
 
 	?></style><!-- Customizer CSS --><?php
 
+	if ( is_customize_preview() ) {
+
+		?><style type="text/css">
+
+			li.soliloquy-item:not(:first-child) {
+				display: none !important;
+			}
+
+		</style><!-- Customizer CSS --><?php
+
+	}
+
 } // westcpa_header_output()
 
 /**
@@ -1143,4 +1190,21 @@ function westcpa_country_list( $country = '' ) {
 	return $countries;
 
 } // westcpa_country_list()
+
+
+function dashicon_list( $dashicon ) {
+
+	$list[] = '';
+
+	if ( empty( $dashicon ) ) {
+
+		return $list;
+
+	} else {
+
+		return $list[$dashicon];
+
+	}
+
+} // dashicon_list()
 

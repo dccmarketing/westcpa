@@ -11,9 +11,16 @@
 
 	do_action( 'tha_entry_top' );
 
-	?><header class="page-header contentnone">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'westcpa' ); ?></h1>
-	</header><!-- .page-header --><?php
+	?><header class="page-header contentnone"><?php
+
+
+		/**
+		 * @hooked 		title_none 		10
+		 */
+		do_action( 'entry_header_content' );
+
+		//<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'westcpa' ); </h1>
+	?></header><!-- .page-header --><?php
 
 	do_action( 'tha_entry_content_before' );
 

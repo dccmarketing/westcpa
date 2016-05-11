@@ -4,20 +4,20 @@
 .entry-content:after,
 .comment-content:before,
 .comment-content:after,
-.site-header:before,
-.site-header:after,
+[role="banner"]:before,
+[role="banner"]:after,
 .site-content:before,
 .site-content:after,
-.site-footer:before,
-.site-footer:after {
+[role="contentinfo"]:before,
+[role="contentinfo"]:after {
 	@extend %clearfix;
 }
 
 .clear:after,
 .entry-content:after,
 .comment-content:after,
-.site-header:after,
+[role="banner"]:after,
 .site-content:after,
-.site-footer:after {
+[role="contentinfo"]:after {
 	@extend %clearfix-after;
 }

@@ -31,7 +31,8 @@ class westcpa_Actions_and_Filters {
 		add_filter( 'script_loader_src', 				array( $this, 'remove_cssjs_ver' ), 10, 2 );
 
 		add_filter( 'body_class', 						array( $this, 'page_body_classes' ) );
-		//add_action( 'wp_head', 						array( $this, 'background_images' ) );
+		//add_action( 'wp_head', 							array( $this, 'background_images' ) );
+		add_action( 'wp_head', 							array( $this, 'block_home_img' ) );
 		add_filter( 'get_search_form', 					array( $this, 'make_search_button_a_button' ) );
 		add_filter( 'embed_oembed_html', 				array( $this, 'youtube_add_id_attribute' ), 99, 4 );
 		add_action( 'init', 							array( $this, 'disable_emojis' ) );
@@ -85,7 +86,7 @@ class westcpa_Actions_and_Filters {
 	 */
 	public function admin_scripts_and_styles( $hook ) {
 
-		wp_enqueue_style( 'westcpa-admin', get_stylesheet_directory_uri() . '/admin.css' );
+		wp_enqueue_style( 'westcpa-admin', get_stylesheet_directory_uri() . '/styles/admin.css' );
 
 		// if ( 'nav-menus.php' != $hook ) { return; } // Page-specific scripts & styles after this
 
@@ -118,6 +119,44 @@ class westcpa_Actions_and_Filters {
 		</style><!-- Background Images --><?php
 
 	} // background_images()
+
+	/**
+	 * Creates a style tag in the header with the background image
+	 *
+	 * @return 		mixed 			Style tag
+	 */
+	public function block_home_img() {
+
+		if ( ! is_front_page() ) { return; }
+
+		$img1 = get_field( 'image_block_1' );
+		$img2 = get_field( 'image_block_2' );
+
+		if ( empty( $img1 ) && empty( $img2 ) ) { return; }
+
+		//showme( $img );
+
+		?><style><?php
+
+			if ( ! empty( $img1 ) ) {
+
+				?>@media screen and (min-width:768px){
+					#bhi1{background-image:url(<?php echo esc_url( $img1['url'] ); ?>);
+				}<?php
+
+			}
+
+			if ( ! empty( $img2 ) ) {
+
+				?>@media screen and (min-width:768px){
+					#bhi2{background-image:url(<?php echo esc_url( $img2['url'] ); ?>);
+				}<?php
+
+			}
+
+		?></style><!-- Block Home Image --><?php
+
+	} // block_home_img()
 
 	/**
 	 * Flush out the transients used in westcpa_categorized_blog.
@@ -240,7 +279,7 @@ class westcpa_Actions_and_Filters {
 	 */
 	public function login_scripts() {
 
-		wp_enqueue_style( 'westcpa-login', get_stylesheet_directory_uri() . '/login.css', 10, 2 );
+		wp_enqueue_style( 'westcpa-login', get_stylesheet_directory_uri() . '/styles/login.css', 10, 2 );
 		wp_enqueue_script( 'enquire', '//cdnjs.cloudflare.com/ajax/libs/enquire.js/2.1.2/enquire.min.js', array(), '20150804', true );
 
 	} // login_scripts()
@@ -364,7 +403,7 @@ class westcpa_Actions_and_Filters {
 
 		wp_enqueue_script( 'westcpa-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
-		wp_enqueue_style( 'dashicons' );
+		// wp_enqueue_style( 'dashicons' );
 
 		wp_enqueue_script( 'westcpa-search', get_template_directory_uri() . '/js/hidden-search.min.js', array(), '20150807', true );
 
@@ -373,6 +412,8 @@ class westcpa_Actions_and_Filters {
 		wp_enqueue_script( 'westcpa-menu-scripts', get_template_directory_uri() . '/js/menu-scripts.min.js', array( 'jquery', 'enquire' ), '20160429', true );
 
 		wp_enqueue_style( 'westcpa-fonts', $this->fonts_url(), array(), null );
+
+		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' );
 
 	} // public_scripts_and_styles()
 
@@ -459,6 +500,26 @@ class westcpa_Actions_and_Filters {
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', '_s' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer Middle', 'westcpa' ),
+			'id'            => 'footer-middle',
+			'description'   => esc_html__( 'Add widgets here.', '_s' ),
+			'before_widget' => '<section id="%1$s" class="block widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer Right', 'westcpa' ),
+			'id'            => 'footer-right',
+			'description'   => esc_html__( 'Add widgets here.', '_s' ),
+			'before_widget' => '<section id="%1$s" class="block widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',

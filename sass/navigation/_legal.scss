@@ -1,0 +1,21 @@
+.nav-legal {
+	ul {
+		@include listreset();
+
+		@media only screen and (min-width: $bp__tablet) {
+			display 		: flex;
+			flex-wrap 		: wrap;
+			justify-content : center;
+		}
+
+		@media only screen and (max-width: $bp__tablet) {
+			margin: 0.5em 0;
+		}
+	}
+
+	li {
+		padding 	: 1em;
+		text-align 	: center;
+		width 		: auto;
+	}
+}
