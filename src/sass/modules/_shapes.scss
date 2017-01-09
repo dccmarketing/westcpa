@@ -1,0 +1,35 @@
+.triangle {
+	border-color	: transparent;
+	border-style	: solid;
+	border-width	: 5px;
+	height 			: 0;
+	width 			: 0;
+}
+
+.triangle-up {
+	@extend .triangle;
+	
+	border-top-width	: 0;
+	border-bottom-color	: currentColor;
+}
+
+.triangle-right {
+	@extend .triangle;
+	
+	border-right-width	: 0;
+	border-left-color	: currentColor;
+}
+
+.triangle-left {
+	@extend .triangle;
+	
+	border-left-width 	: 0;
+	border-right-color 	: currentColor;
+}
+
+.triangle-down {
+	@extend .triangle;
+	
+	border-bottom-width : 0;
+	border-top-color	: currentColor;
+}

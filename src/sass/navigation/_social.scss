@@ -1,0 +1,19 @@
+.social-menu-items {
+	@include resetlist();
+}
+
+.social-menu-item {
+	display 	: inline-block;
+	line-height : 1.5;
+	margin 		: 0 0.5em;
+	position 	: relative;
+	
+	svg {
+		height 	: $font__size-social;
+		width 	: $font__size-social;
+	}
+}
+
+.social-menu-item-link {
+	display: block;
+}

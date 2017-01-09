@@ -1,0 +1,29 @@
+/**
+ * Close menu button.
+ */
+.close-tablet-menu-btn {
+	@include resetbutton();
+	display : none;
+	padding	: .5em 1em;
+	width 	: 100%;
+
+	&:focus,
+	&:active {
+		box-shadow	: inset 0 0 5px $dark;
+		outline 	: none;
+	}
+	
+	@include tablet-to-laptop {
+		display: block;
+	}
+}
+
+.close-btn-text {
+	pointer-events: none;
+
+	&:before,
+	&:after {
+		border 	: 5px solid transparent;
+		content : '';
+	}
+}

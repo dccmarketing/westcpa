@@ -1,0 +1,54 @@
+/**
+ * Toggle Button.
+ */
+.menu-primary-toggle {
+	@include resetbutton( $maroon, $maroon, $light );
+
+	color 			: $light;
+	font-size		: 1.25em;
+	line-height		: 1.5;
+	outline 		: 0;
+	padding 		: 0.5em;
+	width			: 100%;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border		: none;
+	}
+
+	&:focus,
+	&:active {
+		box-shadow: inset 0 0 5px $light;
+	}
+
+	@include laptop-up {
+		display 		: none;
+	}
+}
+
+.menu-primary-submenu-toggle {
+	@include resetbutton();
+
+	color 		: $light;
+	cursor 		: pointer;
+	line-height	: 1.5;
+	width 		: 2em;
+
+	@include laptop-up {
+		display: none;
+	}
+}
+
+.menu-primary-submenu-icon {
+	display: none;
+
+	@include laptop-up {
+		display 	: inline-block;
+		margin-left : 0.25em;
+	}
+}
+
+.close-btn-text {
+	color: $light;
+}

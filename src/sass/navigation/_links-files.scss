@@ -1,0 +1,68 @@
+.target-blank {
+	position: relative;
+	
+	&:hover:after {
+		content 	: "\f504";
+		font-family : 'dashicons';
+		position 	: absolute;
+		right 		: -1em;
+		top 		: -4px;
+	}
+}
+
+$files: 'pdf' '#FF0000' '\f497',
+		'ai' 'inherit' '\f497',
+		'eps' 'inherit' '\f497',
+		'psd' 'inherit' '\f497',
+		'svg' 'inherit' '\f497',
+		'swf' 'inherit' '\f497',
+
+		'doc' '#00188F' '\f491',
+		'docx' '#00188F' '\f491',
+		'txt' 'inherit' '\f491',
+		'rtf' 'inherit' '\f491',
+		
+		'xls' '#007233' '\f495',
+		'xlsx' '#007233' '\f495',
+
+		'ppt' '#dd5900' '\f496',
+		'pptx' '#dd5900' '\f496',
+
+		'zip' 'inherit' '\f501',
+		'tar' 'inherit' '\f501',
+		'gz' 'inherit' '\f501',
+		'dmg' 'inherit' '\f501',
+		'tgz' 'inherit' '\f501',
+
+		'aac' 'inherit' '\f500',
+		'flac' 'inherit' '\f500',
+		'm4a' 'inherit' '\f500',
+		'm4p' 'inherit' '\f500',
+		'mp3' 'inherit' '\f500',
+		'ogg' 'inherit' '\f500',
+		'wav' 'inherit' '\f500',
+		'wma' 'inherit' '\f500',
+
+		'webm' 'inherit' '\f490',
+		'mov' 'inherit' '\f490',
+		'wmv' 'inherit' '\f490',
+		'mp4' 'inherit' '\f490',
+		'm4v' 'inherit' '\f490',
+		'mpg' 'inherit' '\f490',
+		'mp2' 'inherit' '\f490',
+		'mpeg' 'inherit' '\f490';
+
+@each $file in $files {
+	[href*=".#{nth($file, 1)}"] {
+
+		&:after {
+			color: #{nth($file, 2)};
+			content 		: "#{nth($file, 3)}";
+			display 		: inline-block;
+			font-family 	: 'dashicons';
+			line-height 	: 1;
+			speak 			: none;
+			text-decoration : none;
+		}
+	}
+}

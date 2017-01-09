@@ -1,0 +1,10 @@
+.footer-locs {
+	ul {
+		@include resetlist();
+	}
+
+	p,
+	.loc-title {
+		margin: 0;
+	}
+}

@@ -1,0 +1,23 @@
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+[role="banner"]:before,
+[role="banner"]:after,
+.site-content:before,
+.site-content:after,
+[role="contentinfo"]:before,
+[role="contentinfo"]:after {
+	@include clearfix();
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+[role="banner"]:after,
+.site-content:after,
+[role="contentinfo"]:after {
+	@include clearfix-after();
+}

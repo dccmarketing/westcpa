@@ -1,0 +1,140 @@
+/**
+ * Tablet menu - slide in from left - on top of content
+ */
+@mixin slide-ontop-from-left( $menu-width ) {
+	@include tablet-to-laptop {
+		.primary-menu-items-0 {
+			background-color: $dark;
+			bottom 			: 0;
+			display 		: block;
+			height 			: 100%;
+			left 			: 0;
+			overflow 		: auto;
+			position 		: fixed;
+			top 			: 0;
+			transform 		: translateX( -$menu-width);
+			transition 		: transform 0.4s ease;
+			width 			: $menu-width;
+			z-index 		: 9999;
+
+			@include adminbar( 'padding-top' );
+
+			&[aria-expanded="true"] {
+				transform 	: translateX(0);
+			}
+		}
+
+		.menu-primary-toggle {
+			position 		: absolute;
+			right 			: 0;
+			width 			: $menu-width;
+			z-index 		: 9999;
+		}
+	}
+}
+
+/**
+ * Tablet menu - slide in from right - on top of content
+ */
+@mixin slide-ontop-from-right( $menu-width ) {
+	@include tablet-to-laptop {
+		.primary-menu-items-0 {
+			background-color: $dark;
+			bottom 			: 0;
+			display 		: block;
+			height 			: 100%;
+			right 			: 0;
+			overflow 		: auto;
+			position 		: fixed;
+			top 			: 0;
+			transform 		: translateX( $menu-width);
+			transition 		: transform 0.4s ease;
+			width 			: $menu-width;
+			z-index 		: 9999;
+
+			@include adminbar( 'padding-top' );
+
+			&[aria-expanded="true"] {
+				transform 	: translateX(0);
+			}
+		}
+
+		.menu-primary-toggle {
+			position 		: absolute;
+			left 			: 0;
+			width 			: $menu-width;
+			z-index 		: 9999;
+		}
+	}
+}
+
+@mixin push-from-left( $menu-width ) {
+	@include tablet-to-laptop {
+		.primary-menu-items-0 {
+			background-color: $dark;
+			bottom 			: 0;
+			height 			: 100%;
+			left 			: 0;
+			overflow 		: auto;
+			position 		: fixed;
+			top 			: 0;
+			transform 		: translateX( -$menu-width);
+			transition 		: transform 0.4s ease;
+			width 			: $menu-width;
+			z-index 		: 9999;
+
+			@include adminbar( 'padding-top' );
+		}
+
+		.menu-primary-toggle {
+			position 		: absolute;
+			right 			: 0;
+			transition 		: transform 0.4s ease;
+			width 			: $menu-width;
+			z-index 		: 9999;
+		}
+
+		&.nav-primary-open {
+			.menu-primary-toggle {
+				transform: translateX(-300px);
+			}
+		}
+	}
+}
+
+/**
+ * Tablet menu - pushes content aside from right
+ */
+@mixin push-from-right( $menu-width ) {
+	@include tablet-to-laptop {
+		.primary-menu-items-0 {
+			background-color: $dark;
+			bottom 			: 0;
+			height 			: 100%;
+			right 			: 0;
+			overflow 		: auto;
+			position 		: fixed;
+			top 			: 0;
+			transform 		: translateX( $menu-width);
+			transition 		: transform 0.4s ease;
+			width 			: $menu-width;
+			z-index 		: 9999;
+
+			@include adminbar( 'padding-top' );
+		}
+
+		.menu-primary-toggle {
+			position 		: absolute;
+			left 			: 0;
+			transition 		: transform 0.4s ease;
+			width 			: $menu-width;
+			z-index 		: 9999;
+		}
+
+		&.nav-primary-open {
+			.menu-primary-toggle {
+				transform: translateX(300px);
+			}
+		}
+	}
+}

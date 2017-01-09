@@ -1,0 +1,20 @@
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	main & {
+		margin	: 0 0 $size__default-bot-marg;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float	: left;
+		width	: 50%;
+	}
+
+	.nav-next {
+		float		: right;
+		text-align 	: right;
+		width		: 50%;
+	}
+}

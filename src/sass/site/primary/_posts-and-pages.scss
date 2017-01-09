@@ -1,0 +1,65 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin 		: 1.5em 0 0;
+	word-wrap 	: break-word;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.site-content {
+	margin 		: 0 auto $size__default-bot-marg;
+	max-width 	: $size__max-width;
+	overflow 	: auto;
+	width 		: 100%;
+
+	@include tablet-to-laptop {
+		padding-top: 3em;
+	}
+}
+
+.content-area {
+	display 	: flex;
+	flex-wrap	: wrap;
+	overflow 	: auto;
+	padding 	: 1em;
+	width 		: 100%;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $blue;
+	}
+}
+
+main {
+	@include tablet-landscape-up {
+		.content-sidebar & {
+			margin 	: 0 2.5% 0 0;
+			width 	: 70%;
+		}
+
+		.sidebar-content & {
+			margin 	: 0 0 0 2.5%;
+			width 	: 70%;
+		}
+	}
+}
+
+.contact {
+	table {
+		th {
+			padding 	: 1.5em 0 0;
+			text-align 	: left;
+		}
+	}
+}

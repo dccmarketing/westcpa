@@ -1,0 +1,150 @@
+/**
+ * Custom styling for the admin
+ */
+
+@import "variables-site/vars";
+@import "mixins/mixins";
+
+.wp-admin {
+
+}
+
+// Hide SimpleMap Update Nag
+.toplevel_page_simplemap,
+.post-type-sm-location {
+	.update-nag {
+		display: none;
+	}
+}
+
+.image-upload-preview {
+	background-repeat 	: no-repeat;
+	background-position : center center;
+	background-size 	: cover;
+	height 				: 150px;
+	width 				: 150px;
+}
+
+.bordered-img-preview {
+	border: 4px dashed $ltmed;
+}
+
+.float-right {
+	float: right;
+}
+
+.hide {
+	display		: none;
+	opacity		: 0;
+	visibility	: hidden;
+}
+
+.field-error {
+	background-color: $errorred;
+	color 			: $light;
+	font-weight 	: 700;
+	padding 		: 0.5em;
+}
+
+.date-field-icon,
+.time-field-icon {
+	background-color: $ltgray;
+	border 			: 1px solid $ltmed;
+	border-radius 	: 3px 0 0 3px;
+	box-sizing 		: border-box;
+	height 			: 25px;
+	margin-right 	: -2px;
+	padding-right 	: 2px;
+	width 			: 25px;
+}
+
+.field-date,
+.field-time {
+	margin: 0;
+}
+
+.repeater {
+	box-sizing 		: border-box;
+	list-style 		: none;
+	margin-bottom 	: 1em;
+	width 			: 100%;
+
+	& * {
+		box-sizing: border-box;
+	}
+
+	.upload-file {
+		display 	: block;
+		text-align 	: right;
+	}
+}
+
+.remove-repeater {
+	color			: #a00;
+	text-decoration : none;
+
+	&:hover {
+		color 			: red;
+		text-decoration : underline;
+	}
+}
+
+.repeater-handle {
+	background-color: #fafafa;
+	cursor 			: move;
+	overflow 		: auto;
+	position		: relative;
+	width 			: 100%;
+	border 			: 1px solid #ddd;
+	padding 		: 0.75em;
+}
+
+.repeater-content {
+	border 		: 1px solid #ddd;
+	border-top	: none;
+	padding 	: 0.75em;
+}
+
+.repeater-edit-btn {
+	@include resetbutton();
+	cursor 			: pointer;
+	height 			: 100%;
+	margin 			: 0;
+	outline 		: 0;
+	overflow 		: hidden;
+	position 		: absolute;
+	right 			: 0;
+	top 			: 0;
+	width 			: 30px;
+}
+
+.repeater-toggle-arrow-open {
+	color 					: #a0a5aa;
+	display 				: inline-block;
+	font-family 			: dashicons;
+	font-size 				: 20px;
+	font-style 				: normal;
+	font-weight 			: 400px;
+	height 					: 20px;
+	line-height 			: 1;
+	text-align 				: center;
+	text-decoration 		: inherit;
+	transition 				: 0.4s ease;
+	vertical-align 			: top;
+	-webkit-font-smoothing 	: antialiased;
+	width 					: 20px;
+
+	&:before {
+		content: "\f142";
+	}
+}
+
+.repeater-toggle-arrow-closed {
+	&:before {
+		content: "\f140";
+	}
+}
+
+.repeater-more {
+	text-align: right;
+}

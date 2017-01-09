@@ -1,0 +1,106 @@
+/**
+ * Custom styling for the login form page
+ */
+
+@import "variables-site/vars";
+@import "mixins/mixins";
+
+h1 {
+
+	a {
+		height 	: 175px;
+		width 	: 320px; // max: 320px
+
+		@include bgimage( 'images/logo.jpg' );
+	}
+}
+
+[name="loginform"] {
+	background-color: $med;
+	padding-bottom 	: 26px;
+
+	p {
+
+	}
+
+	label {
+		color: $light;
+	}
+}
+
+.input { // username and password fields
+	background-color: $med;
+	border 			: 0;
+	color 			: $light;
+
+	&:focus,
+	&:active {
+		border 		: 1px solid $med;
+		box-shadow 	: 0 0 5sdpx $med;
+	}
+}
+
+.submit { // submit button p tag
+
+}
+
+.button-primary { // submit button itself
+	background-color: $med;
+	border 			: 0;
+	border-radius 	: 0;
+	box-shadow 		: none;
+	color 			: $light;
+	font-size 		: 1.25em;
+	font-weight 	: 700;
+	text-shadow 	: none;
+	text-transform 	: uppercase;
+
+	&:hover {
+		background-color: darken( $med, 25% );
+		border-color 	: transparent;
+		color 			: $light;
+	}
+}
+
+[href$="?action=lostpassword"] {
+	color: $dark;
+
+	&:hover {
+		color: $med;
+	}
+}
+
+
+#backtoblog {
+
+	a {
+		color: $dark;
+
+		&:hover {
+			color: $med;
+		}
+	}
+}
+
+.forgetmenot { // remember me checkbox p tag
+
+	label {
+
+	}
+}
+
+[name="rememberme"] { // checkbox itself
+	background-color: $med;
+	color 			: $light;
+
+	&:checked {
+
+		&:before {
+			color: $med;
+		}
+	}
+}
+
+.login { // page body tag
+	background: $light;
+}

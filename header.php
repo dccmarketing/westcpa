@@ -55,7 +55,7 @@ do_action( 'tha_body_top' );
 	 */
 	do_action( 'tha_header_before' );
 
-	?><header id="masthead" role="banner"><?php
+	?><header class="site-header" id="masthead" role="banner"><?php
 
 		/**
 		 * The tha_header_top action hook

@@ -26,7 +26,7 @@
 	 */
 	do_action( 'tha_footer_before' );
 
-	?><footer id="colophon" role="contentinfo"><?php
+	?><footer class="site-footer" id="colophon" role="contentinfo"><?php
 
 		/**
 		 * The tha_footer_top action hook

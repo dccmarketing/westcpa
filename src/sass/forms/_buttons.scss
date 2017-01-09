@@ -1,0 +1,29 @@
+button,
+[role="button"],
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	background 			: $med;
+	border 				: 1px solid;
+	border-color 		: $med $med $med;
+	border-radius		: 3px;
+	box-shadow 			: inset 0 1px 0 $medshadow, inset 0 15px 17px $medshadow, inset 0 -5px 12px $medshadow;
+	color 				: $transdark;
+	@include font-size(0.75);
+	line-height 		: 1;
+	padding 			: .6em 1em .4em;
+	text-shadow 		: 0 1px 0 $darkshadow;
+
+	&:hover {
+		background-color 	: lighten( $med, 10% );
+		border-color 		: $med $med $darkmed;
+		color 				: $light;
+	}
+
+	&:focus,
+	&:active {
+		background-color 	: darken( $med, 10% );
+		border-color 		: $darkmed $med $med;
+		color 				: $light;
+	}
+}

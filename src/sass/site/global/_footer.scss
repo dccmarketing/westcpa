@@ -1,0 +1,39 @@
+.site-footer {
+	background-color: $blue;
+	color 			: $light;
+	width 			: 100%;
+
+	a {
+		color 			: $light;
+		text-decoration : none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.widget-title {
+		background-color: transparent;
+	}
+
+	.textwidget {
+		ul {
+			@include resetlist();
+		}
+	}
+}
+
+.wrap-footer {
+	margin 			: 0 auto;
+	max-width 		: $size__max-width;
+	overflow 	: auto;
+	padding 	: 1em;
+
+}
+
+.site-info {
+	margin-top 	: 1.5em;
+	overflow 	: auto;
+	text-align 	: center;
+	width 		: 100%;
+}

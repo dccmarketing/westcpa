@@ -7,157 +7,57 @@
  * @package West_CPA
  */
 
-if ( ! function_exists( 'westcpa_setup' ) ) :
-
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function westcpa_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 */
-		load_theme_textdomain( 'westcpa', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
-
-		/*
-		 * Enable support for Post Formats.
-		 * See https://developer.wordpress.org/themes/functionality/post-formats/
-		 */
-		/*add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );*/
-
-		// Set up the WordPress core custom logo feature.
-		add_theme_support( 'custom-logo', array(
-			'flex-width' => true
-		) );
-
-		/**
-		 * Enable Yoast Breadcrumb support
-		 *
-		 * Turning off for this site.
-		 */
-		//add_theme_support( 'yoast-seo-breadcrumbs' );
-
-		/**
-		 * Register Menus
-		 */
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'westcpa' ),
-			'social' => esc_html__( 'Social Links', 'westcpa' ),
-			'legal' => esc_html__( 'Legal', 'westcpa' )
-		) );
-
-	} // westcpa_setup()
-
-endif; // westcpa_setup
-
-add_action( 'after_setup_theme', 'westcpa_setup' );
+/**
+ * Set the constants used throughout.
+ */
+define( 'PARENT_THEME_SLUG', 'west-cpa' );
+define( 'PARENT_THEME_VERSION', '1.0.1' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global 		int 		$content_width
+ * Load Imagekit.
  */
-function westcpa_content_width() {
-
-	$GLOBALS['content_width'] = apply_filters( 'westcpa_content_width', 640 );
-
-} // westcpa_content_width()
-
-add_action( 'after_setup_theme', 'westcpa_content_width', 0 );
+require get_stylesheet_directory() . '/functions/imagekit.php';
 
 /**
- * Implement the Custom Header feature.
+ * Load Themekit.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_stylesheet_directory() . '/functions/themekit.php';
 
 /**
- * Custom template tags for this theme.
+ * Load menu walkers.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_stylesheet_directory() . '/classes/class-menu-walker.php';
 
 /**
- * Customizer additions.
+ * Load Autoloader
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_stylesheet_directory() . '/classes/class-autoloader.php';
+
 
 /**
- * Load Jetpack compatibility file.
+ * Create an instance of each class and load the hooks function.
  */
-require get_template_directory() . '/inc/jetpack.php';
+$classes[] = 'Automattic';
+$classes[] = 'Blocks';
+$classes[] = 'Critical';
+$classes[] = 'Customizer';
+$classes[] = 'Employees';
+$classes[] = 'Menukit';
+$classes[] = 'Setup';
+$classes[] = 'Slushicons';
+$classes[] = 'Soliloquy';
+$classes[] = 'Themehooks';
+//$classes[] = 'Users';
+$classes[] = 'Utilities';
 
-/**
- * Load Slushman Themekit
- */
-require get_template_directory() . '/inc/themekit.php';
+foreach ( $classes as $class ) {
 
-/**
- * Load Actions and Filters
- */
-require get_template_directory() . '/inc/actions-and-filters.php';
+	$class_name 	= 'westcpa_' . $class;
+	$class_obj 		= new $class_name();
 
-/**
- * Load Themehooks
- */
-require get_template_directory() . '/inc/themehooks.php';
+	add_action( 'after_setup_theme', array( $class_obj, 'hooks' ) );
 
-/**
- * Load Slushman Menukit
- */
-require get_template_directory() . '/inc/menukit.php';
-
-/**
- * Load Main Menu Walker
- */
-require get_template_directory() . '/inc/main-menu-walker.php';
-
-/**
- * Load Employees Customizer
- */
-require get_template_directory() . '/inc/employees.php';
-
-/**
- * Load Soliloquy Customizer
- */
-require get_template_directory() . '/inc/soliloquy.php';
+}
 
 
 

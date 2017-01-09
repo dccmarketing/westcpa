@@ -1,0 +1,41 @@
+/**
+ * Menu Item Links.
+ */
+.primary-menu-item-link {
+	align-items 	: center;
+	color 			: $light;
+	display			: flex;
+	font-size 		: 1.25em;
+	padding 		: 1.5em;
+	text-decoration	: none;
+	transition 		: $trans__default;
+	white-space 	: nowrap;
+
+	@include laptop-down {
+		justify-content	: space-between;
+	}
+
+	&:focus,
+	&:active {
+		outline-color: $med;
+	}
+	
+	&:hover,
+	&:visited {
+		color: $light;
+	}
+
+}
+
+.primary-menu-item-link-1 { // 2nd-level menu item link, first submenu
+	@include phone-down {
+		padding-left: 2em;
+	}
+}
+
+.primary-menu-item-link-2 { // 3rd-level menu item link, second submenu
+	@include phone-down {
+		border-left : none;
+		padding-left: 3em;
+	}
+}

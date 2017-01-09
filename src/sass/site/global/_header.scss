@@ -1,0 +1,50 @@
+.site-header {
+	// DO NOT ADD PADDING HERE! - it screws up menus
+	background-color: $blue;
+	overflow 		: auto;
+	
+	@include tablet-portrait-up {
+		overflow 	: visible;
+	}
+}
+
+.site-branding {
+	align-items : center;
+	display 	: flex;
+	flex-wrap 	: wrap;
+	margin		: 0 auto;
+}
+
+.site-title {
+	text-align	: center;
+	width 		: 100%;
+
+	@include tablet-portrait-up {
+		padding: 0 1em;
+	}
+
+	a {
+		color 			: $char;
+		text-decoration : none;
+	}
+}
+
+.site-description {
+	font-size 		: 1.5em;
+	position 		: relative;
+	text-align		: center;
+	text-transform 	: uppercase;
+//	margin-left 	: 3em;
+//  padding 		: 0.25em 4em;
+//	width 			: 95%;
+
+/* 	@include tablet-portrait-up {
+		padding-left 	: 0;
+		padding-right 	: 0em;
+	} */
+
+/* 	.diamond {
+		@include diamond( $maroon );
+	} */
+}
+

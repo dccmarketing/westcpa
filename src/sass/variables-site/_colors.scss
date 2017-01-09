@@ -1,0 +1,30 @@
+$light		: #fff;
+$ltgray 	: #f7f7f7;
+$ltmed 		: #ddd;
+$med		: #ccc;
+$darkmed 	: darken( $med, 25% );
+$dark		: #020202;
+$darkdark 	: darken( $dark, 25% );
+
+$ltyellow 	: #fff9c0; // bg for inserted text
+$tealblue 	: #21759b; // text color for a11y focus
+
+$ltshadow	: rgba(0, 0, 0, 0.05);
+$medshadow	: rgba(255, 255, 255, 0.5);
+$darkshadow	: rgba(255, 255, 255, 0.8);
+
+$transdark 	: rgba( $dark, 0.8 );
+
+$errorred 	: #dc3232;
+
+
+$maroon		: #a1171b;
+$navy 		: #001a28;
+$char 		: lighten( #000, 35% );
+$blue 		: #004c75;
+
+$transnavy 	: rgba( $blue, 0.85 );
+$transred 	: rgba( $maroon, 0.85 );
+
+
+$bg__tablet-menu: $transnavy;

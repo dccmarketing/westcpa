@@ -1,0 +1,18 @@
+a {
+	color: $blue;
+
+	&:visited {
+		color: $blue;
+	}
+
+	&:active,
+	&:hover {
+		color: $maroon;
+	}
+
+	&:focus {
+		color 			: $maroon;
+		outline-color 	: $med;
+	}
+
+}

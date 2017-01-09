@@ -1,0 +1,33 @@
+/**
+ * Slide on top of content from bottom.
+ */
+.tablet-slide-ontop-from-bottom {
+	.primary-menu-items-0 {
+		@include tablet-to-laptop {
+			background-color: $bg__tablet-menu;
+			bottom 			: 0;
+			display 		: block;
+			left 			: 0;
+			overflow 		: auto;
+			position 		: absolute;
+			right 			: 0;
+			transform 		: translateY( 100%);
+			transition 		: transform 0.4s ease;
+			width 			: 100%;
+			z-index 		: 9999;
+
+			&[aria-expanded="true"] {
+				transform 	: translateY(0);
+			}
+		}
+	}
+
+	.menu-primary-toggle {
+		@include tablet-to-laptop {
+			position 		: absolute;
+			right 			: 0;
+			width 			: $size__menu_width;
+			z-index 		: 9999;
+		}
+	}
+}

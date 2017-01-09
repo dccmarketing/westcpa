@@ -1,0 +1,60 @@
+/**
+ * Menus
+ */
+.primary-menu-items { // all the ULs
+	@include resetlist();
+	
+	@include laptop-up {
+		@include center();
+	}
+}
+
+.primary-menu-items-closed {
+	@include tablet-down {
+		display: none;
+	}
+}
+
+.primary-menu-items-0 { // the 1st-level menu
+	@include phone-down {
+		background-color: $maroon;
+		display			: none;
+
+		&[aria-expanded="true"] {
+			display: block;
+		}
+	}
+
+	ul { // all the submenus
+		@include laptop-up {
+			box-shadow 	: 0 3px 3px rgba(0, 0, 0, 0.2);
+			display 	: block;
+			left 		: 0;
+			opacity 	: 0;
+			position 	: absolute;
+			transition 	: visibility 0s ease, opacity 0.5s ease;
+			visibility 	: hidden;
+			z-index 	: 99999;
+		}
+	}
+}
+
+.primary-menu-items-1 { // 2nd-level menu
+	background-color: $blue;
+	display			: inherit;
+	
+	@include tablet-portrait-up{
+		background-color: $maroon;
+	}
+	
+	@include laptop-up{
+		background-color: $blue;
+	}	
+
+	a { // all the links under the 2nd-level menu
+		@include laptop-up {
+			min-width: 200px;
+		}
+	}
+
+}

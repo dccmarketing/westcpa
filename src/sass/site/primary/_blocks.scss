@@ -1,0 +1,21 @@
+.blocks {
+	margin-bottom 	: 1.5em;
+
+	@include adminbar-up {
+		display 		: flex;
+		//flex-wrap 		: wrap;
+		justify-content : space-between;
+	}
+}
+
+.block {
+	flex-grow 		: 1;
+	padding 		: 1em;
+	text-align 		: center;
+}
+
+.flex-center {
+	align-items 	: center;
+	display 		: flex;
+	justify-content : center;
+}

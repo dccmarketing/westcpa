@@ -1,0 +1,27 @@
+.nav-legal {
+	
+}
+
+.nav-legal-items {
+	@include resetlist();
+	
+	@include tablet-portrait-up {
+		display 		: flex;
+		flex-wrap 		: wrap;
+		justify-content : center;
+	}
+	
+	@include tablet-down {
+		margin: 0.5em 0;
+	}
+}
+
+.nav-legal-item {
+	padding 	: 1em;
+	text-align 	: center;
+	width 		: auto;
+}
+
+.nav-legal-link {
+	
+}

@@ -1,0 +1,343 @@
+/**
+ * Adds spacing for the WP Admin bar. Default property is "top".
+ *
+ * @param  string 	$prop 	The CSS property to affect
+ * @param  int 		$size 	Additional space needed
+ */
+@mixin adminbar( $prop: 'top', $size: 0 ) {
+
+	.admin-bar & {
+
+		#{$prop}: $size__wp-admin-bar-1 + $size;
+
+		@include adminbar-up {
+			#{$prop}: $size__wp-admin-bar-2 + $size;
+		}
+	}
+}
+
+/**
+ * Sets the appearance of an item
+ *
+ * Possible values:
+ *     normal
+ *     icon: like a small picture
+ *     window: like a viewport
+ *     button: like a button
+ *     menu: set of options to choose from
+ *     field: like an input field
+ */
+@mixin appearance( $type ) {
+	appearance			: $type;
+	-moz-appearance		: $type;
+	-webkit-appearance	: $type;
+}
+
+/**
+ * Sets the element's width and margin based on the quantity of that element (up to 4).
+ *
+ * Margins are optional. If the parent uses space-between, they aren't needed.
+ *
+ * @param 	string 		$element: 'li'          The element to look for, default is li
+ * @param 	float 		$margin:  1.33          Margin width, as a percent
+ * @parms 	bool 		$margins: false			TRUE to include the margins, default is false
+ * @param 	int 		$offset:  1             How much to offset the order for flexbox
+ */
+@mixin autowidthflex( $element: 'li', $margin: 1.33, $margins: false, $offset: 1 ) {
+
+	@for $i from 1 through 4 {
+
+		$margperc: percentage( $margin / 100 );
+
+		&:first-of-type:nth-last-of-type(#{$i}),
+		&:first-of-type:nth-last-of-type(#{$i}) ~ #{$element} {
+			width: percentage( ( ( 100 / $i ) - ( $margin * 2 ) ) / 100 );
+		}
+
+		@if $margins {
+			&:first-of-type:nth-last-of-type(#{$i}),
+			&:first-of-type:nth-last-of-type(#{$i}) ~ #{$element} {
+				margin 	: 0 $margperc;
+			}
+
+			&:first-of-type {
+				margin-left : 0 !important;
+			}
+
+			&:last-of-type {
+				margin-right: 0 !important;
+			}
+		}
+	}
+
+	@for $j from 0 through 3 {
+		&:nth-of-type(#{$j + 1}) {
+			order: #{$j + $offset};
+		}
+	}
+}
+
+/**
+ * Adds a background image.
+ * @param 		string 		$image 			The URL to the image.
+ * @param 		string 		$position 		The background-position property value..
+ * @param 		string 		$size 			The background-size property value.
+ * @param 		string 		$attach 		The background-attachment property value.
+ * @param 		string 		$repeat 		The background-repeat property value.
+ */
+@mixin bgimage ( $image, $position: center center, $size: cover, $attach: scroll, $repeat: no-repeat ) {
+	background-attachment 	: $attach;
+	background-image 		: url( $image );
+	background-position 	: $position;
+	background-repeat 		: $repeat;
+	background-size 		: $size;
+}
+
+/**
+ * Adding a blur
+ */
+@mixin blur( $blur ) {
+	-webkit-filter	: blur( $blur );
+	-moz-filter		: blur( $blur );
+	-o-filter		: blur( $blur );
+	-ms-filter		: blur( $blur );
+	filter			: blur( $blur );
+	filter			:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$blur');
+}
+
+@mixin center() {
+	align-items 	: center;
+	display 		: flex;
+	justify-content : center;
+}
+
+/**
+ * Centers and sets the max-width, with optional padding.
+ * @param		string 		$padding 		Optional padding.
+ */
+@mixin centermax( $padding: 0 ) {
+	margin 		: 0 auto;
+	max-width 	: $size__max-width;
+	padding 	: $padding;
+}
+
+@mixin clearafter() {
+	&:after {
+		display 	: block;
+		height 		: 0;
+		clear 		: both;
+		visibility 	: hidden;
+		content 	: "";
+	}
+}
+
+/**
+ * Responsive width
+ *
+ * This is based on a 12 column grid
+ * Margin is constant: 1.666%
+ *
+ * @param   $quantity   How many total columns will there be
+ * @param   $span       How many of grids should this span, default: 1
+ */
+@mixin column( $quantity, $span: 1, $margin: 1.6666666666667 ) {
+
+	$margins	: $quantity * ( $margin * 2 );
+	$boxwidth	: ( 100 - $margins ) / $quantity;
+	$width		: percentage( $boxwidth / 100 );
+
+	@if ( $span > 1 ) {
+		// $width: percentage( ( ( $boxwidth * $span ) - ( $margin * $span ) ) / 100 );
+		$width: percentage( ( ( ( 100 / 12 ) * $span ) - ( $margin * 2 ) ) / 100 );
+	}
+
+	$marginperc	: percentage( $margin / 100 );
+	width		: $width;
+	float		: left;
+	margin-left	: $marginperc;
+	margin-right: $marginperc;
+}
+
+/**
+ * Responsive widths, without margins
+ *
+ * @param 	int 	$quantity 	The total number of columns
+ */
+@mixin evencols( $quantity ) {
+
+	width 			: percentage( ( ( 100 / $quantity ) - 1 ) / 100 );
+	display 		: inline-block;
+	vertical-align 	: top;
+
+} // evencols()
+
+/**
+ * Adds a full viewer width background color behind an element.
+ *
+ * @param 		string 		$color 		The color for the background.
+ * @param 		mixed 		$width		The width of the element.
+ */
+@mixin fullwidthbgcolor( $color, $width ) {
+	position: relative;
+	
+	&:before {
+		background-color: $color;
+		content			: "";
+		height 			: 100%;
+		left 			: calc( -50vw + #{$width / 2} );
+		position 		: absolute;
+		top 			: 0;
+		width 			: 100vw;
+		z-index 		: -1;
+	}
+	
+}
+
+/**
+ * Hides text
+ */
+@mixin hidetext() {
+	text-indent	: 100%;
+	overflow	: hidden;
+	white-space	: nowrap;
+	font-size 	: 0;
+}
+
+@mixin margcols( $quantity, $span: 1, $margin: 1.5 ) {
+
+	$margins	: $quantity * ( $margin * 2 );
+	$boxwidth	: ( 99 - $margins ) / $quantity;
+	$width		: percentage( $boxwidth / 100 );
+
+	@if ( $span > 1 ) {
+		$width: percentage( ( ( ( 99 / $quantity ) * $span ) - ( $margin * 2 ) ) / 100 );
+	}
+
+	$marginperc	 	: percentage( $margin / 100 );
+
+	width			: $width;
+	margin-left	 	: $marginperc;
+	margin-right 	: $marginperc;
+	display 		: inline-block;
+	vertical-align 	: top;
+
+}
+
+@mixin nobreak() {
+	-webkit-column-break-inside : avoid;
+	page-break-inside 			: avoid;
+	break-inside 				: avoid;
+}
+
+/**
+ * Sets the opacity
+ *
+ * @param 	$opacity 	The amount of opacity you want, default: 0.5
+ */
+@mixin opacity( $opacity: 0.5 ) {
+
+	$ms: $opacity * 100;
+
+	filter 	: Alpha(opacity=$ms);
+	opacity : $opacity;
+}
+
+/**
+ * Border radius with separate values for each corner
+ */
+@mixin radiuscorners( $topleft, $topright, $botleft, $botright ) {
+	-webkit-border-top-left-radius		: $topleft;
+	-webkit-border-top-right-radius		: $topright;
+	-webkit-border-bottom-right-radius	: $botright;
+	-webkit-border-bottom-left-radius	: $botleft;
+
+	-moz-border-radius-topleft			: $topleft;
+	-moz-border-radius-topright			: $topright;
+	-moz-border-radius-bottomright		: $botright;
+	-moz-border-radius-bottomleft		: $botleft;
+
+	border-top-left-radius				: $topleft;
+	border-top-right-radius				: $topright;
+	border-bottom-right-radius			: $botright;
+	border-bottom-left-radius			: $botleft;
+}
+
+@mixin resetbutton( $bgcolor: transparent, $bghover: inherit, $hovercolor: inherit ) {
+	background 		: $bgcolor;
+	border 			: none;
+	border-radius 	: 0;
+	box-shadow 		: none;
+	font-size 		: 1em;
+	padding 		: 0;
+	text-shadow 	: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $bghover;
+		border-color 	: inherit;
+		color 			: $hovercolor;
+	}
+}
+
+@mixin resetfieldset() {
+	background-color: transparent;
+	border 			: none;
+	margin 			: 0;
+	padding 		: 0;
+}
+
+@mixin resetlist() {
+	list-style 	: none;
+	margin 		: 0;
+	padding 	: 0;
+}
+
+/**
+ * Creates a shadow on an object
+ *
+ * $x: h-shadow - horizontal positioning
+ * $y: v-shadow - vertical positioning
+ * $blur: blur - blur distance
+ * $spread: - spread - size of the shadow
+ * $color: color = the color of the shadow. Default is #000.
+ * $type - inset - is it an inset shadow or outset. Default is outset (outside the object)
+ */
+@mixin shadow( $x, $y, $blur, $spread, $color: #333333, $type: '' ) {
+	-moz-box-shadow		: $x $y $blur $spread $color #{$type};
+	-webkit-box-shadow	: $x $y $blur $spread $color #{$type};
+	box-shadow			: $x $y $blur $spread $color #{$type};
+	-ms-filter			: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color')";
+	filter				: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color');
+}
+
+/**
+ * Style used for links. Removes the default underline except on hover
+ * Sets the color of the link.
+ *
+ * @param  {[type]} $color [description]
+ * @return {[type]}        [description]
+ */
+@mixin unline( $color, $hover: '' ) {
+	color 			: $color;
+	text-decoration : none;
+
+	&:active,
+	&:focus,
+	&.focus,
+	&:visited {
+		color 			: $color;
+		text-decoration : none;
+	}
+
+	&:hover {
+		color 			: #{$hover};
+		text-decoration : underline;
+	}
+}
+
+@mixin vertcenter() {
+	position 	: relative;
+	top 		: 50%;
+	transform 	: translateY(-50%);
+}

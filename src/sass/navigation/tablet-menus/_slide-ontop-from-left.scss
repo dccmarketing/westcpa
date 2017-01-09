@@ -1,0 +1,56 @@
+/**
+ * Slide on top of content from left
+ */
+.tablet-slide-ontop-from-left {
+	.primary-menu-items-0 {
+		@include tablet-to-laptop {
+			background-color: $bg__tablet-menu;
+			bottom 			: 0;
+			display 		: block;
+			height 			: 100%;
+			left 			: 0;
+			overflow 		: auto;
+			position 		: fixed;
+			top 			: 0;
+			transform 		: translateX( -$size__menu_width);
+			transition 		: transform 0.4s ease;
+			width 			: $size__menu_width;
+			z-index 		: 9999;
+
+			&[aria-expanded="true"] {
+				transform 	: translateX(0);
+			}
+		}
+	}
+
+	&.admin-bar {
+		.primary-menu-items-0 {
+			@include tablet-to-adminbar {
+				padding-top: $size__wp-admin-bar-1;
+			}
+
+			@include adminbar-to-laptop {
+				padding-top: $size__wp-admin-bar-2;
+			}
+		}
+	}
+
+	.close-btn-text {
+		&:before {
+			@include tablet-to-laptop {
+				border-right-color	: currentColor;
+				display 			: inline-block;
+				margin-right		: 0.5em;
+			}
+		}
+	}
+
+	.menu-primary-toggle {
+		@include tablet-to-laptop {
+			position 		: absolute;
+			right 			: 0;
+			width 			: $size__menu_width;
+			z-index 		: 9999;
+		}
+	}
+}

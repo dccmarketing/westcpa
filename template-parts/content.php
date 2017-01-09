@@ -34,24 +34,32 @@
 
 	?><div class="entry-content"><?php
 
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'westcpa' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+		/* translators: %s: Name of current post */
+		the_content( sprintf(
+			wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'westcpa' ), array( 'span' => array( 'class' => array() ) ) ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'westcpa' ),
-				'after'  => '</div>',
-			) );
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'westcpa' ),
+			'after'  => '</div>',
+		) );
 
 	?></div><!-- .entry-content --><?php
 
 	do_action( 'tha_entry_content_after' );
 
 	?><footer class="entry-footer"><?php
-
-		westcpa_entry_footer();
+		
+		/**
+		 * The westcpa_entry_footer action hook.
+		 *
+		 * @hooked 		entry_categories_links() 		10
+		 * @hooked		entry_tags_links() 				15
+		 * @hooked		entry_comments_links() 			20
+		 * @hooked 		entry_edit_link() 				25
+		 */
+		do_action( 'westcpa_entry_footer_content' );
 
 	?></footer><!-- .entry-footer --><?php
 

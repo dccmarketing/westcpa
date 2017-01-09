@@ -1,0 +1,17 @@
+@import "current-menu-item";
+@import "toggles";
+@import "menu-lists";
+@import "menu-items";
+@import "menu-item-links";
+
+.nav-primary {
+	.diamond {
+		display: none;
+
+		@media only screen and (min-width: $bp__tablet) and (max-width: $bp__laptop) {
+			display: block;
+			@include diamond( $navy, 1.25em, 5.5em );
+		}
+
+	}
+}
